@@ -2,7 +2,7 @@
 title: "R-Workshop"
 author: "Witek ten Hove"
 date: "7 August 2016"
-output: html_document
+output: html_notebook
 ---
 
 ```{r setup, include=FALSE}
