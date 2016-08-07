@@ -1,0 +1,14 @@
+---
+title: "R-Workshop"
+author: "Witek ten Hove"
+date: "7 August 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welkom
+
+Leer in drie sessies hoe je met R data kunt verzamelen, deze om kunt zetten naar bruikbare input voor analyse en informatie kunt visualiseren en rapporteren.
