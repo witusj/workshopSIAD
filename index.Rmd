@@ -7,6 +7,8 @@ output:
     theme: flatly
     toc: true
     toc_depth: 2
+    toc_float: true
+    code_folding: show
 ---
 
 ```{r setup, include=FALSE}
