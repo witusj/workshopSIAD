@@ -1,22 +1,86 @@
 ---
 title: "R-Workshop"
 author: "Witek ten Hove"
-date: "7 August 2016"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
  html_document:
     theme: flatly
     toc: true
-    toc_depth: 2
+    toc_depth: 3
+    toc_float: true
+    code_folding: show
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Welkom
+## Inleiding
 
-Leer in drie sessies hoe je met R data kunt verzamelen, deze om kunt zetten naar bruikbare input voor analyse en informatie kunt visualiseren en rapporteren.
+In deze workshop leer je op een slimme wijze data te verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en rapporteren.
 
-## Sessie 1 - Installatie en basis
+### Data en locatie
+Locatie: Kapittelweg 31, Lokaal C216, Nijmegen
 
-Leer in drie sessies hoe je met R data kunt verzamelen, deze om kunt zetten naar bruikbare input voor analyse en informatie kunt visualiseren en rapporteren.
+Data:
+
+* __Sessie 1__: Dinsdag 6 september 2016 om 18:30u
+* __Sessie 2__: Dinsdag 13 september 2016 om 18:30u
+* __Sessie 3__: Dinsdag 20 september 2016 om 18:30u
+
+### Voorbereiding
+Download R en Rstudio.
+
+### Basis
+Classes, vectors, data frames en lists.
+
+### Naslagwerk
+Literatuur
+
+Internet
+
+---
+
+## Sessie 1
+
+In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.
+
+### Inlezen
+
+We beginnen eenvoudig en lezen een lokaal spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+
+### Bekijken
+
+Hoe ziet de ruwe data er uit? `str()` en `summary()`
+
+---
+
+## Sessie 2
+
+In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
+
+### Transformeren
+
+Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
+```{r eval=FALSE}
+install.packages("dplyr")
+```
+
+### Analyseren
+`table()`, `plot()` en `hist()`
+
+---
+
+## Sessie 3
+
+In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
+
+### Visualiseren
+`googlevis`, `plotly` en `leaflet`
+
+### Presenteren.
+*markdown* en *RPubs*
+
+
+
+---
