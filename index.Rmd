@@ -4,6 +4,7 @@ author: "Witek ten Hove"
 date: "7 August 2016"
 output:
  html_document:
+    theme: flatly
     toc: true
     toc_depth: 2
 ---
