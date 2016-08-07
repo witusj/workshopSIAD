@@ -12,7 +12,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
+source("content.R")
 ```
 
 ## Inleiding
@@ -20,8 +21,12 @@ knitr::opts_chunk$set(echo = TRUE)
 In deze workshop leer je op een slimme wijze data te verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en rapporteren.
 
 ### Data en locatie
-Locatie: Kapittelweg 31, Lokaal C216, Nijmegen
+Locatie: `r paste0(locaties$adres, " (", locaties$tooltip, ")")`
 
+```{r Map1, results='asis', tidy=FALSE}
+plot(M1)
+```
+<br><br>
 Data:
 
 * __Sessie 1__: Dinsdag 6 september 2016 om 18:30u
@@ -62,7 +67,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 ### Transformeren
 
 Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
-```{r eval=FALSE}
+```{r Install1, eval=FALSE, echo=TRUE}
 install.packages("dplyr")
 ```
 
@@ -76,7 +81,7 @@ install.packages("dplyr")
 In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
 ### Visualiseren
-`googlevis`, `plotly` en `leaflet`
+`googleVis`, `plotly` en `leaflet`
 
 ### Presenteren.
 *markdown* en *RPubs*
