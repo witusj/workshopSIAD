@@ -31,7 +31,7 @@ De workshop bestaat uit drie sessies:
 * __Sessie 2__: Dinsdag 13 september 2016 van 18:30 tot 21:00u
 * __Sessie 3__: Dinsdag 20 september 2016 van 18:30 tot 21:00u
 
-Locatie: `r paste0(locaties$adres, " (", locaties$tooltip, ")")`
+Locatie: `r paste0(adres, " (", extra, ")")`
 
 ```{r Map1, echo=FALSE, results='asis', tidy=FALSE}
 plot(M1)
