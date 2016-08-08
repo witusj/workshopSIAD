@@ -36,7 +36,7 @@ Locatie: `r paste0(locaties$adres, " (", locaties$tooltip, ")")`
 ```{r Map1, echo=FALSE, results='asis', tidy=FALSE}
 plot(M1)
 ```
-
+<br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ### Voorbereiding
