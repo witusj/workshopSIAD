@@ -63,7 +63,6 @@ Internet
 ## Sessie 1 - Inlezen / Bekijken
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
-<br>
 
 ### Lokaal bestand
 
@@ -115,7 +114,6 @@ summary(newDF)
 ```
 <br>
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(newDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(newDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
-
 
 ### Online bestand
 `gsheet`

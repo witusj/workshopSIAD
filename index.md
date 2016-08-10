@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 23:48:26 2016 -->
+<!-- Wed Aug 10 23:50:15 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID2e8614e89926 () {
+function gvisDataMapID2f244fa764c0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID2e8614e89926() {
-var data = gvisDataMapID2e8614e89926();
+function drawChartMapID2f244fa764c0() {
+var data = gvisDataMapID2f244fa764c0();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID2e8614e89926')
+    document.getElementById('MapID2f244fa764c0')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID2e8614e89926);
+callbacks.push(drawChartMapID2f244fa764c0);
 })();
-function displayChartMapID2e8614e89926() {
+function displayChartMapID2f244fa764c0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2e8614e89926"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2f244fa764c0"></script>
  
 <!-- divChart -->
   
-<div id="MapID2e8614e89926" 
+<div id="MapID2f244fa764c0" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -138,7 +138,6 @@ Internet
 ## Sessie 1 - Inlezen / Bekijken
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
-<br>
 
 ### Lokaal bestand
 
@@ -269,7 +268,6 @@ summary(newDF)
 ```
 <br>
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
-
 
 ### Online bestand
 `gsheet`
