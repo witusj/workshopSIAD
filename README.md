@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 15:00:46 2016 -->
+<!-- Wed Aug 10 15:02:58 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID1cb8364d7860 () {
+function gvisDataMapID1d8f7a46d498 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID1cb8364d7860() {
-var data = gvisDataMapID1cb8364d7860();
+function drawChartMapID1d8f7a46d498() {
+var data = gvisDataMapID1d8f7a46d498();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID1cb8364d7860')
+    document.getElementById('MapID1d8f7a46d498')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID1cb8364d7860);
+callbacks.push(drawChartMapID1d8f7a46d498);
 })();
-function displayChartMapID1cb8364d7860() {
+function displayChartMapID1d8f7a46d498() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID1cb8364d7860"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID1d8f7a46d498"></script>
  
 <!-- divChart -->
   
-<div id="MapID1cb8364d7860" 
+<div id="MapID1d8f7a46d498" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -118,7 +118,7 @@ Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of e
 ### Inschrijving
 Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn, waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
-Inschrijving geschiedt naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
+Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
 De kosten van de workshop bedragen 25 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
