@@ -10,7 +10,7 @@ In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze
 
 Tijdens de workshop werk je met R. Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de belangrijkste tool voor data analyse en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.
 
-Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel zeer krachtige scripts (stukjes code) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
+Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
 
 ### Workshop sessies
 De workshop bestaat uit drie sessies:
@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug  9 00:29:51 2016 -->
+<!-- Wed Aug 10 15:00:46 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID130759fe183c () {
+function gvisDataMapID1cb8364d7860 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID130759fe183c() {
-var data = gvisDataMapID130759fe183c();
+function drawChartMapID1cb8364d7860() {
+var data = gvisDataMapID1cb8364d7860();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID130759fe183c')
+    document.getElementById('MapID1cb8364d7860')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID130759fe183c);
+callbacks.push(drawChartMapID1cb8364d7860);
 })();
-function displayChartMapID130759fe183c() {
+function displayChartMapID1cb8364d7860() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,15 +105,22 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID130759fe183c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID1cb8364d7860"></script>
  
 <!-- divChart -->
   
-<div id="MapID130759fe183c" 
+<div id="MapID1cb8364d7860" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
+
+### Inschrijving
+Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn, waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
+
+Inschrijving geschiedt naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
+
+De kosten van de workshop bedragen 25 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ### Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
