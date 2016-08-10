@@ -249,12 +249,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 23:36:23 2016 -->
+<!-- Wed Aug 10 23:48:26 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID2d647520cad () {
+function gvisDataMapID2e8614e89926 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -270,8 +270,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID2d647520cad() {
-var data = gvisDataMapID2d647520cad();
+function drawChartMapID2e8614e89926() {
+var data = gvisDataMapID2e8614e89926();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -280,7 +280,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID2d647520cad')
+    document.getElementById('MapID2e8614e89926')
     );
     chart.draw(data,options);
     
@@ -304,9 +304,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID2d647520cad);
+callbacks.push(drawChartMapID2e8614e89926);
 })();
-function displayChartMapID2d647520cad() {
+function displayChartMapID2e8614e89926() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -329,16 +329,16 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2d647520cad"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2e8614e89926"></script>
 <!-- divChart -->
-<div id="MapID2d647520cad" style="width: 100; height: 300;">
+<div id="MapID2e8614e89926" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
 </div>
 <div id="inschrijving" class="section level3">
 <h3>Inschrijving</h3>
-<p>Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn, waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.</p>
+<p>Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.</p>
 <p>Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.</p>
 <p>De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.</p>
 </div>
@@ -357,14 +357,11 @@ callbacks.shift()();
 <hr />
 </div>
 </div>
-<div id="sessie-1" class="section level2">
-<h2>Sessie 1</h2>
-<p>In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.</p>
-<div id="inlezen-en-bekijken" class="section level3">
-<h3>Inlezen en bekijken</h3>
-<p>We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. <br></p>
-<div id="lokaal-bestand" class="section level4">
-<h4>Lokaal bestand</h4>
+<div id="sessie-1---inlezen-bekijken" class="section level2">
+<h2>Sessie 1 - Inlezen / Bekijken</h2>
+<p>In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. <br></p>
+<div id="lokaal-bestand" class="section level3">
+<h3>Lokaal bestand</h3>
 <p>Maak een nieuw R Script aan in RStudio:</p>
 <div class="figure">
 <img src="images/newfile.png" alt=" of File &gt;&gt; New File &gt;&gt; R Script" />
@@ -463,22 +460,21 @@ summary(newDF)</code></pre>
 ## </code></pre>
 <p><br> We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele <code>BEC.Propedeuse</code> van 5 observaties de gegevens ontbreken (<code>NA</code>).</p>
 </div>
-<div id="online-bestand" class="section level4">
-<h4>Online bestand</h4>
+<div id="online-bestand" class="section level3">
+<h3>Online bestand</h3>
 <p><code>gsheet</code></p>
 </div>
-<div id="web-scraping" class="section level4">
-<h4>Web scraping</h4>
+<div id="web-scraping" class="section level3">
+<h3>Web scraping</h3>
 <p><code>rvest</code> en <code>quandmod</code></p>
 <hr />
 </div>
 </div>
-</div>
-<div id="sessie-2" class="section level2">
-<h2>Sessie 2</h2>
+<div id="sessie-2---muteren-analyseren" class="section level2">
+<h2>Sessie 2 - Muteren / Analyseren</h2>
 <p>In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.</p>
-<div id="transformeren" class="section level3">
-<h3>Transformeren</h3>
+<div id="muteren" class="section level3">
+<h3>Muteren</h3>
 <p>Met de package <code>dplyr</code> kan data eenvoudig worden aangepast. Installeer <code>dplyr</code> via de ‘Install’ knop in Rstudio of via het commando:</p>
 <pre class="r"><code>install.packages(&quot;dplyr&quot;)</code></pre>
 </div>
@@ -488,8 +484,8 @@ summary(newDF)</code></pre>
 <hr />
 </div>
 </div>
-<div id="sessie-3" class="section level2">
-<h2>Sessie 3</h2>
+<div id="sessie-3---visualiseren-presenteren" class="section level2">
+<h2>Sessie 3 - Visualiseren / Presenteren</h2>
 <p>In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.</p>
 <div id="visualiseren" class="section level3">
 <h3>Visualiseren</h3>

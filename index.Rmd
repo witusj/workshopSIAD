@@ -41,7 +41,7 @@ plot(M1)
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ### Inschrijving
-Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn, waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
+Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
@@ -60,16 +60,12 @@ Internet
 
 ---
 
-## Sessie 1
+## Sessie 1 - Inlezen / Bekijken
 
-In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.
-
-### Inlezen en bekijken
-
-We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 <br>
 
-#### Lokaal bestand
+### Lokaal bestand
 
 Maak een nieuw R Script aan in RStudio:
 
@@ -121,20 +117,20 @@ summary(newDF)
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(newDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(newDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
 
-#### Online bestand
+### Online bestand
 `gsheet`
 
 
-#### Web scraping
+### Web scraping
 `rvest` en `quandmod`
 
 ---
 
-## Sessie 2
+## Sessie 2 - Muteren / Analyseren
 
 In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
 
-### Transformeren
+### Muteren
 
 Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
 ```{r Install1, eval=FALSE, echo=TRUE}
@@ -146,7 +142,7 @@ install.packages("dplyr")
 
 ---
 
-## Sessie 3
+## Sessie 3 - Visualiseren / Presenteren
 
 In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 

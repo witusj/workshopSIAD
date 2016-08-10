@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 23:36:23 2016 -->
+<!-- Wed Aug 10 23:48:26 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID2d647520cad () {
+function gvisDataMapID2e8614e89926 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID2d647520cad() {
-var data = gvisDataMapID2d647520cad();
+function drawChartMapID2e8614e89926() {
+var data = gvisDataMapID2e8614e89926();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID2d647520cad')
+    document.getElementById('MapID2e8614e89926')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID2d647520cad);
+callbacks.push(drawChartMapID2e8614e89926);
 })();
-function displayChartMapID2d647520cad() {
+function displayChartMapID2e8614e89926() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,18 +105,18 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2d647520cad"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2e8614e89926"></script>
  
 <!-- divChart -->
   
-<div id="MapID2d647520cad" 
+<div id="MapID2e8614e89926" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ### Inschrijving
-Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn, waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
+Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
@@ -135,16 +135,12 @@ Internet
 
 ---
 
-## Sessie 1
+## Sessie 1 - Inlezen / Bekijken
 
-In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.
-
-### Inlezen en bekijken
-
-We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 <br>
 
-#### Lokaal bestand
+### Lokaal bestand
 
 Maak een nieuw R Script aan in RStudio:
 
@@ -275,20 +271,20 @@ summary(newDF)
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
 
-#### Online bestand
+### Online bestand
 `gsheet`
 
 
-#### Web scraping
+### Web scraping
 `rvest` en `quandmod`
 
 ---
 
-## Sessie 2
+## Sessie 2 - Muteren / Analyseren
 
 In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
 
-### Transformeren
+### Muteren
 
 Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
 
@@ -301,7 +297,7 @@ install.packages("dplyr")
 
 ---
 
-## Sessie 3
+## Sessie 3 - Visualiseren / Presenteren
 
 In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
