@@ -32,4 +32,4 @@ glimpse(studentDF)
 summary(studentDF)
 
 ### Write to csv
-write.csv(x = studentDF, file = "datasets/sessie 1/stud_perf.csv")
+write.csv(x = studentDF, file = "sessie 1/stud_perf.csv", row.names = FALSE)

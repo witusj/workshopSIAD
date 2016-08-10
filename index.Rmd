@@ -64,9 +64,10 @@ Internet
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.
 
-### Inlezen
+### Inlezen en bekijken
 
-We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+<br>
 
 #### Lokaal bestand
 
@@ -74,17 +75,58 @@ Maak een nieuw R Script aan in RStudio:
 
 ![<br>of _File >> New File >> R Script_](images/newfile.png)
 
-en bewaar het in een voor jou logische folder op je computer. Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu dit bestand:
+Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
-<a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a>
+In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+## Lees data uit lokaal csv-bestand
+newDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+```
+Selecteer alles en klik op Run:
 
-en sla het op in de werkfolder.
+![<br>of _Ctrl + Enter_](images/run.png)
 
-### Bekijken
+In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *newDF* is toegevoegd:
 
-Hoe ziet de ruwe data er uit? `str()` en `summary()`
+![](images/env.png)
+
+<br>
+We kunnen kijken hoe de data er uit zien door naar de eerste zes regels te kijken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk eerste regels van data
+head(newDF)
+```
+
+<br>
+Alles ziet er goed uit en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de structuur van data
+str(newDF)
+```
+
+<br>
+en we zien dat de data de vorm van een data frame (tabel) heeft met `r length(newDF$Voor)` rijen (observaties) en `r length(newDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+
+Met `summary()` kunnen we de kwaliteit van de data beoordelen:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de kwaliteit van data
+summary(newDF)
+```
+<br>
+We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(newDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(newDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
+
+
+#### Online bestand
+`gsheet`
+
+
+#### Web scraping
+`rvest` en `quandmod`
 
 ---
 

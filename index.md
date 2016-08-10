@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 15:45:38 2016 -->
+<!-- Wed Aug 10 23:18:42 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID217f7c9d868a () {
+function gvisDataMapID2be635ef617b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID217f7c9d868a() {
-var data = gvisDataMapID217f7c9d868a();
+function drawChartMapID2be635ef617b() {
+var data = gvisDataMapID2be635ef617b();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID217f7c9d868a')
+    document.getElementById('MapID2be635ef617b')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID217f7c9d868a);
+callbacks.push(drawChartMapID2be635ef617b);
 })();
-function displayChartMapID217f7c9d868a() {
+function displayChartMapID2be635ef617b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID217f7c9d868a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2be635ef617b"></script>
  
 <!-- divChart -->
   
-<div id="MapID217f7c9d868a" 
+<div id="MapID2be635ef617b" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -139,9 +139,10 @@ Internet
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen.
 
-### Inlezen
+### Inlezen en bekijken
 
-We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+<br>
 
 #### Lokaal bestand
 
@@ -149,17 +150,137 @@ Maak een nieuw R Script aan in RStudio:
 
 ![<br>of _File >> New File >> R Script_](images/newfile.png)
 
-en bewaar het in een voor jou logische folder op je computer. Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu dit bestand:
+Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
-<a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a>
+In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 
-en sla het op in dezelfde folder.
+```r
+## Lees data uit lokaal csv-bestand
+newDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+```
+Selecteer alles en klik op Run:
 
-### Bekijken
+![<br>of _Ctrl + Enter_](images/run.png)
 
-Hoe ziet de ruwe data er uit? `str()` en `summary()`
+In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *newDF* is toegevoegd:
+
+![](images/env.png)
+
+<br>
+We kunnen kijken hoe de data er uit zien door naar de eerste zes regels te kijken:
+
+
+```r
+## Bekijk eerste regels van data
+head(newDF)
+```
+
+```
+##       Voor      Achter Kennistoetsen Schriftelijk Schriftelijk.Voldoende
+## 1    ANTON   Entwistle           0.0          6.0                    100
+## 2 CHRISTEN    Hardaway           4.6          2.2                      0
+## 3    KYLEE      Mauzey           5.3          8.8                    100
+## 4      KAI    Tredwell           5.0          4.8                      0
+## 5     NELL      Darden           6.7          9.2                    100
+## 6  KIRSTIE Tinklenberg           7.7          7.4                    100
+##   Schriftelijk.Bonus Schriftelijk.Bonus.Voldoende Clicks Weblectures
+## 1                6.0                          100    536         5.5
+## 2                2.2                            0    636         0.8
+## 3                8.8                          100    666         3.6
+## 4                4.8                            0    479         1.2
+## 5               10.0                          100    298         0.0
+## 6                8.6                          100    863         0.0
+##   BEC.Propedeuse AEC.Propedeuse Vooropleiding
+## 1              1              1          HAVO
+## 2              0              0           MBO
+## 3              1              1           MBO
+## 4              1              1          HAVO
+## 5              1              1          HAVO
+## 6              1              1           MBO
+```
+
+<br>
+Alles ziet er goed uit en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+
+
+```r
+## Bekijk de structuur van data
+str(newDF)
+```
+
+```
+## 'data.frame':	109 obs. of  12 variables:
+##  $ Voor                        : chr  "ANTON" "CHRISTEN" "KYLEE" "KAI" ...
+##  $ Achter                      : chr  "Entwistle" "Hardaway" "Mauzey" "Tredwell" ...
+##  $ Kennistoetsen               : num  0 4.6 5.3 5 6.7 7.7 3.8 4.8 4.5 4.1 ...
+##  $ Schriftelijk                : num  6 2.2 8.8 4.8 9.2 7.4 5 5.8 3.2 6.6 ...
+##  $ Schriftelijk.Voldoende      : int  100 0 100 0 100 100 0 100 0 100 ...
+##  $ Schriftelijk.Bonus          : num  6 2.2 8.8 4.8 10 8.6 5 5.8 3.2 6.6 ...
+##  $ Schriftelijk.Bonus.Voldoende: int  100 0 100 0 100 100 0 100 0 100 ...
+##  $ Clicks                      : int  536 636 666 479 298 863 434 428 441 1058 ...
+##  $ Weblectures                 : num  5.5 0.8 3.6 1.2 0 0 0 0 0 1.2 ...
+##  $ BEC.Propedeuse              : int  1 0 1 1 1 1 1 0 0 1 ...
+##  $ AEC.Propedeuse              : int  1 0 1 1 1 1 1 1 0 1 ...
+##  $ Vooropleiding               : chr  "HAVO" "MBO" "MBO" "HAVO" ...
+```
+
+<br>
+en we zien dat de data de vorm van een data frame (tabel) heeft met 109 rijen (observaties) en 12 kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+
+Met `summary()` kunnen we de kwaliteit van de data beoordelen:
+
+
+```r
+## Bekijk de kwaliteit van data
+summary(newDF)
+```
+
+```
+##      Voor              Achter          Kennistoetsen   Schriftelijk  
+##  Length:109         Length:109         Min.   :0.00   Min.   :0.800  
+##  Class :character   Class :character   1st Qu.:3.20   1st Qu.:4.000  
+##  Mode  :character   Mode  :character   Median :4.80   Median :5.600  
+##                                        Mean   :4.48   Mean   :5.503  
+##                                        3rd Qu.:5.70   3rd Qu.:6.800  
+##                                        Max.   :8.30   Max.   :9.600  
+##                                                                      
+##  Schriftelijk.Voldoende Schriftelijk.Bonus Schriftelijk.Bonus.Voldoende
+##  Min.   :  0.00         Min.   : 0.800     Min.   :  0.00              
+##  1st Qu.:  0.00         1st Qu.: 4.000     1st Qu.:  0.00              
+##  Median :100.00         Median : 5.600     Median :100.00              
+##  Mean   : 52.29         Mean   : 5.787     Mean   : 53.21              
+##  3rd Qu.:100.00         3rd Qu.: 7.600     3rd Qu.:100.00              
+##  Max.   :100.00         Max.   :10.000     Max.   :100.00              
+##                                                                        
+##      Clicks        Weblectures     BEC.Propedeuse  AEC.Propedeuse  
+##  Min.   :   1.0   Min.   :0.0000   Min.   :0.000   Min.   :0.0000  
+##  1st Qu.: 269.0   1st Qu.:0.0000   1st Qu.:1.000   1st Qu.:1.0000  
+##  Median : 386.0   Median :0.0000   Median :1.000   Median :1.0000  
+##  Mean   : 445.7   Mean   :0.8505   Mean   :0.875   Mean   :0.9327  
+##  3rd Qu.: 541.0   3rd Qu.:1.2000   3rd Qu.:1.000   3rd Qu.:1.0000  
+##  Max.   :1058.0   Max.   :6.8000   Max.   :1.000   Max.   :1.0000  
+##                                    NA's   :5       NA's   :5       
+##  Vooropleiding     
+##  Length:109        
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+##                    
+## 
+```
+<br>
+We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
+
+
+#### Online bestand
+`gsheet`
+
+
+#### Web scraping
+`rvest` en `quandmod`
 
 ---
 
