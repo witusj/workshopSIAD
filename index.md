@@ -4,7 +4,7 @@ Witek ten Hove
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 
 
-## Inleiding
+# Inleiding
 
 In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.
 
@@ -12,7 +12,7 @@ Tijdens de workshop werk je met R. Deze software is speciaal ontwikkeld om makke
 
 Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
 
-### Workshop sessies
+## Workshop sessies
 De workshop bestaat uit drie sessies:
 
 * __Sessie 1__: Dinsdag 6 september 2016 van 18:30 tot 21:00u
@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 23:50:15 2016 -->
+<!-- Thu Aug 11 00:29:00 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID2f244fa764c0 () {
+function gvisDataMapID32821d28ad97 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID2f244fa764c0() {
-var data = gvisDataMapID2f244fa764c0();
+function drawChartMapID32821d28ad97() {
+var data = gvisDataMapID32821d28ad97();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID2f244fa764c0')
+    document.getElementById('MapID32821d28ad97')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID2f244fa764c0);
+callbacks.push(drawChartMapID32821d28ad97);
 })();
-function displayChartMapID2f244fa764c0() {
+function displayChartMapID32821d28ad97() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,41 +105,41 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2f244fa764c0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID32821d28ad97"></script>
  
 <!-- divChart -->
   
-<div id="MapID2f244fa764c0" 
+<div id="MapID32821d28ad97" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
-### Inschrijving
+## Inschrijving
 Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
 De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
-### Voorbereiding
+## Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
-### Basis
+## Basis
 Classes, vectors, data frames en lists (nested data frames).
 
-### Naslagwerk
+## Naslagwerk
 Literatuur
 
 Internet
 
 ---
 
-## Sessie 1 - Inlezen / Bekijken
+# Sessie 1 - Inlezen / Bekijken
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 
-### Lokaal bestand
+## Lokaal bestand
 
 Maak een nieuw R Script aan in RStudio:
 
@@ -153,23 +153,23 @@ In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 
 ```r
 ## Lees data uit lokaal csv-bestand
-newDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
 ```
 Selecteer alles en klik op Run:
 
 ![<br>of _Ctrl + Enter_](images/run.png)
 
-In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *newDF* is toegevoegd:
+In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
 
 ![](images/env.png)
 
 <br>
-We kunnen kijken hoe de data er uit zien door naar de eerste zes regels te kijken:
+We kunnen kijken hoe de data er uit ziet door naar de eerste zes regels te kijken:
 
 
 ```r
 ## Bekijk eerste regels van data
-head(newDF)
+head(studDF)
 ```
 
 ```
@@ -202,7 +202,7 @@ Alles ziet er goed uit en we kunnen nu wat nauwkeuriger kijken naar de data. Het
 
 ```r
 ## Bekijk de structuur van data
-str(newDF)
+str(studDF)
 ```
 
 ```
@@ -229,7 +229,7 @@ Met `summary()` kunnen we de kwaliteit van de data beoordelen:
 
 ```r
 ## Bekijk de kwaliteit van data
-summary(newDF)
+summary(studDF)
 ```
 
 ```
@@ -269,20 +269,25 @@ summary(newDF)
 <br>
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
-### Online bestand
+### Vragenset 1
+1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
+
+2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
+
+## Online bestand
 `gsheet`
 
 
-### Web scraping
+## Web scraping
 `rvest` en `quandmod`
 
 ---
 
-## Sessie 2 - Muteren / Analyseren
+# Sessie 2 - Muteren / Analyseren
 
 In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
 
-### Muteren
+## Muteren
 
 Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
 
@@ -290,19 +295,19 @@ Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` v
 install.packages("dplyr")
 ```
 
-### Analyseren
+## Analyseren
 `table()`, `plot()` en `hist()`
 
 ---
 
-## Sessie 3 - Visualiseren / Presenteren
+# Sessie 3 - Visualiseren / Presenteren
 
 In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
-### Visualiseren
+## Visualiseren
 `googleVis`, `plotly` en `leaflet`
 
-### Presenteren.
+## Presenteren.
 *markdown* en *RPubs*
 
 

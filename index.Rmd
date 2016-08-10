@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 source("content.R")
 ```
 
-## Inleiding
+# Inleiding
 
 In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.
 
@@ -25,7 +25,7 @@ Tijdens de workshop werk je met R. Deze software is speciaal ontwikkeld om makke
 
 Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
 
-### Workshop sessies
+## Workshop sessies
 De workshop bestaat uit drie sessies:
 
 * __Sessie 1__: Dinsdag 6 september 2016 van 18:30 tot 21:00u
@@ -40,31 +40,31 @@ plot(M1)
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
-### Inschrijving
+## Inschrijving
 Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
 De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
-### Voorbereiding
+## Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
-### Basis
+## Basis
 Classes, vectors, data frames en lists (nested data frames).
 
-### Naslagwerk
+## Naslagwerk
 Literatuur
 
 Internet
 
 ---
 
-## Sessie 1 - Inlezen / Bekijken
+# Sessie 1 - Inlezen / Bekijken
 
 In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 
-### Lokaal bestand
+## Lokaal bestand
 
 Maak een nieuw R Script aan in RStudio:
 
@@ -77,22 +77,22 @@ Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/
 In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 ## Lees data uit lokaal csv-bestand
-newDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
 ```
 Selecteer alles en klik op Run:
 
 ![<br>of _Ctrl + Enter_](images/run.png)
 
-In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *newDF* is toegevoegd:
+In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
 
 ![](images/env.png)
 
 <br>
-We kunnen kijken hoe de data er uit zien door naar de eerste zes regels te kijken:
+We kunnen kijken hoe de data er uit ziet door naar de eerste zes regels te kijken:
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Bekijk eerste regels van data
-head(newDF)
+head(studDF)
 ```
 
 <br>
@@ -100,54 +100,59 @@ Alles ziet er goed uit en we kunnen nu wat nauwkeuriger kijken naar de data. Het
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Bekijk de structuur van data
-str(newDF)
+str(studDF)
 ```
 
 <br>
-en we zien dat de data de vorm van een data frame (tabel) heeft met `r length(newDF$Voor)` rijen (observaties) en `r length(newDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+en we zien dat de data de vorm van een data frame (tabel) heeft met `r length(studDF$Voor)` rijen (observaties) en `r length(studDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
 
 Met `summary()` kunnen we de kwaliteit van de data beoordelen:
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Bekijk de kwaliteit van data
-summary(newDF)
+summary(studDF)
 ```
 <br>
-We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(newDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(newDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
+We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(studDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(studDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
-### Online bestand
+### Vragenset 1
+1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
+
+2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
+
+## Online bestand
 `gsheet`
 
 
-### Web scraping
+## Web scraping
 `rvest` en `quandmod`
 
 ---
 
-## Sessie 2 - Muteren / Analyseren
+# Sessie 2 - Muteren / Analyseren
 
 In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
 
-### Muteren
+## Muteren
 
 Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
 ```{r Install1, eval=FALSE, echo=TRUE}
 install.packages("dplyr")
 ```
 
-### Analyseren
+## Analyseren
 `table()`, `plot()` en `hist()`
 
 ---
 
-## Sessie 3 - Visualiseren / Presenteren
+# Sessie 3 - Visualiseren / Presenteren
 
 In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
-### Visualiseren
+## Visualiseren
 `googleVis`, `plotly` en `leaflet`
 
-### Presenteren.
+## Presenteren.
 *markdown* en *RPubs*
 
 
