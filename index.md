@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 23:21:52 2016 -->
+<!-- Wed Aug 10 23:36:23 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID2ce86444effb () {
+function gvisDataMapID2d647520cad () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID2ce86444effb() {
-var data = gvisDataMapID2ce86444effb();
+function drawChartMapID2d647520cad() {
+var data = gvisDataMapID2d647520cad();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID2ce86444effb')
+    document.getElementById('MapID2d647520cad')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID2ce86444effb);
+callbacks.push(drawChartMapID2d647520cad);
 })();
-function displayChartMapID2ce86444effb() {
+function displayChartMapID2d647520cad() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2ce86444effb"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID2d647520cad"></script>
  
 <!-- divChart -->
   
-<div id="MapID2ce86444effb" 
+<div id="MapID2d647520cad" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -141,7 +141,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ### Inlezen en bekijken
 
-We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 <br>
 
 #### Lokaal bestand

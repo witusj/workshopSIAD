@@ -66,7 +66,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ### Inlezen en bekijken
 
-We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
 <br>
 
 #### Lokaal bestand
