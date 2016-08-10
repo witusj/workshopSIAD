@@ -25,7 +25,7 @@ studentDF$Voor <- fnamesSEL
 studentDF$Achter <- lnamesSEL
 
 ### Remove variables
-studentDF <- studentDF[-c(3, 12)]
+studentDF <- studentDF[-c(3, 9, 12)]
 
 ### Check data
 glimpse(studentDF)
