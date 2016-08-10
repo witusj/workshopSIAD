@@ -45,7 +45,7 @@ Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
-De kosten van de workshop bedragen 25 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
+De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ### Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
@@ -66,7 +66,21 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ### Inlezen
 
-We beginnen eenvoudig en lezen een lokaal spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+
+#### Lokaal bestand
+
+Maak een nieuw R Script aan in RStudio:
+
+![<br>of _File >> New File >> R Script_](images/newfile.png)
+
+en bewaar het in een voor jou logische folder op je computer. Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+Download nu dit bestand:
+
+<a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a>
+
+en sla het op in de werkfolder.
 
 ### Bekijken
 

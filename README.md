@@ -120,7 +120,7 @@ Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
-De kosten van de workshop bedragen 25 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
+De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ### Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))

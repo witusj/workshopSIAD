@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 10 15:02:58 2016 -->
+<!-- Wed Aug 10 15:45:38 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID1d8f7a46d498 () {
+function gvisDataMapID217f7c9d868a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID1d8f7a46d498() {
-var data = gvisDataMapID1d8f7a46d498();
+function drawChartMapID217f7c9d868a() {
+var data = gvisDataMapID217f7c9d868a();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID1d8f7a46d498')
+    document.getElementById('MapID217f7c9d868a')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID1d8f7a46d498);
+callbacks.push(drawChartMapID217f7c9d868a);
 })();
-function displayChartMapID1d8f7a46d498() {
+function displayChartMapID217f7c9d868a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID1d8f7a46d498"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID217f7c9d868a"></script>
  
 <!-- divChart -->
   
-<div id="MapID1d8f7a46d498" 
+<div id="MapID217f7c9d868a" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -120,7 +120,7 @@ Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
-De kosten van de workshop bedragen 25 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
+De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ### Voorbereiding
 Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
@@ -141,7 +141,21 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ### Inlezen
 
-We beginnen eenvoudig en lezen een lokaal spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+We beginnen eenvoudig en lezen een lokaal opgeslage spreadsheet bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina. `rvest` en `quandmod`
+
+#### Lokaal bestand
+
+Maak een nieuw R Script aan in RStudio:
+
+![<br>of _File >> New File >> R Script_](images/newfile.png)
+
+en bewaar het in een voor jou logische folder op je computer. Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+Download nu dit bestand:
+
+<a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a>
+
+en sla het op in dezelfde folder.
 
 ### Bekijken
 
