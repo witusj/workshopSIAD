@@ -56,7 +56,7 @@ In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
 * Direct via de console
 * Indirect via een script
 
-Meestal zul je eerst je code in een script schrijven en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren.
+Meestal zul je eerst je code in een script schrijven (of kopiëren uit voorbeelden) en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren en later dus kunt hergebruiken.
 
 Maak een nieuw R Script aan in RStudio via het icoontje met het groene plusje:
 

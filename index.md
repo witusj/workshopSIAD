@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 13:08:07 2016 -->
+<!-- Thu Aug 11 13:15:16 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID42fa23a0e2e0 () {
+function gvisDataMapID43b07ce5124c () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID42fa23a0e2e0() {
-var data = gvisDataMapID42fa23a0e2e0();
+function drawChartMapID43b07ce5124c() {
+var data = gvisDataMapID43b07ce5124c();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID42fa23a0e2e0')
+    document.getElementById('MapID43b07ce5124c')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID42fa23a0e2e0);
+callbacks.push(drawChartMapID43b07ce5124c);
 })();
-function displayChartMapID42fa23a0e2e0() {
+function displayChartMapID43b07ce5124c() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID42fa23a0e2e0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID43b07ce5124c"></script>
  
 <!-- divChart -->
   
-<div id="MapID42fa23a0e2e0" 
+<div id="MapID43b07ce5124c" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -131,7 +131,7 @@ In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
 * Direct via de console
 * Indirect via een script
 
-Meestal zul je eerst je code in een script schrijven en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren.
+Meestal zul je eerst je code in een script schrijven (of kopiëren uit voorbeelden) en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren en later dus kunt hergebruiken.
 
 Maak een nieuw R Script aan in RStudio via het icoontje met het groene plusje:
 
