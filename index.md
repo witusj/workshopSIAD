@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 18:30:00 2016 -->
+<!-- Thu Aug 11 18:33:49 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID4babc4366db () {
+function gvisDataMapID4c5c783c3dd0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID4babc4366db() {
-var data = gvisDataMapID4babc4366db();
+function drawChartMapID4c5c783c3dd0() {
+var data = gvisDataMapID4c5c783c3dd0();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID4babc4366db')
+    document.getElementById('MapID4c5c783c3dd0')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID4babc4366db);
+callbacks.push(drawChartMapID4c5c783c3dd0);
 })();
-function displayChartMapID4babc4366db() {
+function displayChartMapID4c5c783c3dd0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,18 +105,18 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4babc4366db"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4c5c783c3dd0"></script>
  
 <!-- divChart -->
   
-<div id="MapID4babc4366db" 
+<div id="MapID4c5c783c3dd0" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ## Inschrijving
-Aanmelding geschiedt via dit formulier. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
+Aanmelding geschiedt via dit [formulier](https://goo.gl/forms/GGCpoQdm6d5Lkvvu1). Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
