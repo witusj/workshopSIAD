@@ -51,11 +51,58 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis
-Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
+In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
+
+* Direct via de console
+* Indirect via een script
+
+Meestal zul je eerst je code in een script schrijven en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren.
+
+Maak een nieuw R Script aan in RStudio via het icoontje met het groene plusje:
+
+![<br>of _File >> New File >> R Script_](images/newfile.png)
+
+Er wordt nu een venster met een veld voor tekstbewerking geopend. Je kunt hier je instructies invoeren, bijvoorbeeld een optelling.
+
+![](images/editor.png)
+
+<br>
+
+Selecteer alles en klik op *Run*:
+
+![<br>of _Ctrl + Enter_](images/run.png)
+
+In de console zie je het resultaat.
+
+```{r}
+2 + 3
+```
+
+We hebben nu niet meer gedaan dan je ook op een gewone rekenmachine kunt uitvoeren. R is echter geen rekenmachine, maar een programmeertaal. In iedere programmeertaal kun je gegevens in variabelen opslaan en deze variabelen hergebruiken.
+
+We kunnen bijvoorbeeld een variabele *a* en *b* aanmaken en daarin de waarden *2* en *3* bewaren. Het resultaat van de optelling bewaren we in een variabele *c*.
+
+```{r, echo=TRUE}
+a <- 2
+b <- 3
+c <- a + b
+c
+```
+
+Het voordeel hiervan is dat we nu *a* of *b* andere waarden kunnen geven en dat de waarde van *c* automatisch wordt aangepast.
+```{r, echo=TRUE}
+a <- 4
+b <- 3
+c <- a + b
+c
+```
+
+
+Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
 
 De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Vectoren en classes
@@ -77,20 +124,20 @@ Plaats[2]
 We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
-## Vectorelementen toevoegen.
+## Vectorelementen toevoegen of verwijderen.
 Plaats[4] <- "Amsterdam"
 Plaats
 Plaats <- Plaats[-3]
 Plaats
 ```
 
-Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
+Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen *[rij,kolom]* de elementen opvragen.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Data frame structuur
 Land <- c("Polska", "UK", "Nederland")
 Locatie <- data.frame(Plaats, Land)
-class(Locatie)
+Locatie
 Locatie[3,1]
 Locatie[3,]
 Locatie[,2]
@@ -108,6 +155,8 @@ Locatie$Plaats[1]
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
+2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
+
 ## Naslagwerk
 Literatuur
 
@@ -121,11 +170,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ## Lokaal bestand
 
-Maak een nieuw R Script aan in RStudio:
-
-![<br>of _File >> New File >> R Script_](images/newfile.png)
-
-en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
 Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
@@ -134,11 +179,7 @@ In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 ## Lees data uit lokaal csv-bestand
 studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
 ```
-Selecteer alles en klik op Run:
-
-![<br>of _Ctrl + Enter_](images/run.png)
-
-In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
+Selecteer alles en klik op Run. In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
 
 ![](images/env.png)
 

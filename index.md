@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 02:27:31 2016 -->
+<!-- Thu Aug 11 12:57:10 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID3aa078bb433 () {
+function gvisDataMapID41af78f6b46c () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID3aa078bb433() {
-var data = gvisDataMapID3aa078bb433();
+function drawChartMapID41af78f6b46c() {
+var data = gvisDataMapID41af78f6b46c();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID3aa078bb433')
+    document.getElementById('MapID41af78f6b46c')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID3aa078bb433);
+callbacks.push(drawChartMapID41af78f6b46c);
 })();
-function displayChartMapID3aa078bb433() {
+function displayChartMapID41af78f6b46c() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3aa078bb433"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID41af78f6b46c"></script>
  
 <!-- divChart -->
   
-<div id="MapID3aa078bb433" 
+<div id="MapID41af78f6b46c" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -126,11 +126,69 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis
-Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
+In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
+
+* Direct via de console
+* Indirect via een script
+
+Meestal zul je eerst je code in een script schrijven en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren.
+
+Maak een nieuw R Script aan in RStudio via het icoontje met het groene plusje:
+
+![<br>of _File >> New File >> R Script_](images/newfile.png)
+
+Er wordt nu een venster met een veld voor tekstbewerking geopend. Je kunt hier je instructies invoeren, bijvoorbeeld een optelling.
+
+![](images/editor.png)
+
+<br>
+
+Selecteer alles en klik op *Run*:
+
+![<br>of _Ctrl + Enter_](images/run.png)
+
+In de console zie je het resultaat.
+
+
+```
+## [1] 5
+```
+
+We hebben nu niet meer gedaan dan je ook op een gewone rekenmachine kunt uitvoeren. R is echter geen rekenmachine, maar een programmeertaal. In iedere programmeertaal kun je gegevens in variabelen opslaan en deze variabelen hergebruiken.
+
+We kunnen bijvoorbeeld een variabele *a* en *b* aanmaken en daarin de waarden *2* en *3* bewaren. Het resultaat van de optelling bewaren we in een variabele *c*.
+
+
+```r
+a <- 2
+b <- 3
+c <- a + b
+c
+```
+
+```
+## [1] 5
+```
+
+Het voordeel hiervan is dat we nu *a* of *b* andere waarden kunnen geven en dat de waarde van *c* automatisch wordt aangepast.
+
+```r
+a <- 4
+b <- 3
+c <- a + b
+c
+```
+
+```
+## [1] 7
+```
+
+
+Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
 
 De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
 
 
 ```r
@@ -177,7 +235,7 @@ We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.
 
 
 ```r
-## Vectorelementen toevoegen.
+## Vectorelementen toevoegen of verwijderen.
 Plaats[4] <- "Amsterdam"
 Plaats
 ```
@@ -195,18 +253,21 @@ Plaats
 ## [1] "Warszawa"  "London"    "Amsterdam"
 ```
 
-Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
+Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen *[rij,kolom]* de elementen opvragen.
 
 
 ```r
 ## Data frame structuur
 Land <- c("Polska", "UK", "Nederland")
 Locatie <- data.frame(Plaats, Land)
-class(Locatie)
+Locatie
 ```
 
 ```
-## [1] "data.frame"
+##      Plaats      Land
+## 1  Warszawa    Polska
+## 2    London        UK
+## 3 Amsterdam Nederland
 ```
 
 ```r
@@ -262,6 +323,8 @@ Locatie$Plaats[1]
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
+2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
+
 ## Naslagwerk
 Literatuur
 
@@ -275,11 +338,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ## Lokaal bestand
 
-Maak een nieuw R Script aan in RStudio:
-
-![<br>of _File >> New File >> R Script_](images/newfile.png)
-
-en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
 Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
@@ -289,11 +348,7 @@ In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 ## Lees data uit lokaal csv-bestand
 studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
 ```
-Selecteer alles en klik op Run:
-
-![<br>of _Ctrl + Enter_](images/run.png)
-
-In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
+Selecteer alles en klik op Run. In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
 
 ![](images/env.png)
 
