@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 00:29:00 2016 -->
+<!-- Thu Aug 11 02:13:49 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID32821d28ad97 () {
+function gvisDataMapID3982111d1dbd () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID32821d28ad97() {
-var data = gvisDataMapID32821d28ad97();
+function drawChartMapID3982111d1dbd() {
+var data = gvisDataMapID3982111d1dbd();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID32821d28ad97')
+    document.getElementById('MapID3982111d1dbd')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID32821d28ad97);
+callbacks.push(drawChartMapID3982111d1dbd);
 })();
-function displayChartMapID32821d28ad97() {
+function displayChartMapID3982111d1dbd() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID32821d28ad97"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3982111d1dbd"></script>
  
 <!-- divChart -->
   
-<div id="MapID32821d28ad97" 
+<div id="MapID3982111d1dbd" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -123,10 +123,144 @@ Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingsterm
 De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ## Voorbereiding
-Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
+Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis
-Classes, vectors, data frames en lists (nested data frames).
+Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen deze elementen zich tot elkaar verhouden.
+
+De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
+
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kan van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
+
+
+```r
+## Vectoren en classes
+Plaats <- c("Warszawa", "London", "Paris")
+class(Plaats)
+```
+
+```
+## [1] "character"
+```
+
+```r
+Geslacht <- c("Man", "Man", "Vrouw")
+class(Geslacht)
+```
+
+```
+## [1] "character"
+```
+
+```r
+Geslacht <- as.factor(Geslacht)
+class(Geslacht)
+```
+
+```
+## [1] "factor"
+```
+
+Iedere element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
+
+
+```r
+## Vectorindices
+Plaats[2]
+```
+
+```
+## [1] "London"
+```
+
+We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.
+
+
+```r
+## Vectorelementen toevoegen.
+Plaats[4] <- "Amsterdam"
+Plaats
+```
+
+```
+## [1] "Warszawa"  "London"    "Paris"     "Amsterdam"
+```
+
+```r
+Plaats <- Plaats[-3]
+Plaats
+```
+
+```
+## [1] "Warszawa"  "London"    "Amsterdam"
+```
+
+Stel we creeren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
+
+
+```r
+## Data frame structuur
+Land <- c("Polska", "UK", "Nederland")
+Locatie <- data.frame(Plaats, Land)
+class(Locatie)
+```
+
+```
+## [1] "data.frame"
+```
+
+```r
+Locatie[3,1]
+```
+
+```
+## [1] Amsterdam
+## Levels: Amsterdam London Warszawa
+```
+
+```r
+Locatie[3,]
+```
+
+```
+##      Plaats      Land
+## 3 Amsterdam Nederland
+```
+
+```r
+Locatie[,2]
+```
+
+```
+## [1] Polska    UK        Nederland
+## Levels: Nederland Polska UK
+```
+
+We kunnen ook de afzonderlijke variabelen binnen een data frame oproepen via het `$` teken.
+
+
+```r
+## Data frame structuur
+Locatie$Land
+```
+
+```
+## [1] Polska    UK        Nederland
+## Levels: Nederland Polska UK
+```
+
+```r
+Locatie$Plaats[1]
+```
+
+```
+## [1] Warszawa
+## Levels: Amsterdam London Warszawa
+```
+
+### Vragenset Basis
+
+1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
 ## Naslagwerk
 Literatuur
@@ -164,7 +298,7 @@ In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je z
 ![](images/env.png)
 
 <br>
-We kunnen kijken hoe de data er uit ziet door naar de eerste zes regels te kijken:
+We snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
 
 
 ```r

@@ -48,10 +48,65 @@ Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingsterm
 De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ## Voorbereiding
-Download R en RStudio. Install.packages(c("rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
+Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis
-Classes, vectors, data frames en lists (nested data frames).
+Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen deze elementen zich tot elkaar verhouden.
+
+De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
+
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kan van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectoren en classes
+Plaats <- c("Warszawa", "London", "Paris")
+class(Plaats)
+Geslacht <- c("Man", "Man", "Vrouw")
+class(Geslacht)
+Geslacht <- as.factor(Geslacht)
+class(Geslacht)
+```
+
+Iedere element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectorindices
+Plaats[2]
+```
+
+We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectorelementen toevoegen.
+Plaats[4] <- "Amsterdam"
+Plaats
+Plaats <- Plaats[-3]
+Plaats
+```
+
+Stel we creeren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Data frame structuur
+Land <- c("Polska", "UK", "Nederland")
+Locatie <- data.frame(Plaats, Land)
+class(Locatie)
+Locatie[3,1]
+Locatie[3,]
+Locatie[,2]
+```
+
+We kunnen ook de afzonderlijke variabelen binnen een data frame oproepen via het `$` teken.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Data frame structuur
+Locatie$Land
+Locatie$Plaats[1]
+```
+
+### Vragenset Basis
+
+1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
 ## Naslagwerk
 Literatuur
@@ -88,7 +143,7 @@ In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je z
 ![](images/env.png)
 
 <br>
-We kunnen kijken hoe de data er uit ziet door naar de eerste zes regels te kijken:
+We snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Bekijk eerste regels van data
