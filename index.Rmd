@@ -212,17 +212,58 @@ summary(studDF)
 <br>
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(studDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(studDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
-### Vragenset 1
+Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Console* met het commando `View(studDF)`), krijg je een tabel met alle data.
+
+![](images/view.png)
+
+### Vragenset 1A
 1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
 
 2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
 
 ## Online bestand
-`gsheet`
+We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+## Lees online data in
+library(gsheet)
+surveyDF <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA")
+```
+
+### Vragenset 1B
+1. Welke dimensies heeft de data set (rijen / kolommen)?
+
+2. Welke classes hebben de variabelen?
+
+3. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
 
 
 ## Web scraping
-`rvest` en `quandmod`
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` kunnen we de data uit de html code filteren.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+# Laad de benodigde package(s)
+library(rvest)
+
+# Lees ruwe html data in.
+htmlpage <- read_html("http://www.pginvestor.com/Historic-Prices")
+
+# Extraheer alle tabellen uit de ruwe data
+nodes <- html_nodes(htmlpage, "table")
+tables <- html_table(nodes, fill = TRUE)
+
+# Kies een tabel en stop de data in een data frame
+stockDF <- tables[1][[1]]
+```
+
+### Vragenset 1C
+1. Welke data staat in `stockDF`?
+
+2. Welke classes hebben de variabelen?
+
+4. Wat was de hoogste waarde voor de variabele`Price`?
+
+3. Waarom wordt de variabele `Volume` niet als `numeric` gezien?
 
 ---
 

@@ -249,12 +249,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 13:21:59 2016 -->
+<!-- Thu Aug 11 18:30:00 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID4463e0d7fa4 () {
+function gvisDataMapID4babc4366db () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -270,8 +270,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID4463e0d7fa4() {
-var data = gvisDataMapID4463e0d7fa4();
+function drawChartMapID4babc4366db() {
+var data = gvisDataMapID4babc4366db();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -280,7 +280,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID4463e0d7fa4')
+    document.getElementById('MapID4babc4366db')
     );
     chart.draw(data,options);
     
@@ -304,9 +304,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID4463e0d7fa4);
+callbacks.push(drawChartMapID4babc4366db);
 })();
-function displayChartMapID4463e0d7fa4() {
+function displayChartMapID4babc4366db() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -329,9 +329,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4463e0d7fa4"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4babc4366db"></script>
 <!-- divChart -->
-<div id="MapID4463e0d7fa4" style="width: 100; height: 300;">
+<div id="MapID4babc4366db" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -546,8 +546,13 @@ summary(studDF)</code></pre>
 ##                    
 ## </code></pre>
 <p><br> We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele <code>BEC.Propedeuse</code> van 5 observaties de gegevens ontbreken (<code>NA</code>).</p>
-<div id="vragenset-1" class="section level3">
-<h3>Vragenset 1</h3>
+<p>Door in het <em>Environment</em> veld op de variabele <code>StudDF</code> te klikken (of in de <em>Console</em> met het commando <code>View(studDF)</code>), krijg je een tabel met alle data.</p>
+<div class="figure">
+<img src="images/view.png" alt="" />
+
+</div>
+<div id="vragenset-1a" class="section level3">
+<h3>Vragenset 1A</h3>
 <ol style="list-style-type: decimal">
 <li><p>Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?</p></li>
 <li><p>In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?</p></li>
@@ -556,12 +561,44 @@ summary(studDF)</code></pre>
 </div>
 <div id="online-bestand" class="section level2">
 <h2>Online bestand</h2>
-<p><code>gsheet</code></p>
+<p>We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package <code>gsheet</code> gebruiken.</p>
+<pre class="r"><code>## Lees online data in
+library(gsheet)
+surveyDF &lt;- gsheet2tbl(&quot;https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA&quot;)</code></pre>
+<div id="vragenset-1b" class="section level3">
+<h3>Vragenset 1B</h3>
+<ol style="list-style-type: decimal">
+<li><p>Welke dimensies heeft de data set (rijen / kolommen)?</p></li>
+<li><p>Welke classes hebben de variabelen?</p></li>
+<li><p>Wat is het gemiddelde niveau van de ingeschatte vaardigheden?</p></li>
+</ol>
+</div>
 </div>
 <div id="web-scraping" class="section level2">
 <h2>Web scraping</h2>
-<p><code>rvest</code> en <code>quandmod</code></p>
+<p>Een andere wijze om online data te verzamelen is via <em>web scraping</em>. Soms zie je op webpagina’s tabellen met data staan, zoals bijvoorbeeld <a href="http://www.pginvestor.com/Historic-Prices">hier</a>. Met de <code>rvest</code> kunnen we de data uit de html code filteren.</p>
+<pre class="r"><code># Laad de benodigde package(s)
+library(rvest)
+
+# Lees ruwe html data in.
+htmlpage &lt;- read_html(&quot;http://www.pginvestor.com/Historic-Prices&quot;)
+
+# Extraheer alle tabellen uit de ruwe data
+nodes &lt;- html_nodes(htmlpage, &quot;table&quot;)
+tables &lt;- html_table(nodes, fill = TRUE)
+
+# Kies een tabel en stop de data in een data frame
+stockDF &lt;- tables[1][[1]]</code></pre>
+<div id="vragenset-1c" class="section level3">
+<h3>Vragenset 1C</h3>
+<ol style="list-style-type: decimal">
+<li><p>Welke data staat in <code>stockDF</code>?</p></li>
+<li><p>Welke classes hebben de variabelen?</p></li>
+<li><p>Wat was de hoogste waarde voor de variabele<code>Price</code>?</p></li>
+<li><p>Waarom wordt de variabele <code>Volume</code> niet als <code>numeric</code> gezien?</p></li>
+</ol>
 <hr />
+</div>
 </div>
 </div>
 <div id="sessie-2---muteren-analyseren" class="section level1">

@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 13:21:59 2016 -->
+<!-- Thu Aug 11 18:30:00 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID4463e0d7fa4 () {
+function gvisDataMapID4babc4366db () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID4463e0d7fa4() {
-var data = gvisDataMapID4463e0d7fa4();
+function drawChartMapID4babc4366db() {
+var data = gvisDataMapID4babc4366db();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID4463e0d7fa4')
+    document.getElementById('MapID4babc4366db')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID4463e0d7fa4);
+callbacks.push(drawChartMapID4babc4366db);
 })();
-function displayChartMapID4463e0d7fa4() {
+function displayChartMapID4babc4366db() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4463e0d7fa4"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4babc4366db"></script>
  
 <!-- divChart -->
   
-<div id="MapID4463e0d7fa4" 
+<div id="MapID4babc4366db" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -467,17 +467,60 @@ summary(studDF)
 <br>
 We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen 4.48 bedroeg met een maximum van 8.3 en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
 
-### Vragenset 1
+Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Console* met het commando `View(studDF)`), krijg je een tabel met alle data.
+
+![](images/view.png)
+
+### Vragenset 1A
 1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
 
 2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
 
 ## Online bestand
-`gsheet`
+We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+
+
+```r
+## Lees online data in
+library(gsheet)
+surveyDF <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA")
+```
+
+### Vragenset 1B
+1. Welke dimensies heeft de data set (rijen / kolommen)?
+
+2. Welke classes hebben de variabelen?
+
+3. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
 
 
 ## Web scraping
-`rvest` en `quandmod`
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` kunnen we de data uit de html code filteren.
+
+
+```r
+# Laad de benodigde package(s)
+library(rvest)
+
+# Lees ruwe html data in.
+htmlpage <- read_html("http://www.pginvestor.com/Historic-Prices")
+
+# Extraheer alle tabellen uit de ruwe data
+nodes <- html_nodes(htmlpage, "table")
+tables <- html_table(nodes, fill = TRUE)
+
+# Kies een tabel en stop de data in een data frame
+stockDF <- tables[1][[1]]
+```
+
+### Vragenset 1C
+1. Welke data staat in `stockDF`?
+
+2. Welke classes hebben de variabelen?
+
+4. Wat was de hoogste waarde voor de variabele`Price`?
+
+3. Waarom wordt de variabele `Volume` niet als `numeric` gezien?
 
 ---
 
