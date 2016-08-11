@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 12:57:10 2016 -->
+<!-- Thu Aug 11 13:08:07 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID41af78f6b46c () {
+function gvisDataMapID42fa23a0e2e0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID41af78f6b46c() {
-var data = gvisDataMapID41af78f6b46c();
+function drawChartMapID42fa23a0e2e0() {
+var data = gvisDataMapID42fa23a0e2e0();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID41af78f6b46c')
+    document.getElementById('MapID42fa23a0e2e0')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID41af78f6b46c);
+callbacks.push(drawChartMapID42fa23a0e2e0);
 })();
-function displayChartMapID41af78f6b46c() {
+function displayChartMapID42fa23a0e2e0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID41af78f6b46c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID42fa23a0e2e0"></script>
  
 <!-- divChart -->
   
-<div id="MapID41af78f6b46c" 
+<div id="MapID42fa23a0e2e0" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -186,9 +186,9 @@ c
 
 Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
 
-De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
+De belangrijkste datatypes (`classes`) binnen R zijn: *getallen*, *letters* en *factoren*. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` *letters* (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` *letters* zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van *factoren* met 3 levels: `Transgender`, `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
 
 
 ```r
@@ -211,12 +211,21 @@ class(Geslacht)
 ```
 
 ```r
-Geslacht <- as.factor(Geslacht)
+Geslacht <- factor(Geslacht, levels = c("Transgender", "Man", "Vrouw"))
 class(Geslacht)
 ```
 
 ```
 ## [1] "factor"
+```
+
+```r
+Geslacht
+```
+
+```
+## [1] Man   Man   Vrouw
+## Levels: Transgender Man Vrouw
 ```
 
 Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.

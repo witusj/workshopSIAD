@@ -100,9 +100,9 @@ c
 
 Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
 
-De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
+De belangrijkste datatypes (`classes`) binnen R zijn: *getallen*, *letters* en *factoren*. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` *letters* (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` *letters* zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van *factoren* met 3 levels: `Transgender`, `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Vectoren en classes
@@ -110,8 +110,9 @@ Plaats <- c("Warszawa", "London", "Paris")
 class(Plaats)
 Geslacht <- c("Man", "Man", "Vrouw")
 class(Geslacht)
-Geslacht <- as.factor(Geslacht)
+Geslacht <- factor(Geslacht, levels = c("Transgender", "Man", "Vrouw"))
 class(Geslacht)
+Geslacht
 ```
 
 Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.

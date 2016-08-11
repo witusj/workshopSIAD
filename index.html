@@ -249,12 +249,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 12:57:10 2016 -->
+<!-- Thu Aug 11 13:08:07 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID41af78f6b46c () {
+function gvisDataMapID42fa23a0e2e0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -270,8 +270,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID41af78f6b46c() {
-var data = gvisDataMapID41af78f6b46c();
+function drawChartMapID42fa23a0e2e0() {
+var data = gvisDataMapID42fa23a0e2e0();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -280,7 +280,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID41af78f6b46c')
+    document.getElementById('MapID42fa23a0e2e0')
     );
     chart.draw(data,options);
     
@@ -304,9 +304,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID41af78f6b46c);
+callbacks.push(drawChartMapID42fa23a0e2e0);
 })();
-function displayChartMapID41af78f6b46c() {
+function displayChartMapID42fa23a0e2e0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -329,9 +329,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID41af78f6b46c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID42fa23a0e2e0"></script>
 <!-- divChart -->
-<div id="MapID41af78f6b46c" style="width: 100; height: 300;">
+<div id="MapID42fa23a0e2e0" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -386,8 +386,8 @@ c &lt;- a + b
 c</code></pre>
 <pre><code>## [1] 7</code></pre>
 <p>Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, <code>classes</code>, <code>vectors</code> en <code>data frames</code>, en te begrijpen hoe deze elementen zich tot elkaar verhouden.</p>
-<p>De belangrijkste datatypes (<code>classes</code>) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data.</p>
-<p>Bijvoorbeeld de vector: <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> is een vector van plaatsen en de elementen zijn van <code>class</code> letters (<code>character</code>). De elementen uit de vector <code>(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;)</code> kunnen van <code>class</code> letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: <code>Man</code> en <code>Vrouw</code>. Dit kunnen we specifiek aangeven in R.</p>
+<p>De belangrijkste datatypes (<code>classes</code>) binnen R zijn: <em>getallen</em>, <em>letters</em> en <em>factoren</em>. Een vector is een geordende verzameling van elementen van hetzelfde type data.</p>
+<p>Bijvoorbeeld de vector: <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> is een vector van plaatsen en de elementen zijn van <code>class</code> <em>letters</em> (<code>character</code>). De elementen uit de vector <code>(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;)</code> kunnen van <code>class</code> <em>letters</em> zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van <em>factoren</em> met 3 levels: <code>Transgender</code>, <code>Man</code> en <code>Vrouw</code>. Dit kunnen we specifiek aangeven in R.</p>
 <pre class="r"><code>## Vectoren en classes
 Plaats &lt;- c(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)
 class(Plaats)</code></pre>
@@ -395,9 +395,12 @@ class(Plaats)</code></pre>
 <pre class="r"><code>Geslacht &lt;- c(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;)
 class(Geslacht)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>Geslacht &lt;- as.factor(Geslacht)
+<pre class="r"><code>Geslacht &lt;- factor(Geslacht, levels = c(&quot;Transgender&quot;, &quot;Man&quot;, &quot;Vrouw&quot;))
 class(Geslacht)</code></pre>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
+<pre class="r"><code>Geslacht</code></pre>
+<pre><code>## [1] Man   Man   Vrouw
+## Levels: Transgender Man Vrouw</code></pre>
 <p>Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> de naam <code>Plaats</code> geven dan heeft het element <code>Plaats[2]</code> de waarde <code>&quot;London&quot;</code>.</p>
 <pre class="r"><code>## Vectorindices
 Plaats[2]</code></pre>
