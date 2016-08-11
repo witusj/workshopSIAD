@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 02:13:49 2016 -->
+<!-- Thu Aug 11 02:27:31 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID3982111d1dbd () {
+function gvisDataMapID3aa078bb433 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID3982111d1dbd() {
-var data = gvisDataMapID3982111d1dbd();
+function drawChartMapID3aa078bb433() {
+var data = gvisDataMapID3aa078bb433();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID3982111d1dbd')
+    document.getElementById('MapID3aa078bb433')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID3982111d1dbd);
+callbacks.push(drawChartMapID3aa078bb433);
 })();
-function displayChartMapID3982111d1dbd() {
+function displayChartMapID3aa078bb433() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3982111d1dbd"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3aa078bb433"></script>
  
 <!-- divChart -->
   
-<div id="MapID3982111d1dbd" 
+<div id="MapID3aa078bb433" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -126,11 +126,11 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis
-Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen deze elementen zich tot elkaar verhouden.
+Om goed te kunnen leren hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
 
 De belangrijkste datatypes (`classes`) binnen R zijn: getallen, letters en factoren. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kan van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` letters (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` letters zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van factoren met 2 levels: `Man` en `Vrouw`.
 
 
 ```r
@@ -161,7 +161,7 @@ class(Geslacht)
 ## [1] "factor"
 ```
 
-Iedere element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
+Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
 
 
 ```r
@@ -195,7 +195,7 @@ Plaats
 ## [1] "Warszawa"  "London"    "Amsterdam"
 ```
 
-Stel we creeren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
+Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen [rij,kolom] de elementen opvragen.
 
 
 ```r
@@ -298,7 +298,7 @@ In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je z
 ![](images/env.png)
 
 <br>
-We snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
+We kunnen snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
 
 
 ```r
@@ -331,7 +331,7 @@ head(studDF)
 ```
 
 <br>
-Alles ziet er goed uit en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+Het gaat hier klaarblijkelijk om een cijferlijst van studenten. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
 
 
 ```r
