@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 00:21:39 2016 -->
+<!-- Fri Aug 12 00:25:33 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID521057fa8757 () {
+function gvisDataMapID529b31b9f0f6 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID521057fa8757() {
-var data = gvisDataMapID521057fa8757();
+function drawChartMapID529b31b9f0f6() {
+var data = gvisDataMapID529b31b9f0f6();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID521057fa8757')
+    document.getElementById('MapID529b31b9f0f6')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID521057fa8757);
+callbacks.push(drawChartMapID529b31b9f0f6);
 })();
-function displayChartMapID521057fa8757() {
+function displayChartMapID529b31b9f0f6() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID521057fa8757"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID529b31b9f0f6"></script>
  
 <!-- divChart -->
   
-<div id="MapID521057fa8757" 
+<div id="MapID529b31b9f0f6" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -336,7 +336,7 @@ Locatie$Plaats[1]
 
 ### Naslagwerk
 
-Er zijn online ontzettend veel gratis handleidingen te vinden. Een paar links:
+Er zijn online ontzettend veel gratis handleidingen te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
 

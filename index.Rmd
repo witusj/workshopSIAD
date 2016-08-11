@@ -160,7 +160,7 @@ Locatie$Plaats[1]
 
 ### Naslagwerk
 
-Er zijn online ontzettend veel gratis handleidingen te vinden. Een paar links:
+Er zijn online ontzettend veel gratis handleidingen te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
 
