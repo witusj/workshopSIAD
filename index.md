@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 13:15:16 2016 -->
+<!-- Thu Aug 11 13:21:59 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID43b07ce5124c () {
+function gvisDataMapID4463e0d7fa4 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID43b07ce5124c() {
-var data = gvisDataMapID43b07ce5124c();
+function drawChartMapID4463e0d7fa4() {
+var data = gvisDataMapID4463e0d7fa4();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID43b07ce5124c')
+    document.getElementById('MapID4463e0d7fa4')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID43b07ce5124c);
+callbacks.push(drawChartMapID4463e0d7fa4);
 })();
-function displayChartMapID43b07ce5124c() {
+function displayChartMapID4463e0d7fa4() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID43b07ce5124c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4463e0d7fa4"></script>
  
 <!-- divChart -->
   
-<div id="MapID43b07ce5124c" 
+<div id="MapID4463e0d7fa4" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -395,7 +395,7 @@ head(studDF)
 ```
 
 <br>
-Het gaat hier klaarblijkelijk om een cijferlijst van studenten. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+Het gaat hier klaarblijkelijk om een cijferlijst van studenten met wat metadata. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
 
 
 ```r
@@ -420,7 +420,7 @@ str(studDF)
 ```
 
 <br>
-en we zien dat de data de vorm van een data frame (tabel) heeft met 109 rijen (observaties) en 12 kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+en we zien dat de data de vorm van een *data frame* (tabel) heeft met 109 rijen (observaties) en 12 kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
 
 Met `summary()` kunnen we de kwaliteit van de data beoordelen:
 

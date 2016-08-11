@@ -193,7 +193,7 @@ head(studDF)
 ```
 
 <br>
-Het gaat hier klaarblijkelijk om een cijferlijst van studenten. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+Het gaat hier klaarblijkelijk om een cijferlijst van studenten met wat metadata. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Bekijk de structuur van data
@@ -201,7 +201,7 @@ str(studDF)
 ```
 
 <br>
-en we zien dat de data de vorm van een data frame (tabel) heeft met `r length(studDF$Voor)` rijen (observaties) en `r length(studDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+en we zien dat de data de vorm van een *data frame* (tabel) heeft met `r length(studDF$Voor)` rijen (observaties) en `r length(studDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
 
 Met `summary()` kunnen we de kwaliteit van de data beoordelen:
 
