@@ -158,10 +158,13 @@ Locatie$Plaats[1]
 
 2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
 
-## Naslagwerk
-Literatuur
+### Naslagwerk
 
-Internet
+Er zijn online ontzettend veel gratis handleidingen te vinden. Een paar links:
+
+- [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
+
+- [Introduction to R for Excel Users](https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf)
 
 ---
 
@@ -222,7 +225,7 @@ Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Co
 2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
 
 ## Online bestand
-We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
 
 ```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
 ## Laad de benodigde package(s)
@@ -242,7 +245,7 @@ surveyDF <- gsheet2tbl(url)
 
 
 ## Web scraping
-Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` kunnen we de data uit de html code filteren.
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` package kunnen we de data uit de html code filteren.
 
 ```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
 # Laad de benodigde package(s)
@@ -260,13 +263,11 @@ stockDF <- tables[1][[1]]
 ```
 
 ### Vragenset 1C
-1. Welke data staat in `stockDF`?
+1. Wat voor een soort data bevat `stockDF`?
 
 2. Welke classes hebben de variabelen?
 
-4. Wat was de hoogste waarde voor de variabele`Price`?
-
-3. Waarom wordt de variabele `Volume` niet als `numeric` gezien?
+3. Wat was de hoogste waarde voor de variabele`Price`?
 
 ---
 

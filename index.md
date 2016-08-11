@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 19:01:26 2016 -->
+<!-- Fri Aug 12 00:21:39 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID4dd63bbb1d8c () {
+function gvisDataMapID521057fa8757 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID4dd63bbb1d8c() {
-var data = gvisDataMapID4dd63bbb1d8c();
+function drawChartMapID521057fa8757() {
+var data = gvisDataMapID521057fa8757();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID4dd63bbb1d8c')
+    document.getElementById('MapID521057fa8757')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID4dd63bbb1d8c);
+callbacks.push(drawChartMapID521057fa8757);
 })();
-function displayChartMapID4dd63bbb1d8c() {
+function displayChartMapID521057fa8757() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4dd63bbb1d8c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID521057fa8757"></script>
  
 <!-- divChart -->
   
-<div id="MapID4dd63bbb1d8c" 
+<div id="MapID521057fa8757" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -334,10 +334,13 @@ Locatie$Plaats[1]
 
 2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
 
-## Naslagwerk
-Literatuur
+### Naslagwerk
 
-Internet
+Er zijn online ontzettend veel gratis handleidingen te vinden. Een paar links:
+
+- [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
+
+- [Introduction to R for Excel Users](https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf)
 
 ---
 
@@ -477,7 +480,7 @@ Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Co
 2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
 
 ## Online bestand
-We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
 
 
 ```r
@@ -498,7 +501,7 @@ surveyDF <- gsheet2tbl(url)
 
 
 ## Web scraping
-Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` kunnen we de data uit de html code filteren.
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` package kunnen we de data uit de html code filteren.
 
 
 ```r
@@ -517,13 +520,11 @@ stockDF <- tables[1][[1]]
 ```
 
 ### Vragenset 1C
-1. Welke data staat in `stockDF`?
+1. Wat voor een soort data bevat `stockDF`?
 
 2. Welke classes hebben de variabelen?
 
-4. Wat was de hoogste waarde voor de variabele`Price`?
-
-3. Waarom wordt de variabele `Volume` niet als `numeric` gezien?
+3. Wat was de hoogste waarde voor de variabele`Price`?
 
 ---
 
