@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 11 18:38:37 2016 -->
+<!-- Thu Aug 11 19:01:26 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID4cf93c79b804 () {
+function gvisDataMapID4dd63bbb1d8c () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID4cf93c79b804() {
-var data = gvisDataMapID4cf93c79b804();
+function drawChartMapID4dd63bbb1d8c() {
+var data = gvisDataMapID4dd63bbb1d8c();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID4cf93c79b804')
+    document.getElementById('MapID4dd63bbb1d8c')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID4cf93c79b804);
+callbacks.push(drawChartMapID4dd63bbb1d8c);
 })();
-function displayChartMapID4cf93c79b804() {
+function displayChartMapID4dd63bbb1d8c() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4cf93c79b804"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID4dd63bbb1d8c"></script>
  
 <!-- divChart -->
   
-<div id="MapID4cf93c79b804" 
+<div id="MapID4dd63bbb1d8c" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -228,7 +228,7 @@ Geslacht
 ## Levels: Transgender Man Vrouw
 ```
 
-Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
+Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven, dan heeft het element `Plaats[2]` de waarde `"London"`.
 
 
 ```r
@@ -481,9 +481,12 @@ We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In d
 
 
 ```r
-## Lees online data in
+## Laad de benodigde package(s)
 library(gsheet)
-surveyDF <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA")
+
+## Lees online data in
+url <- "https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA"
+surveyDF <- gsheet2tbl(url)
 ```
 
 ### Vragenset 1B

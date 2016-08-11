@@ -115,7 +115,7 @@ class(Geslacht)
 Geslacht
 ```
 
-Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven dan heeft het element `Plaats[2]` de waarde `"London"`.
+Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven, dan heeft het element `Plaats[2]` de waarde `"London"`.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Vectorindices
@@ -225,9 +225,12 @@ Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Co
 We kunnen met R ook heel makkelijk data ophalen die online zijn opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
 
 ```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
-## Lees online data in
+## Laad de benodigde package(s)
 library(gsheet)
-surveyDF <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA")
+
+## Lees online data in
+url <- "https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA"
+surveyDF <- gsheet2tbl(url)
 ```
 
 ### Vragenset 1B
