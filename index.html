@@ -251,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 11:09:56 2016 -->
+<!-- Fri Aug 12 11:14:18 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID584c3e63199a () {
+function gvisDataMapID59364f1219b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -272,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID584c3e63199a() {
-var data = gvisDataMapID584c3e63199a();
+function drawChartMapID59364f1219b() {
+var data = gvisDataMapID59364f1219b();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -282,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID584c3e63199a')
+    document.getElementById('MapID59364f1219b')
     );
     chart.draw(data,options);
     
@@ -306,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID584c3e63199a);
+callbacks.push(drawChartMapID59364f1219b);
 })();
-function displayChartMapID584c3e63199a() {
+function displayChartMapID59364f1219b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -331,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID584c3e63199a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID59364f1219b"></script>
 <!-- divChart -->
-<div id="MapID584c3e63199a" style="width: 100; height: 300;">
+<div id="MapID59364f1219b" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -347,16 +347,16 @@ callbacks.shift()();
 <div id="voorbereiding" class="section level2">
 <h2>Voorbereiding</h2>
 <p>Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit doe je op de manier waarop je gewend bent om software te installeren op je systeem. Dit is de Nederlandse <a href="http://cran.xl-mirror.nl/">downloadsite</a> voor R (je kunt ook iedere andere downloadsite gebruiken).</p>
-<p>Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een commandline opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde <em>integrated development environments (IDEs)</em> ontwikkeld. Wij gaan werken met die van <a href="http://cran.xl-mirror.nl/">RStudio</a>. Ook deze software is gratis te <a href="https://www.rstudio.com/products/rstudio/download2/">downloaden</a>.</p>
+<p>Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een command line opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde <em>integrated development environments (IDEs)</em> ontwikkeld. Wij gaan werken met die van <a href="http://cran.xl-mirror.nl/">RStudio</a>. Ook deze software is gratis te <a href="https://www.rstudio.com/products/rstudio/download2/">downloaden</a>.</p>
 <p>LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.</p>
 <p>Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:</p>
 <pre class="r"><code>install.packages(c(&quot;gsheet&quot;, &quot;rvest&quot;, &quot;dplyr&quot;, &quot;googleVis&quot;, &quot;plotly&quot;, &quot;leaflet&quot;))</code></pre>
-<p>,plak het in de console en druk op <em>Enter</em>. Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.</p>
+<p>plak het in de console en druk op <em>Enter</em>.</p>
 <div class="figure">
 <img src="images/console.png" alt="" />
 
 </div>
-<p>Install.packages(c(“gsheet”, “rvest”, “dplyr”, “googleVis”, “plotly”, “leaflet”))</p>
+<p><br> Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.</p>
 </div>
 <div id="basis-r" class="section level2">
 <h2>Basis R</h2>

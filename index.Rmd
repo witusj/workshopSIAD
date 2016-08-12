@@ -50,7 +50,7 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 ## Voorbereiding
 Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit doe je op de manier waarop je gewend bent om software te installeren op je systeem. Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/) voor R (je kunt ook iedere andere downloadsite gebruiken).
 
-Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een commandline opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
+Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een command line opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
 
 LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
 
@@ -60,11 +60,12 @@ Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:
 install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
 ```
 
-,plak het in de console en druk op *Enter*. Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
+plak het in de console en druk op *Enter*.
 
 ![](images/console.png)
 
-Install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
+<br>
+Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
 
 ## Basis R
 In RStudio kun je op twee manieren code schrijven en laten uitvoeren:

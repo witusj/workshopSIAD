@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 11:09:56 2016 -->
+<!-- Fri Aug 12 11:14:18 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID584c3e63199a () {
+function gvisDataMapID59364f1219b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID584c3e63199a() {
-var data = gvisDataMapID584c3e63199a();
+function drawChartMapID59364f1219b() {
+var data = gvisDataMapID59364f1219b();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID584c3e63199a')
+    document.getElementById('MapID59364f1219b')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID584c3e63199a);
+callbacks.push(drawChartMapID59364f1219b);
 })();
-function displayChartMapID584c3e63199a() {
+function displayChartMapID59364f1219b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID584c3e63199a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID59364f1219b"></script>
  
 <!-- divChart -->
   
-<div id="MapID584c3e63199a" 
+<div id="MapID59364f1219b" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -125,7 +125,7 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 ## Voorbereiding
 Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit doe je op de manier waarop je gewend bent om software te installeren op je systeem. Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/) voor R (je kunt ook iedere andere downloadsite gebruiken).
 
-Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een commandline opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
+Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een command line opdrachten kunnen worden ingevoerd. Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
 
 LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
 
@@ -136,11 +136,12 @@ Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:
 install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
 ```
 
-,plak het in de console en druk op *Enter*. Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
+plak het in de console en druk op *Enter*.
 
 ![](images/console.png)
 
-Install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
+<br>
+Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
 
 ## Basis R
 In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
