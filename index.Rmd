@@ -207,7 +207,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu het volgende bestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
 In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
@@ -268,11 +268,13 @@ surveyDF <- gsheet2tbl(url)
 ```
 
 ### Vragenset 1B
-1. Welke dimensies heeft de data set (rijen / kolommen)?
+1. Om wat voor een soort data gaat het hier?
 
-2. Welke classes hebben de variabelen?
+2. Welke dimensies heeft de data set (rijen / kolommen)?
 
-3. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
+3. Welke classes hebben de variabelen?
+
+4. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
 
 
 ## Web scraping
@@ -308,10 +310,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 ## Muteren
 
-Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
-```{r Install1, eval=FALSE, echo=TRUE}
-install.packages("dplyr")
-```
+Met de package `dplyr` kan data eenvoudig worden aangepast. 
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
