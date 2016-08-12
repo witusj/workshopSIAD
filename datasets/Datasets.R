@@ -1,4 +1,4 @@
-packs <- c("gsheet", "dplyr", "readstata13", "XML")
+packs <- c("gsheet", "dplyr", "readstata13", "XML", "tidyr")
 lapply(packs, library, character.only = TRUE)
 
 ############
@@ -55,5 +55,8 @@ dataClean <- dataClean[-1]
 dataClean <- dataClean[c(1:5,12:14,6:11)]
 write.csv(dataClean, file = "sessie 2/cps_morg.csv", row.names = FALSE)
 
+#######################################
+## Bomeninformatie Aphen aan de Rijn ##
+#######################################
 openData <- xmlToDataFrame(doc="http://opendata.alphenaandenrijn.nl/bomen.xml")
 write.csv(openData, "sessie 2/open_data.csv")

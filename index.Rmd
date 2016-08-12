@@ -312,7 +312,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/blob/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
+Download nu het volgende databestand: <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
