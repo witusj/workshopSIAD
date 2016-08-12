@@ -1,7 +1,7 @@
 # Lokaal csv-bestand 
 
-## Lees data uit lokaal csv-bestand
-cpsDF <- read.csv("CPSData.csv", fill = TRUE)
+## Lees data uit online csv-bestand
+cpsDF <- read.csv(file = "https://drive.google.com/file/d/0BxRLH-w1Cn2RYkpNWDlPVjNJdEE", header = FALSE, fill = TRUE)
 
 ## Bekijk eerste regels van data
 head(cpsDF)
