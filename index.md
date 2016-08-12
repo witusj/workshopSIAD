@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Aug 13 00:33:01 2016 -->
+<!-- Sat Aug 13 00:35:08 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID752d2a8ca1cd () {
+function gvisDataMapID763a74df42a0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID752d2a8ca1cd() {
-var data = gvisDataMapID752d2a8ca1cd();
+function drawChartMapID763a74df42a0() {
+var data = gvisDataMapID763a74df42a0();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID752d2a8ca1cd')
+    document.getElementById('MapID763a74df42a0')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID752d2a8ca1cd);
+callbacks.push(drawChartMapID763a74df42a0);
 })();
-function displayChartMapID752d2a8ca1cd() {
+function displayChartMapID763a74df42a0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID752d2a8ca1cd"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID763a74df42a0"></script>
  
 <!-- divChart -->
   
-<div id="MapID752d2a8ca1cd" 
+<div id="MapID763a74df42a0" 
   style="width: 100; height: 300;">
 </div>
 <br>
