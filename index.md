@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 00:25:33 2016 -->
+<!-- Fri Aug 12 10:14:17 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID529b31b9f0f6 () {
+function gvisDataMapID54295a55224a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID529b31b9f0f6() {
-var data = gvisDataMapID529b31b9f0f6();
+function drawChartMapID54295a55224a() {
+var data = gvisDataMapID54295a55224a();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID529b31b9f0f6')
+    document.getElementById('MapID54295a55224a')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID529b31b9f0f6);
+callbacks.push(drawChartMapID54295a55224a);
 })();
-function displayChartMapID529b31b9f0f6() {
+function displayChartMapID54295a55224a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID529b31b9f0f6"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID54295a55224a"></script>
  
 <!-- divChart -->
   
-<div id="MapID529b31b9f0f6" 
+<div id="MapID54295a55224a" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -125,7 +125,7 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 ## Voorbereiding
 Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
-## Basis
+## Basis R
 In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
 
 * Direct via de console
@@ -328,19 +328,21 @@ Locatie$Plaats[1]
 ## Levels: Amsterdam London Warszawa
 ```
 
-### Vragenset Basis
+### Vragenset Basis R
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
 2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
 
-### Naslagwerk
+## Naslagwerk
 
-Er zijn online ontzettend veel gratis handleidingen te vinden. Volgende documenten zijn een willekeurige selectie:
+Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
 
 - [Introduction to R for Excel Users](https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf)
+
+Al je een indruk wilt krijgen van wat je allemaal met R kunt, is de [R-bloggers](https://www.r-bloggers.com/) website een goed startpunt.
 
 ---
 

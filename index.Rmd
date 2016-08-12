@@ -50,7 +50,7 @@ De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de
 ## Voorbereiding
 Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
 
-## Basis
+## Basis R
 In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
 
 * Direct via de console
@@ -152,19 +152,21 @@ Locatie$Land
 Locatie$Plaats[1]
 ```
 
-### Vragenset Basis
+### Vragenset Basis R
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
 2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
 
-### Naslagwerk
+## Naslagwerk
 
-Er zijn online ontzettend veel gratis handleidingen te vinden. Volgende documenten zijn een willekeurige selectie:
+Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
 
 - [Introduction to R for Excel Users](https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf)
+
+Al je een indruk wilt krijgen van wat je allemaal met R kunt, is de [R-bloggers](https://www.r-bloggers.com/) website een goed startpunt.
 
 ---
 

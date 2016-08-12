@@ -249,12 +249,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 00:25:33 2016 -->
+<!-- Fri Aug 12 10:14:17 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID529b31b9f0f6 () {
+function gvisDataMapID54295a55224a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -270,8 +270,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID529b31b9f0f6() {
-var data = gvisDataMapID529b31b9f0f6();
+function drawChartMapID54295a55224a() {
+var data = gvisDataMapID54295a55224a();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -280,7 +280,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID529b31b9f0f6')
+    document.getElementById('MapID54295a55224a')
     );
     chart.draw(data,options);
     
@@ -304,9 +304,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID529b31b9f0f6);
+callbacks.push(drawChartMapID54295a55224a);
 })();
-function displayChartMapID529b31b9f0f6() {
+function displayChartMapID54295a55224a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -329,9 +329,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID529b31b9f0f6"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID54295a55224a"></script>
 <!-- divChart -->
-<div id="MapID529b31b9f0f6" style="width: 100; height: 300;">
+<div id="MapID54295a55224a" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -346,8 +346,8 @@ callbacks.shift()();
 <h2>Voorbereiding</h2>
 <p>Download R en RStudio. Install.packages(c(“gsheet”, “rvest”, “quandmod”, “dplyr”, “googleVis”, “plotly”, “leaflet”))</p>
 </div>
-<div id="basis" class="section level2">
-<h2>Basis</h2>
+<div id="basis-r" class="section level2">
+<h2>Basis R</h2>
 <p>In RStudio kun je op twee manieren code schrijven en laten uitvoeren:</p>
 <ul>
 <li>Direct via de console</li>
@@ -439,22 +439,23 @@ Locatie$Land</code></pre>
 <pre class="r"><code>Locatie$Plaats[1]</code></pre>
 <pre><code>## [1] Warszawa
 ## Levels: Amsterdam London Warszawa</code></pre>
-<div id="vragenset-basis" class="section level3">
-<h3>Vragenset Basis</h3>
+<div id="vragenset-basis-r" class="section level3">
+<h3>Vragenset Basis R</h3>
 <ol style="list-style-type: decimal">
 <li><p>Zoals je ziet hebben de variabelen <code>Plaats</code> en <code>Land</code> uit het voorbeeld door de omzetting naar een data frame de <code>class</code> <code>factor</code> gekregen. Hoe zet je de <code>class</code> van beide variabelen weer terug naar <code>character</code>?</p></li>
 <li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;)</code>?</p></li>
 </ol>
 </div>
-<div id="naslagwerk" class="section level3">
-<h3>Naslagwerk</h3>
-<p>Er zijn online ontzettend veel gratis handleidingen te vinden. Volgende documenten zijn een willekeurige selectie:</p>
+</div>
+<div id="naslagwerk" class="section level2">
+<h2>Naslagwerk</h2>
+<p>Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:</p>
 <ul>
 <li><p><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</a></p></li>
 <li><p><a href="https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf">Introduction to R for Excel Users</a></p></li>
 </ul>
+<p>Al je een indruk wilt krijgen van wat je allemaal met R kunt, is de <a href="https://www.r-bloggers.com/">R-bloggers</a> website een goed startpunt.</p>
 <hr />
-</div>
 </div>
 </div>
 <div id="sessie-1---inlezen-bekijken" class="section level1">
