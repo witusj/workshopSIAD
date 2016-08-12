@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 15:15:05 2016 -->
+<!-- Fri Aug 12 22:41:18 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID65bc54216ce () {
+function gvisDataMapID6e3b6460446 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID65bc54216ce() {
-var data = gvisDataMapID65bc54216ce();
+function drawChartMapID6e3b6460446() {
+var data = gvisDataMapID6e3b6460446();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID65bc54216ce')
+    document.getElementById('MapID6e3b6460446')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID65bc54216ce);
+callbacks.push(drawChartMapID6e3b6460446);
 })();
-function displayChartMapID65bc54216ce() {
+function displayChartMapID6e3b6460446() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID65bc54216ce"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6e3b6460446"></script>
  
 <!-- divChart -->
   
-<div id="MapID65bc54216ce" 
+<div id="MapID6e3b6460446" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -526,11 +526,13 @@ surveyDF <- gsheet2tbl(url)
 ```
 
 ### Vragenset 1B
-1. Welke dimensies heeft de data set (rijen / kolommen)?
+1. Om wat voor een soort data gaat het hier?
 
-2. Welke classes hebben de variabelen?
+2. Welke dimensies heeft de data set (rijen / kolommen)?
 
-3. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
+3. Welke classes hebben de variabelen?
+
+4. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
 
 
 ## Web scraping
@@ -567,11 +569,9 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 ## Muteren
 
-Met de package `dplyr` kan data eenvoudig worden aangepast. Installeer `dplyr` via de 'Install' knop in Rstudio of via het commando:
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-```r
-install.packages("dplyr")
-```
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/open_data.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder.
 
 ## Analyseren
 `table()`, `plot()` en `hist()`

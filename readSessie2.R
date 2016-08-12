@@ -1,13 +1,13 @@
 # Lokaal csv-bestand 
 
 ## Lees data uit online csv-bestand
-cpsDF <- read.csv(file = "https://drive.google.com/file/d/0BxRLH-w1Cn2RYkpNWDlPVjNJdEE", header = FALSE, fill = TRUE)
+openDF <- read.csv(file = "sessie 2/open_data.csv")
 
 ## Bekijk eerste regels van data
-head(cpsDF)
+head(openDF)
 
 ## Bekijk de structuur van data
-str(cpsDF)
+str(openDF)
 
 ## Bekijk de kwaliteit van data
-summary(cpsDF)
+summary(openDF)

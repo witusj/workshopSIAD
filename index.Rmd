@@ -310,7 +310,9 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 ## Muteren
 
-Met de package `dplyr` kan data eenvoudig worden aangepast. 
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/open_data.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder.
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
