@@ -251,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 12:20:07 2016 -->
+<!-- Fri Aug 12 14:30:19 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID5ce258446412 () {
+function gvisDataMapID5e0978d006da () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -272,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID5ce258446412() {
-var data = gvisDataMapID5ce258446412();
+function drawChartMapID5e0978d006da() {
+var data = gvisDataMapID5e0978d006da();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -282,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID5ce258446412')
+    document.getElementById('MapID5e0978d006da')
     );
     chart.draw(data,options);
     
@@ -306,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID5ce258446412);
+callbacks.push(drawChartMapID5e0978d006da);
 })();
-function displayChartMapID5ce258446412() {
+function displayChartMapID5e0978d006da() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -331,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5ce258446412"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5e0978d006da"></script>
 <!-- divChart -->
-<div id="MapID5ce258446412" style="width: 100; height: 300;">
+<div id="MapID5e0978d006da" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -457,7 +457,13 @@ Locatie$Land</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Zoals je ziet hebben de variabelen <code>Plaats</code> en <code>Land</code> uit het voorbeeld door de omzetting naar een data frame de <code>class</code> <code>factor</code> gekregen. Hoe zet je de <code>class</code> van beide variabelen weer terug naar <code>character</code>?</p></li>
 <li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;)</code>?</p></li>
+<li><p>Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.</p></li>
 </ol>
+<pre class="r"><code>values1 &lt;- c(&quot;20&quot;, &quot;50&quot;)
+sum(values1)
+
+values2 &lt;- c(20, 50)
+sum(values2)</code></pre>
 </div>
 </div>
 <div id="naslagwerk" class="section level2">
