@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 22:42:28 2016 -->
+<!-- Fri Aug 12 22:44:19 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID6ec51854ea87 () {
+function gvisDataMapID6f4b54a4f918 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID6ec51854ea87() {
-var data = gvisDataMapID6ec51854ea87();
+function drawChartMapID6f4b54a4f918() {
+var data = gvisDataMapID6f4b54a4f918();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID6ec51854ea87')
+    document.getElementById('MapID6f4b54a4f918')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID6ec51854ea87);
+callbacks.push(drawChartMapID6f4b54a4f918);
 })();
-function displayChartMapID6ec51854ea87() {
+function displayChartMapID6f4b54a4f918() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6ec51854ea87"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6f4b54a4f918"></script>
  
 <!-- divChart -->
   
-<div id="MapID6ec51854ea87" 
+<div id="MapID6f4b54a4f918" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -571,7 +571,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/blob/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
