@@ -163,7 +163,7 @@ Locatie[3,]
 Locatie[,2]
 ```
 
-We kunnen ook de afzonderlijke variabelen binnen een data frame oproepen via het `$` teken.
+We kunnen de afzonderlijke variabelen binnen een data frame ook oproepen via het `$` teken.
 
 ```{r, echo=TRUE, message=TRUE, warning=FALSE}
 ## Data frame structuur
