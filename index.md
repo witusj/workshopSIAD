@@ -8,7 +8,7 @@ Witek ten Hove
 
 In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.
 
-Tijdens de workshop werk je met R. Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de belangrijkste tool voor data analyse en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.
+Tijdens de workshop werk je met [R](https://www.r-project.org/). Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de belangrijkste tool voor data analyse en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.
 
 Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
 
@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 10:14:17 2016 -->
+<!-- Fri Aug 12 11:05:56 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID54295a55224a () {
+function gvisDataMapID575c7cd47c86 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID54295a55224a() {
-var data = gvisDataMapID54295a55224a();
+function drawChartMapID575c7cd47c86() {
+var data = gvisDataMapID575c7cd47c86();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID54295a55224a')
+    document.getElementById('MapID575c7cd47c86')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID54295a55224a);
+callbacks.push(drawChartMapID575c7cd47c86);
 })();
-function displayChartMapID54295a55224a() {
+function displayChartMapID575c7cd47c86() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID54295a55224a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID575c7cd47c86"></script>
  
 <!-- divChart -->
   
-<div id="MapID54295a55224a" 
+<div id="MapID575c7cd47c86" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -123,7 +123,24 @@ Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingsterm
 De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ## Voorbereiding
-Download R en RStudio. Install.packages(c("gsheet", "rvest", "quandmod", "dplyr", "googleVis", "plotly", "leaflet"))
+Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit doe je op de manier waarop je gewend bent om software te installeren op je systeem. Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/).
+
+In principe kun je nu al aan de gang met R, want R heeft een interface, waarmee via een commandline kunt communiceren met de R engine. Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
+
+LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
+
+Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:
+
+
+```r
+install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
+```
+
+,plak het in de console en druk op *Enter*. Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
+
+![](images/console.png)
+
+Install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
 
 ## Basis R
 In RStudio kun je op twee manieren code schrijven en laten uitvoeren:

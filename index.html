@@ -102,7 +102,7 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="index_files/navigation-1.0/tabsets.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -110,7 +110,7 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script src="index_files/navigation-1.0/codefolding.js"></script>
+<script src="index_files/navigation-1.1/codefolding.js"></script>
 <script>
 $(document).ready(function () {
   window.initializeCodeFolding("show" === "show");
@@ -158,6 +158,7 @@ $(document).ready(function ()  {
   width: 100%;
 }
 }
+
 
 .toc-content {
   padding-left: 30px;
@@ -220,10 +221,11 @@ div.tocify {
 <div class="btn-group pull-right">
 <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All</a></li>
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
 </ul>
 </div>
+
 
 
 <h1 class="title toc-ignore">R-Workshop</h1>
@@ -237,7 +239,7 @@ div.tocify {
 <div id="inleiding" class="section level1">
 <h1>Inleiding</h1>
 <p>In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.</p>
-<p>Tijdens de workshop werk je met R. Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de belangrijkste tool voor data analyse en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.</p>
+<p>Tijdens de workshop werk je met <a href="https://www.r-project.org/">R</a>. Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de belangrijkste tool voor data analyse en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.</p>
 <p>Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.</p>
 <div id="workshop-sessies" class="section level2">
 <h2>Workshop sessies</h2>
@@ -249,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 10:14:17 2016 -->
+<!-- Fri Aug 12 11:05:56 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID54295a55224a () {
+function gvisDataMapID575c7cd47c86 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -270,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID54295a55224a() {
-var data = gvisDataMapID54295a55224a();
+function drawChartMapID575c7cd47c86() {
+var data = gvisDataMapID575c7cd47c86();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -280,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID54295a55224a')
+    document.getElementById('MapID575c7cd47c86')
     );
     chart.draw(data,options);
     
@@ -304,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID54295a55224a);
+callbacks.push(drawChartMapID575c7cd47c86);
 })();
-function displayChartMapID54295a55224a() {
+function displayChartMapID575c7cd47c86() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -329,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID54295a55224a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID575c7cd47c86"></script>
 <!-- divChart -->
-<div id="MapID54295a55224a" style="width: 100; height: 300;">
+<div id="MapID575c7cd47c86" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -344,7 +346,17 @@ callbacks.shift()();
 </div>
 <div id="voorbereiding" class="section level2">
 <h2>Voorbereiding</h2>
-<p>Download R en RStudio. Install.packages(c(“gsheet”, “rvest”, “quandmod”, “dplyr”, “googleVis”, “plotly”, “leaflet”))</p>
+<p>Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit doe je op de manier waarop je gewend bent om software te installeren op je systeem. Dit is de Nederlandse <a href="http://cran.xl-mirror.nl/">downloadsite</a>.</p>
+<p>In principe kun je nu al aan de gang met R, want R heeft een interface, waarmee via een commandline kunt communiceren met de R engine. Om echter wat comfortabeler te programmeren zijn er zogenaamde <em>integrated development environments (IDEs)</em> ontwikkeld. Wij gaan werken met die van <a href="http://cran.xl-mirror.nl/">RStudio</a>. Ook deze software is gratis te <a href="https://www.rstudio.com/products/rstudio/download2/">downloaden</a>.</p>
+<p>LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.</p>
+<p>Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:</p>
+<pre class="r"><code>install.packages(c(&quot;gsheet&quot;, &quot;rvest&quot;, &quot;dplyr&quot;, &quot;googleVis&quot;, &quot;plotly&quot;, &quot;leaflet&quot;))</code></pre>
+<p>,plak het in de console en druk op <em>Enter</em>. Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.</p>
+<div class="figure">
+<img src="images/console.png" alt="" />
+
+</div>
+<p>Install.packages(c(“gsheet”, “rvest”, “dplyr”, “googleVis”, “plotly”, “leaflet”))</p>
 </div>
 <div id="basis-r" class="section level2">
 <h2>Basis R</h2>
