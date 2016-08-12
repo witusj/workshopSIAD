@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 22:51:04 2016 -->
+<!-- Sat Aug 13 00:33:01 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID6ff6262c8a62 () {
+function gvisDataMapID752d2a8ca1cd () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID6ff6262c8a62() {
-var data = gvisDataMapID6ff6262c8a62();
+function drawChartMapID752d2a8ca1cd() {
+var data = gvisDataMapID752d2a8ca1cd();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID6ff6262c8a62')
+    document.getElementById('MapID752d2a8ca1cd')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID6ff6262c8a62);
+callbacks.push(drawChartMapID752d2a8ca1cd);
 })();
-function displayChartMapID6ff6262c8a62() {
+function displayChartMapID752d2a8ca1cd() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6ff6262c8a62"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID752d2a8ca1cd"></script>
  
 <!-- divChart -->
   
-<div id="MapID6ff6262c8a62" 
+<div id="MapID752d2a8ca1cd" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -383,7 +383,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ## Lokaal bestand
 
-Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
 Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
@@ -569,9 +569,51 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 ## Muteren
 
-Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu het volgende databestand: <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
+We gaan met een set functies werken uit de `dplyr` package.
+
+
+```r
+library(dplyr)
+```
+
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
+
+
+```r
+## Lees data uit online csv-bestand
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = FALSE)
+glimpse(openDF)
+```
+
+```
+## Observations: 45,669
+## Variables: 15
+## $ X                     (int) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1...
+## $ id                    (int) 2934, 1561, 1563, 1564, 1565, 1567, 1569...
+## $ kl_imagcode           (chr) "PLACERIF", "MEGLYPTO", "MEGLYPTO", "MEG...
+## $ nedboomsoort          (chr) "Gewone plataan", "Watercipres", "Waterc...
+## $ latboomsoort          (chr) "Platanus x hispanica", "Metasequoia gly...
+## $ aanlegjaar            (int) 1985, 1970, 1970, 1970, 1970, 1970, 1970...
+## $ inspectiedatum        (chr) "29-07-2014", "04-08-2014", "04-08-2014"...
+## $ kl_veilig_maatregelen (chr) "Geen veiligheidsmaatregel;", "Geen veil...
+## $ structuurelement      (chr) "Woongebied", "Woongebied", "Woongebied"...
+## $ woonplaats            (chr) "Boskoop", "Boskoop", "Boskoop", "Boskoo...
+## $ wijk                  (chr) "Boskoop", "Boskoop", "Boskoop", "Boskoo...
+## $ buurt                 (chr) "Snijdelwijk", "Boskoop", "Boskoop", "Bo...
+## $ openbare_ruimte       (chr) "Bosweg", "A.p. van neslaan", "A.p. van ...
+## $ x                     (chr) "104066,236", "105447,454", "105455,527"...
+## $ y                     (chr) "453323,99", "454397,319", "454442,028",...
+```
+### Vragenset 2A
+1. Wat voor een soort data bevat `openDF`?
+
+2. Wat is de latijnse naam voor 'Moeraseik'?
+
+3. Wat is het vroegste aanlegjaar in de dataset?
+
+4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
 
 ## Analyseren
 `table()`, `plot()` en `hist()`

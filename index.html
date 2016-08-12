@@ -230,7 +230,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R-Workshop</h1>
 <h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
-<h4 class="date"><em>12 August, 2016</em></h4>
+<h4 class="date"><em>13 August, 2016</em></h4>
 
 </div>
 
@@ -251,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 22:51:04 2016 -->
+<!-- Sat Aug 13 00:33:01 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID6ff6262c8a62 () {
+function gvisDataMapID752d2a8ca1cd () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -272,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID6ff6262c8a62() {
-var data = gvisDataMapID6ff6262c8a62();
+function drawChartMapID752d2a8ca1cd() {
+var data = gvisDataMapID752d2a8ca1cd();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -282,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID6ff6262c8a62')
+    document.getElementById('MapID752d2a8ca1cd')
     );
     chart.draw(data,options);
     
@@ -306,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID6ff6262c8a62);
+callbacks.push(drawChartMapID752d2a8ca1cd);
 })();
-function displayChartMapID6ff6262c8a62() {
+function displayChartMapID752d2a8ca1cd() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -331,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6ff6262c8a62"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID752d2a8ca1cd"></script>
 <!-- divChart -->
-<div id="MapID6ff6262c8a62" style="width: 100; height: 300;">
+<div id="MapID752d2a8ca1cd" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -482,7 +482,7 @@ sum(values2)</code></pre>
 <p>In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.</p>
 <div id="lokaal-bestand" class="section level2">
 <h2>Lokaal bestand</h2>
-<p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>readSessie1.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
+<p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>werkSessie1.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
 <p>Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.</p>
 <p>In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:</p>
 <pre class="r"><code>## Lees data uit lokaal csv-bestand
@@ -632,8 +632,39 @@ stockDF &lt;- tables[1][[1]]</code></pre>
 <p>In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.</p>
 <div id="muteren" class="section level2">
 <h2>Muteren</h2>
-<p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>readSessie2.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
-<p>Download nu het volgende databestand: <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.</p>
+<p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>werkSessie2.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
+<p>We gaan met een set functies werken uit de <code>dplyr</code> package.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<p>Met de volgende code kun je een online csv bestand direct inlezen in R en met de <code>dplyr::glimpse()</code> functie de data bekijken. De oorspronkelijke data komt van de <a href="http://opendata.alphenaandenrijn.nl/">Gemeente Alphen aan de Rijn</a>.</p>
+<pre class="r"><code>## Lees data uit online csv-bestand
+openDF &lt;- read.csv(file = &quot;https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv&quot;, stringsAsFactors = FALSE)
+glimpse(openDF)</code></pre>
+<pre><code>## Observations: 45,669
+## Variables: 15
+## $ X                     (int) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1...
+## $ id                    (int) 2934, 1561, 1563, 1564, 1565, 1567, 1569...
+## $ kl_imagcode           (chr) &quot;PLACERIF&quot;, &quot;MEGLYPTO&quot;, &quot;MEGLYPTO&quot;, &quot;MEG...
+## $ nedboomsoort          (chr) &quot;Gewone plataan&quot;, &quot;Watercipres&quot;, &quot;Waterc...
+## $ latboomsoort          (chr) &quot;Platanus x hispanica&quot;, &quot;Metasequoia gly...
+## $ aanlegjaar            (int) 1985, 1970, 1970, 1970, 1970, 1970, 1970...
+## $ inspectiedatum        (chr) &quot;29-07-2014&quot;, &quot;04-08-2014&quot;, &quot;04-08-2014&quot;...
+## $ kl_veilig_maatregelen (chr) &quot;Geen veiligheidsmaatregel;&quot;, &quot;Geen veil...
+## $ structuurelement      (chr) &quot;Woongebied&quot;, &quot;Woongebied&quot;, &quot;Woongebied&quot;...
+## $ woonplaats            (chr) &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoo...
+## $ wijk                  (chr) &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoo...
+## $ buurt                 (chr) &quot;Snijdelwijk&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Bo...
+## $ openbare_ruimte       (chr) &quot;Bosweg&quot;, &quot;A.p. van neslaan&quot;, &quot;A.p. van ...
+## $ x                     (chr) &quot;104066,236&quot;, &quot;105447,454&quot;, &quot;105455,527&quot;...
+## $ y                     (chr) &quot;453323,99&quot;, &quot;454397,319&quot;, &quot;454442,028&quot;,...</code></pre>
+<div id="vragenset-2a" class="section level3">
+<h3>Vragenset 2A</h3>
+<ol style="list-style-type: decimal">
+<li><p>Wat voor een soort data bevat <code>openDF</code>?</p></li>
+<li><p>Wat is de latijnse naam voor ‘Moeraseik’?</p></li>
+<li><p>Wat is het vroegste aanlegjaar in de dataset?</p></li>
+<li><p>Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie <code>levels()</code> en kijk goed bij de namen die met een ‘N’ beginnen)</p></li>
+</ol>
+</div>
 </div>
 <div id="analyseren" class="section level2">
 <h2>Analyseren</h2>

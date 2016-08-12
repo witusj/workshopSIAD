@@ -205,7 +205,7 @@ In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen
 
 ## Lokaal bestand
 
-Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
 Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
 
@@ -310,9 +310,29 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 ## Muteren
 
-Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `readSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-Download nu het volgende databestand: <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv" download>Open Data (csv)</a> en sla het op in de werkfolder.
+We gaan met een set functies werken uit de `dplyr` package.
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+library(dplyr)
+```
+
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit online csv-bestand
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = FALSE)
+glimpse(openDF)
+```
+### Vragenset 2A
+1. Wat voor een soort data bevat `openDF`?
+
+2. Wat is de latijnse naam voor 'Moeraseik'?
+
+3. Wat is het vroegste aanlegjaar in de dataset?
+
+4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
