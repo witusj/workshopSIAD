@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 14:30:19 2016 -->
+<!-- Fri Aug 12 14:47:50 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID5e0978d006da () {
+function gvisDataMapID6516362472a5 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID5e0978d006da() {
-var data = gvisDataMapID5e0978d006da();
+function drawChartMapID6516362472a5() {
+var data = gvisDataMapID6516362472a5();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID5e0978d006da')
+    document.getElementById('MapID6516362472a5')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID5e0978d006da);
+callbacks.push(drawChartMapID6516362472a5);
 })();
-function displayChartMapID5e0978d006da() {
+function displayChartMapID6516362472a5() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5e0978d006da"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID6516362472a5"></script>
  
 <!-- divChart -->
   
-<div id="MapID5e0978d006da" 
+<div id="MapID6516362472a5" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -365,7 +365,7 @@ values2 <- c(20, 50)
 sum(values2)
 ```
 
-## Naslagwerk
+## Naslagwerken
 
 Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
