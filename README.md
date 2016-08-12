@@ -1,6 +1,6 @@
 # R-Workshop
 Witek ten Hove  
-`r format(Sys.time(), '%d %B, %Y')`  
+ 
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 
 
