@@ -1,5 +1,5 @@
 # R-Workshop
-Witek ten Hove  
+Witek ten Hove - wfth1969@gmail.com  
 `r format(Sys.time(), '%d %B, %Y')`  
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 
@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 11:32:42 2016 -->
+<!-- Fri Aug 12 12:18:03 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID5a414e308b55 () {
+function gvisDataMapID5c35364e1947 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID5a414e308b55() {
-var data = gvisDataMapID5a414e308b55();
+function drawChartMapID5c35364e1947() {
+var data = gvisDataMapID5c35364e1947();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID5a414e308b55')
+    document.getElementById('MapID5c35364e1947')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID5a414e308b55);
+callbacks.push(drawChartMapID5c35364e1947);
 })();
-function displayChartMapID5a414e308b55() {
+function displayChartMapID5c35364e1947() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,18 +105,18 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5a414e308b55"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5c35364e1947"></script>
  
 <!-- divChart -->
   
-<div id="MapID5a414e308b55" 
+<div id="MapID5c35364e1947" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ## Inschrijving
-Aanmelding geschiedt via dit <a href="https://goo.gl/forms/GGCpoQdm6d5Lkvvu1" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur.
+Aanmelding geschiedt via dit <a href="https://goo.gl/forms/GGCpoQdm6d5Lkvvu1" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via wfth1969@gmail.com.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
 
@@ -326,7 +326,7 @@ Locatie[,2]
 ## Levels: Nederland Polska UK
 ```
 
-We kunnen ook de afzonderlijke variabelen binnen een data frame oproepen via het `$` teken.
+We kunnen de afzonderlijke variabelen binnen een data frame ook oproepen via het `$` teken.
 
 
 ```r
