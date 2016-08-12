@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Aug 12 11:31:17 2016 -->
+<!-- Fri Aug 12 11:32:42 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID59c054642233 () {
+function gvisDataMapID5a414e308b55 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID59c054642233() {
-var data = gvisDataMapID59c054642233();
+function drawChartMapID5a414e308b55() {
+var data = gvisDataMapID5a414e308b55();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID59c054642233')
+    document.getElementById('MapID5a414e308b55')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID59c054642233);
+callbacks.push(drawChartMapID5a414e308b55);
 })();
-function displayChartMapID59c054642233() {
+function displayChartMapID5a414e308b55() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID59c054642233"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID5a414e308b55"></script>
  
 <!-- divChart -->
   
-<div id="MapID59c054642233" 
+<div id="MapID5a414e308b55" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -131,7 +131,7 @@ Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated devel
 
 LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
 
-Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:
+Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
 
 
 ```r

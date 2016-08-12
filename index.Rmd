@@ -56,7 +56,7 @@ Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated devel
 
 LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
 
-Als je alles hebt geinstalleerd op RStudio, kopieer de volgende code:
+Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
 
 ```{r, eval=FALSE, echo=TRUE}
 install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
