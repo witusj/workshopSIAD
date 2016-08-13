@@ -251,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Aug 13 00:35:08 2016 -->
+<!-- Sat Aug 13 09:21:34 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID763a74df42a0 () {
+function gvisDataMapID791f48066e3e () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -272,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID763a74df42a0() {
-var data = gvisDataMapID763a74df42a0();
+function drawChartMapID791f48066e3e() {
+var data = gvisDataMapID791f48066e3e();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -282,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID763a74df42a0')
+    document.getElementById('MapID791f48066e3e')
     );
     chart.draw(data,options);
     
@@ -306,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID763a74df42a0);
+callbacks.push(drawChartMapID791f48066e3e);
 })();
-function displayChartMapID763a74df42a0() {
+function displayChartMapID791f48066e3e() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -331,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID763a74df42a0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID791f48066e3e"></script>
 <!-- divChart -->
-<div id="MapID763a74df42a0" style="width: 100; height: 300;">
+<div id="MapID791f48066e3e" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -468,6 +468,7 @@ sum(values2)</code></pre>
 </div>
 <div id="naslagwerken" class="section level2">
 <h2>Naslagwerken</h2>
+<p>Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.</p>
 <p>Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:</p>
 <ul>
 <li><p><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</a></p></li>
@@ -633,29 +634,30 @@ stockDF &lt;- tables[1][[1]]</code></pre>
 <div id="muteren" class="section level2">
 <h2>Muteren</h2>
 <p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>werkSessie2.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
-<p>We gaan met een set functies werken uit de <code>dplyr</code> package.</p>
-<pre class="r"><code>library(dplyr)</code></pre>
+<p>We gaan met functies werken uit de <code>dplyr</code> en <code>tidyr</code> packages.</p>
+<pre class="r"><code>library(dplyr)
+library(tidyr)</code></pre>
 <p>Met de volgende code kun je een online csv bestand direct inlezen in R en met de <code>dplyr::glimpse()</code> functie de data bekijken. De oorspronkelijke data komt van de <a href="http://opendata.alphenaandenrijn.nl/">Gemeente Alphen aan de Rijn</a>.</p>
 <pre class="r"><code>## Lees data uit online csv-bestand
-openDF &lt;- read.csv(file = &quot;https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv&quot;, stringsAsFactors = FALSE)
+openDF &lt;- read.csv(file = &quot;https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv&quot;, stringsAsFactors = TRUE)
 glimpse(openDF)</code></pre>
 <pre><code>## Observations: 45,669
 ## Variables: 15
 ## $ X                     (int) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1...
 ## $ id                    (int) 2934, 1561, 1563, 1564, 1565, 1567, 1569...
-## $ kl_imagcode           (chr) &quot;PLACERIF&quot;, &quot;MEGLYPTO&quot;, &quot;MEGLYPTO&quot;, &quot;MEG...
-## $ nedboomsoort          (chr) &quot;Gewone plataan&quot;, &quot;Watercipres&quot;, &quot;Waterc...
-## $ latboomsoort          (chr) &quot;Platanus x hispanica&quot;, &quot;Metasequoia gly...
+## $ kl_imagcode           (fctr) PLACERIF, MEGLYPTO, MEGLYPTO, MEGLYPTO,...
+## $ nedboomsoort          (fctr) Gewone plataan, Watercipres, Watercipre...
+## $ latboomsoort          (fctr) Platanus x hispanica, Metasequoia glypt...
 ## $ aanlegjaar            (int) 1985, 1970, 1970, 1970, 1970, 1970, 1970...
-## $ inspectiedatum        (chr) &quot;29-07-2014&quot;, &quot;04-08-2014&quot;, &quot;04-08-2014&quot;...
-## $ kl_veilig_maatregelen (chr) &quot;Geen veiligheidsmaatregel;&quot;, &quot;Geen veil...
-## $ structuurelement      (chr) &quot;Woongebied&quot;, &quot;Woongebied&quot;, &quot;Woongebied&quot;...
-## $ woonplaats            (chr) &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoo...
-## $ wijk                  (chr) &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Boskoo...
-## $ buurt                 (chr) &quot;Snijdelwijk&quot;, &quot;Boskoop&quot;, &quot;Boskoop&quot;, &quot;Bo...
-## $ openbare_ruimte       (chr) &quot;Bosweg&quot;, &quot;A.p. van neslaan&quot;, &quot;A.p. van ...
-## $ x                     (chr) &quot;104066,236&quot;, &quot;105447,454&quot;, &quot;105455,527&quot;...
-## $ y                     (chr) &quot;453323,99&quot;, &quot;454397,319&quot;, &quot;454442,028&quot;,...</code></pre>
+## $ inspectiedatum        (fctr) 29-07-2014, 04-08-2014, 04-08-2014, 04-...
+## $ kl_veilig_maatregelen (fctr) Geen veiligheidsmaatregel;, Geen veilig...
+## $ structuurelement      (fctr) Woongebied, Woongebied, Woongebied, Woo...
+## $ woonplaats            (fctr) Boskoop, Boskoop, Boskoop, Boskoop, Bos...
+## $ wijk                  (fctr) Boskoop, Boskoop, Boskoop, Boskoop, Bos...
+## $ buurt                 (fctr) Snijdelwijk, Boskoop, Boskoop, Boskoop,...
+## $ openbare_ruimte       (fctr) Bosweg, A.p. van neslaan, A.p. van nesl...
+## $ x                     (fctr) 104066,236, 105447,454, 105455,527, 105...
+## $ y                     (fctr) 453323,99, 454397,319, 454442,028, 4544...</code></pre>
 <div id="vragenset-2a" class="section level3">
 <h3>Vragenset 2A</h3>
 <ol style="list-style-type: decimal">
@@ -664,6 +666,44 @@ glimpse(openDF)</code></pre>
 <li><p>Wat is het vroegste aanlegjaar in de dataset?</p></li>
 <li><p>Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie <code>levels()</code> en kijk goed bij de namen die met een ‘N’ beginnen)</p></li>
 </ol>
+<p>Het kan wellicht handig zijn om de inspectiedatum op te splitsen in <em>dag</em>, <em>maand</em> en <em>jaar</em>.</p>
+<pre class="r"><code>## Splits de inspectiedatum
+openDF &lt;- separate(openDF, inspectiedatum, into = c(&quot;inspectiedag&quot;, &quot;inspectiemaand&quot;, &quot;inspectiejaar&quot;), sep=&quot;-&quot;, remove = FALSE, extra = &quot;drop&quot;, fill = &quot;right&quot;)</code></pre>
+<p>Nu kunnen we makkelijk de inspecties van een bepaalde periode uit de data filteren (let op het dubbele <code>=</code> teken) en kijken welke bomen zijn aangemerkt om gerooid te worden.</p>
+<pre class="r"><code>## Filter op jaar en maand
+openDF2014 &lt;- filter(openDF, inspectiejaar == &quot;2014&quot;, kl_veilig_maatregelen == &quot;Rooien;&quot;)
+head(openDF2014)</code></pre>
+<pre><code>##     X   id kl_imagcode       nedboomsoort      latboomsoort aanlegjaar
+## 1  63 2857      SAALBA         Schietwilg        Salix alba       1990
+## 2 356 2880      SAALBA         Schietwilg        Salix alba       2000
+## 3 451 3349      SAALBA         Schietwilg        Salix alba       1970
+## 4 455 1952    BEPENDUL          Ruwe berk    Betula pendula       1980
+## 5 749 3445    TICORDAT Kleinbladige linde     Tilia cordata       1985
+## 6 847 1840    LISTYRAC          Sassafras Sassafras albidum       2012
+##   inspectiedatum inspectiedag inspectiemaand inspectiejaar
+## 1     30-07-2014           30             07          2014
+## 2     31-07-2014           31             07          2014
+## 3     06-08-2014           06             08          2014
+## 4     07-08-2014           07             08          2014
+## 5     05-08-2014           05             08          2014
+## 6     08-08-2014           08             08          2014
+##   kl_veilig_maatregelen structuurelement woonplaats    wijk       buurt
+## 1               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+## 2               Rooien;                     Boskoop Boskoop Snijdelwijk
+## 3               Rooien;       Woongebied    Boskoop Boskoop     Boskoop
+## 4               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+## 5               Rooien;       Woongebied    Boskoop Boskoop     Boskoop
+## 6               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+##   openbare_ruimte          x          y
+## 1      Lage weide 103890,645 453625,156
+## 2        Emmakade   104931,9 453665,223
+## 3     Weteringpad 103938,935 454361,435
+## 4      Klaverblad 103958,989 453882,047
+## 5      Reyerskoop 105583,114 454224,553
+## 6       Wilgehout 103800,245 453831,052</code></pre>
+</div>
+<div id="vragenset-2b" class="section level3">
+<h3>Vragenset 2B</h3>
 </div>
 </div>
 <div id="analyseren" class="section level2">

@@ -189,6 +189,8 @@ sum(values2)
 
 ## Naslagwerken
 
+Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.
+
 Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
@@ -312,17 +314,18 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met een set functies werken uit de `dplyr` package.
+We gaan met functies werken uit de `dplyr` en `tidyr` packages.
 
 ```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
+library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
 ## Lees data uit online csv-bestand
-openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = FALSE)
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = TRUE)
 glimpse(openDF)
 ```
 ### Vragenset 2A
@@ -333,6 +336,22 @@ glimpse(openDF)
 3. Wat is het vroegste aanlegjaar in de dataset?
 
 4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
+
+Het kan wellicht handig zijn om de inspectiedatum op te splitsen in *dag*, *maand* en *jaar*.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Splits de inspectiedatum
+openDF <- separate(openDF, inspectiedatum, into = c("inspectiedag", "inspectiemaand", "inspectiejaar"), sep="-", remove = FALSE, extra = "drop", fill = "right")
+```
+
+Nu kunnen we makkelijk de inspecties van een bepaalde periode uit de data filteren (let op het dubbele `=` teken) en kijken welke bomen zijn aangemerkt om gerooid te worden.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Filter op jaar en maand
+openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;")
+head(openDF2014)
+```
+### Vragenset 2B
+
+
 
 ## Analyseren
 `table()`, `plot()` en `hist()`

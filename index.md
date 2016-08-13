@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Aug 13 00:35:08 2016 -->
+<!-- Sat Aug 13 09:21:34 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID763a74df42a0 () {
+function gvisDataMapID791f48066e3e () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID763a74df42a0() {
-var data = gvisDataMapID763a74df42a0();
+function drawChartMapID791f48066e3e() {
+var data = gvisDataMapID791f48066e3e();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID763a74df42a0')
+    document.getElementById('MapID791f48066e3e')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID763a74df42a0);
+callbacks.push(drawChartMapID791f48066e3e);
 })();
-function displayChartMapID763a74df42a0() {
+function displayChartMapID791f48066e3e() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID763a74df42a0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID791f48066e3e"></script>
  
 <!-- divChart -->
   
-<div id="MapID763a74df42a0" 
+<div id="MapID791f48066e3e" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -367,6 +367,8 @@ sum(values2)
 
 ## Naslagwerken
 
+Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.
+
 Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
@@ -571,11 +573,12 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met een set functies werken uit de `dplyr` package.
+We gaan met functies werken uit de `dplyr` en `tidyr` packages.
 
 
 ```r
 library(dplyr)
+library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
@@ -583,7 +586,7 @@ Met de volgende code kun je een online csv bestand direct inlezen in R en met de
 
 ```r
 ## Lees data uit online csv-bestand
-openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = FALSE)
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = TRUE)
 glimpse(openDF)
 ```
 
@@ -592,19 +595,19 @@ glimpse(openDF)
 ## Variables: 15
 ## $ X                     (int) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1...
 ## $ id                    (int) 2934, 1561, 1563, 1564, 1565, 1567, 1569...
-## $ kl_imagcode           (chr) "PLACERIF", "MEGLYPTO", "MEGLYPTO", "MEG...
-## $ nedboomsoort          (chr) "Gewone plataan", "Watercipres", "Waterc...
-## $ latboomsoort          (chr) "Platanus x hispanica", "Metasequoia gly...
+## $ kl_imagcode           (fctr) PLACERIF, MEGLYPTO, MEGLYPTO, MEGLYPTO,...
+## $ nedboomsoort          (fctr) Gewone plataan, Watercipres, Watercipre...
+## $ latboomsoort          (fctr) Platanus x hispanica, Metasequoia glypt...
 ## $ aanlegjaar            (int) 1985, 1970, 1970, 1970, 1970, 1970, 1970...
-## $ inspectiedatum        (chr) "29-07-2014", "04-08-2014", "04-08-2014"...
-## $ kl_veilig_maatregelen (chr) "Geen veiligheidsmaatregel;", "Geen veil...
-## $ structuurelement      (chr) "Woongebied", "Woongebied", "Woongebied"...
-## $ woonplaats            (chr) "Boskoop", "Boskoop", "Boskoop", "Boskoo...
-## $ wijk                  (chr) "Boskoop", "Boskoop", "Boskoop", "Boskoo...
-## $ buurt                 (chr) "Snijdelwijk", "Boskoop", "Boskoop", "Bo...
-## $ openbare_ruimte       (chr) "Bosweg", "A.p. van neslaan", "A.p. van ...
-## $ x                     (chr) "104066,236", "105447,454", "105455,527"...
-## $ y                     (chr) "453323,99", "454397,319", "454442,028",...
+## $ inspectiedatum        (fctr) 29-07-2014, 04-08-2014, 04-08-2014, 04-...
+## $ kl_veilig_maatregelen (fctr) Geen veiligheidsmaatregel;, Geen veilig...
+## $ structuurelement      (fctr) Woongebied, Woongebied, Woongebied, Woo...
+## $ woonplaats            (fctr) Boskoop, Boskoop, Boskoop, Boskoop, Bos...
+## $ wijk                  (fctr) Boskoop, Boskoop, Boskoop, Boskoop, Bos...
+## $ buurt                 (fctr) Snijdelwijk, Boskoop, Boskoop, Boskoop,...
+## $ openbare_ruimte       (fctr) Bosweg, A.p. van neslaan, A.p. van nesl...
+## $ x                     (fctr) 104066,236, 105447,454, 105455,527, 105...
+## $ y                     (fctr) 453323,99, 454397,319, 454442,028, 4544...
 ```
 ### Vragenset 2A
 1. Wat voor een soort data bevat `openDF`?
@@ -614,6 +617,55 @@ glimpse(openDF)
 3. Wat is het vroegste aanlegjaar in de dataset?
 
 4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
+
+Het kan wellicht handig zijn om de inspectiedatum op te splitsen in *dag*, *maand* en *jaar*.
+
+```r
+## Splits de inspectiedatum
+openDF <- separate(openDF, inspectiedatum, into = c("inspectiedag", "inspectiemaand", "inspectiejaar"), sep="-", remove = FALSE, extra = "drop", fill = "right")
+```
+
+Nu kunnen we makkelijk de inspecties van een bepaalde periode uit de data filteren (let op het dubbele `=` teken) en kijken welke bomen zijn aangemerkt om gerooid te worden.
+
+```r
+## Filter op jaar en maand
+openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;")
+head(openDF2014)
+```
+
+```
+##     X   id kl_imagcode       nedboomsoort      latboomsoort aanlegjaar
+## 1  63 2857      SAALBA         Schietwilg        Salix alba       1990
+## 2 356 2880      SAALBA         Schietwilg        Salix alba       2000
+## 3 451 3349      SAALBA         Schietwilg        Salix alba       1970
+## 4 455 1952    BEPENDUL          Ruwe berk    Betula pendula       1980
+## 5 749 3445    TICORDAT Kleinbladige linde     Tilia cordata       1985
+## 6 847 1840    LISTYRAC          Sassafras Sassafras albidum       2012
+##   inspectiedatum inspectiedag inspectiemaand inspectiejaar
+## 1     30-07-2014           30             07          2014
+## 2     31-07-2014           31             07          2014
+## 3     06-08-2014           06             08          2014
+## 4     07-08-2014           07             08          2014
+## 5     05-08-2014           05             08          2014
+## 6     08-08-2014           08             08          2014
+##   kl_veilig_maatregelen structuurelement woonplaats    wijk       buurt
+## 1               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+## 2               Rooien;                     Boskoop Boskoop Snijdelwijk
+## 3               Rooien;       Woongebied    Boskoop Boskoop     Boskoop
+## 4               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+## 5               Rooien;       Woongebied    Boskoop Boskoop     Boskoop
+## 6               Rooien;       Woongebied    Boskoop Boskoop Snijdelwijk
+##   openbare_ruimte          x          y
+## 1      Lage weide 103890,645 453625,156
+## 2        Emmakade   104931,9 453665,223
+## 3     Weteringpad 103938,935 454361,435
+## 4      Klaverblad 103958,989 453882,047
+## 5      Reyerskoop 105583,114 454224,553
+## 6       Wilgehout 103800,245 453831,052
+```
+### Vragenset 2B
+
+
 
 ## Analyseren
 `table()`, `plot()` en `hist()`
