@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 19:08:48 2016 -->
+<!-- Tue Aug 16 21:55:49 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID9a3142e78dfd () {
+function gvisDataMapIDa2a75f2fcc65 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID9a3142e78dfd() {
-var data = gvisDataMapID9a3142e78dfd();
+function drawChartMapIDa2a75f2fcc65() {
+var data = gvisDataMapIDa2a75f2fcc65();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID9a3142e78dfd')
+    document.getElementById('MapIDa2a75f2fcc65')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID9a3142e78dfd);
+callbacks.push(drawChartMapIDa2a75f2fcc65);
 })();
-function displayChartMapID9a3142e78dfd() {
+function displayChartMapIDa2a75f2fcc65() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID9a3142e78dfd"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDa2a75f2fcc65"></script>
  
 <!-- divChart -->
   
-<div id="MapID9a3142e78dfd" 
+<div id="MapIDa2a75f2fcc65" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -530,7 +530,7 @@ surveyDF <- gsheet2tbl(url)
 ### Vragenset 1B
 1. Om wat voor een soort data gaat het hier?
 
-2. Welke dimensies heeft de data set (rijen / kolommen)?
+2. Welke dimensies heeft de dataset (rijen / kolommen)?
 
 3. Welke classes hebben de variabelen?
 
@@ -667,10 +667,10 @@ head(openDF2014)
 
 2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
 
-3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
+3. Maak een subset van alle bomen die **sinds** 2010 geinspecteerd zijn.
 
 ## Analyseren
-We gaan nu wat data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. De geaggregeerde data plaatsen we in een `barplot`
+We gaan data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. Met de `table()` functie kunnen we een matrix bouwen. Horizontaal (*rij*) plaatsen we de afzonderlijke *woonplaatsen* en verticaal (*kolom*) de *inspectiejaren*. In de cellen van de matrix staat het aantal keren dat de gegeven combinatie (*woonplaats*, *jaar*) in de dataset voorkomt.
 
 
 ```r
@@ -715,7 +715,7 @@ str(inspecTab)
 ##   ..$ : chr [1:12] "2003" "2005" "2006" "2007" ...
 ```
 
-Als we de structuur van `inspecTab` bekijken zien we dat het class "table" heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+Als we de structuur van `inspecTab` bekijken zien we dat het class `table` heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
 
 
 ```r
@@ -751,7 +751,7 @@ cat(plaatsenVec, sep = ", ")
 ## , Aarlanderveen, Alphen aan den Rijn, Benthuizen, Boskoop, Hazerswoude-Dorp, Hazerswoude-Rijndijk, Koudekerk aan den Rijn, Zwammerdam
 ```
 
-We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot gebruikt als input een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot accepteert als input alleen een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
 
 
 ```r
@@ -782,10 +782,504 @@ legend("topleft",
 
 # Sessie 3 - Visualiseren / Presenteren
 
-In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
+In deze sessie kijken we hoe je data aantrekkelijk kunt visualiseren en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
 ## Visualiseren
-`googleVis`, `plotly` en `leaflet`
+Er zijn talrijke packages voor R gebouwd waarmee je data op veelzijdige manieren grafisch kunt weergeven. In deze workshop gaan we werken met de R interface voor de Google Charts API (`googleVis`). Op deze  [pagina](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html) vind je voorbeelden van de mogelijkheden die de interface biedt.
+
+
+```r
+## Laad de benodigde packages
+library(googleVis)
+library(gsheet)
+library(dplyr)
+```
+
+De data die we gebruiken, komt uit een Google Spreadsheet.
+
+```r
+## Lees data uit Google Spreadsheet
+url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
+surveyData <- gsheet2tbl(url)
+glimpse(surveyData[1:6])
+```
+
+```
+## Observations: 58
+## Variables: 6
+## $ Tijdstempel        (chr) "22-4-2016 19:25:53", "23-4-2016 13:20:45",...
+## $ Naam               (chr) "ELIN", "NIKIA", "MARIO", "ROMAINE", "ALLYS...
+## $ Waarschijnlijkheid (int) 2, 4, 3, 3, 4, 2, 1, 3, 3, 4, 4, 4, 3, 5, 3...
+## $ Gevolg             (int) 4, 5, 5, 3, 2, 4, 4, 3, 3, 4, 3, 4, 4, 3, 4...
+## $ Soort.Risico       (chr) "Kans", "Kans", "Kans", "Kans", "Kans", "Ka...
+## $ Toelichting        (chr) "wanneer wet en regelgeving minder complexe...
+```
+
+Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
+
+
+```r
+## Bouw Google Bubble Chart
+survChart <- gvisBubbleChart(surveyData,
+                             idvar = "Naam",
+                             xvar = "Waarschijnlijkheid",
+                             yvar = "Gevolg",
+                             colorvar = "Soort.Risico",
+                             options = list(hAxis = '{minValue:1, maxValue:5, title:"Gevolg"}'
+                                            ,vAxis = '{minValue:1, maxValue:5, title:"Waarschijnlijkheid"}',
+                                            width = 700,
+                                            height = 700
+                                            )
+                             )
+plot(survChart)
+```
+
+<!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
+<!-- Tue Aug 16 21:55:49 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataBubbleChartIDa2a7d6de358 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "ELIN",
+2,
+4,
+"Kans" 
+],
+[
+ "NIKIA",
+4,
+5,
+"Kans" 
+],
+[
+ "MARIO",
+3,
+5,
+"Kans" 
+],
+[
+ "ROMAINE",
+3,
+3,
+"Kans" 
+],
+[
+ "ALLYSON",
+4,
+2,
+"Kans" 
+],
+[
+ "VADA",
+2,
+4,
+"Kans" 
+],
+[
+ "MYRLE",
+1,
+4,
+"Kans" 
+],
+[
+ "VERTIE",
+3,
+3,
+"Kans" 
+],
+[
+ "DAISY",
+3,
+3,
+"Kans" 
+],
+[
+ "KATHERINE",
+4,
+4,
+"Kans" 
+],
+[
+ "SID",
+4,
+3,
+"Kans" 
+],
+[
+ "LERA",
+4,
+4,
+"Kans" 
+],
+[
+ "MARLYS",
+3,
+4,
+"Kans" 
+],
+[
+ "ANTON",
+5,
+3,
+"Bedreiging" 
+],
+[
+ "CHRISTEN",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "KYLEE",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "KAI",
+2,
+4,
+"Bedreiging" 
+],
+[
+ "NELL",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "KIRSTIE",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "THERESIA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "MOSES",
+3,
+5,
+"Bedreiging" 
+],
+[
+ "BRYANT",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "LEZLIE",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "SANDI",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "ARNETTA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "LAVINA",
+2,
+4,
+"Bedreiging" 
+],
+[
+ "IGNACIA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "ARLETHA",
+4,
+3,
+"Bedreiging" 
+],
+[
+ "WILTON",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "ALTHA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "GEORGIANN",
+5,
+5,
+"Bedreiging" 
+],
+[
+ "EMMETT",
+2,
+5,
+"Bedreiging" 
+],
+[
+ "MAMIE",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "ROXANA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "JERRY",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "MARINE",
+2,
+5,
+"Bedreiging" 
+],
+[
+ "HONG",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "RHETT",
+2,
+2,
+"Bedreiging" 
+],
+[
+ "DEDRA",
+5,
+4,
+"Bedreiging" 
+],
+[
+ "MALIK",
+5,
+4,
+"Bedreiging" 
+],
+[
+ "KELSEY",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "SHANDI",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "HERMINA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "CATHARINE",
+3,
+4,
+"Bedreiging" 
+],
+[
+ "SHERRIL",
+2,
+5,
+"Bedreiging" 
+],
+[
+ "SHAWANA",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "ALICA",
+3,
+3,
+"Bedreiging" 
+],
+[
+ "SHAREN",
+4,
+3,
+"Bedreiging" 
+],
+[
+ "CAROLEE",
+4,
+3,
+"Bedreiging" 
+],
+[
+ "YASUKO",
+4,
+3,
+"Bedreiging" 
+],
+[
+ "FUMIKO",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "SHON",
+5,
+5,
+"Bedreiging" 
+],
+[
+ "MONNIE",
+4,
+5,
+"Bedreiging" 
+],
+[
+ "BETTYE",
+5,
+5,
+"Bedreiging" 
+],
+[
+ "SUE",
+4,
+4,
+"Bedreiging" 
+],
+[
+ "JARED",
+2,
+2,
+"Bedreiging" 
+],
+[
+ "LAURI",
+5,
+4,
+"Bedreiging" 
+],
+[
+ "FAWN",
+4,
+3,
+"Bedreiging" 
+] 
+];
+data.addColumn('string','Naam');
+data.addColumn('number','Waarschijnlijkheid');
+data.addColumn('number','Gevolg');
+data.addColumn('string','Soort.Risico');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartBubbleChartIDa2a7d6de358() {
+var data = gvisDataBubbleChartIDa2a7d6de358();
+var options = {};
+options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
+options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
+options["width"] =    700;
+options["height"] =    700;
+
+    var chart = new google.visualization.BubbleChart(
+    document.getElementById('BubbleChartIDa2a7d6de358')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartBubbleChartIDa2a7d6de358);
+})();
+function displayChartBubbleChartIDa2a7d6de358() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDa2a7d6de358"></script>
+ 
+<!-- divChart -->
+  
+<div id="BubbleChartIDa2a7d6de358" 
+  style="width: 700; height: 700;">
+</div>
+
+### Vragenset 3A
+1. Wat voor een structuur heeft `survData`?
+
+2. Om wat voor een soort data gaat het?
+
+3. Maak een nieuwe bubble chart met de variabelen die op ".1" eindigen.
+
+
+`plotly` en `leaflet`
 
 ## Presenteren.
 *markdown* en *RPubs*

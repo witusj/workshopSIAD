@@ -272,7 +272,7 @@ surveyDF <- gsheet2tbl(url)
 ### Vragenset 1B
 1. Om wat voor een soort data gaat het hier?
 
-2. Welke dimensies heeft de data set (rijen / kolommen)?
+2. Welke dimensies heeft de dataset (rijen / kolommen)?
 
 3. Welke classes hebben de variabelen?
 
@@ -353,10 +353,10 @@ head(openDF2014)
 
 2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
 
-3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
+3. Maak een subset van alle bomen die **sinds** 2010 geinspecteerd zijn.
 
 ## Analyseren
-We gaan nu wat data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. De geaggregeerde data plaatsen we in een `barplot`
+We gaan data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. Met de `table()` functie kunnen we een matrix bouwen. Horizontaal (*rij*) plaatsen we de afzonderlijke *woonplaatsen* en verticaal (*kolom*) de *inspectiejaren*. In de cellen van de matrix staat het aantal keren dat de gegeven combinatie (*woonplaats*, *jaar*) in de dataset voorkomt.
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
 ## Aantal inspecties per woonplaats per jaar
@@ -366,7 +366,7 @@ str(inspecTab)
 
 ```
 
-Als we de structuur van `inspecTab` bekijken zien we dat het class "table" heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+Als we de structuur van `inspecTab` bekijken zien we dat het class `table` heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
 ## Conversie tabel naar data frame
@@ -378,7 +378,7 @@ plaatsenVec <- rownames(inspecDF)
 cat(plaatsenVec, sep = ", ")
 ```
 
-We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot gebruikt als input een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot accepteert als input alleen een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
 ## Barplot van aantal inspecties per woonplaats per jaar
@@ -406,10 +406,53 @@ legend("topleft",
 
 # Sessie 3 - Visualiseren / Presenteren
 
-In deze sessie kijken we hoe je data visueel kunt opmaken en op een makkelijke manier toegankelijk maakt voor de gebruikers.
+In deze sessie kijken we hoe je data aantrekkelijk kunt visualiseren en op een makkelijke manier toegankelijk maakt voor de gebruikers.
 
 ## Visualiseren
-`googleVis`, `plotly` en `leaflet`
+Er zijn talrijke packages voor R gebouwd waarmee je data op veelzijdige manieren grafisch kunt weergeven. In deze workshop gaan we werken met de R interface voor de Google Charts API (`googleVis`). Op deze  [pagina](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html) vind je voorbeelden van de mogelijkheden die de interface biedt.
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+## Laad de benodigde packages
+library(googleVis)
+library(gsheet)
+library(dplyr)
+```
+
+De data die we gebruiken, komt uit een Google Spreadsheet.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit Google Spreadsheet
+url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
+surveyData <- gsheet2tbl(url)
+glimpse(surveyData[1:6])
+```
+
+Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Bouw Google Bubble Chart
+survChart <- gvisBubbleChart(surveyData,
+                             idvar = "Naam",
+                             xvar = "Waarschijnlijkheid",
+                             yvar = "Gevolg",
+                             colorvar = "Soort.Risico",
+                             options = list(hAxis = '{minValue:1, maxValue:5, title:"Gevolg"}'
+                                            ,vAxis = '{minValue:1, maxValue:5, title:"Waarschijnlijkheid"}',
+                                            width = 700,
+                                            height = 700
+                                            )
+                             )
+plot(survChart)
+```
+
+### Vragenset 3A
+1. Wat voor een structuur heeft `survData`?
+
+2. Om wat voor een soort data gaat het?
+
+3. Maak een nieuwe bubble chart met de variabelen die op ".1" eindigen.
+
+
+`plotly` en `leaflet`
 
 ## Presenteren.
 *markdown* en *RPubs*
