@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 19:07:50 2016 -->
+<!-- Tue Aug 16 19:08:48 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID999c24a2620 () {
+function gvisDataMapID9a3142e78dfd () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID999c24a2620() {
-var data = gvisDataMapID999c24a2620();
+function drawChartMapID9a3142e78dfd() {
+var data = gvisDataMapID9a3142e78dfd();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID999c24a2620')
+    document.getElementById('MapID9a3142e78dfd')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID999c24a2620);
+callbacks.push(drawChartMapID9a3142e78dfd);
 })();
-function displayChartMapID999c24a2620() {
+function displayChartMapID9a3142e78dfd() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID999c24a2620"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID9a3142e78dfd"></script>
  
 <!-- divChart -->
   
-<div id="MapID999c24a2620" 
+<div id="MapID9a3142e78dfd" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -578,7 +578,6 @@ We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van
 
 ```r
 library(dplyr)
-library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).

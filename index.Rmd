@@ -318,7 +318,6 @@ We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van
 
 ```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
-library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
