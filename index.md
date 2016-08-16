@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 19:02:47 2016 -->
+<!-- Tue Aug 16 19:07:50 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID96d747c24adc () {
+function gvisDataMapID999c24a2620 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID96d747c24adc() {
-var data = gvisDataMapID96d747c24adc();
+function drawChartMapID999c24a2620() {
+var data = gvisDataMapID999c24a2620();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID96d747c24adc')
+    document.getElementById('MapID999c24a2620')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID96d747c24adc);
+callbacks.push(drawChartMapID999c24a2620);
 })();
-function displayChartMapID96d747c24adc() {
+function displayChartMapID999c24a2620() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID96d747c24adc"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID999c24a2620"></script>
  
 <!-- divChart -->
   
-<div id="MapID96d747c24adc" 
+<div id="MapID999c24a2620" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -573,7 +573,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met functies werken uit de `dplyr` en `tidyr` packages. Een uitgebreid overzicht van de functies van `dplyr` vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
+We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van deze functies vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
 
 
 ```r

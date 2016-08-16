@@ -314,7 +314,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met functies werken uit de `dplyr` en `tidyr` packages. Een uitgebreid overzicht van de functies van `dplyr` vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
+We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van deze functies vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
 
 ```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
