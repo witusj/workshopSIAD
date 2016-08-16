@@ -321,7 +321,7 @@ library(dplyr)
 library(tidyr)
 ```
 
-Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
 ## Lees data uit online csv-bestand
@@ -356,11 +356,52 @@ head(openDF2014)
 
 3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
 
-4. Zoek op een internet een dataset en experimenteer met de de vaardigheden die je tot nu toe hebt ontwikkeld. (TIP: https://opendatanederland.org/)
-
-
 ## Analyseren
-`table()`, `plot()` en `hist()`
+We gaan nu wat data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. De geaggregeerde data plaatsen we in een `barplot`
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Aantal inspecties per woonplaats per jaar
+inspecTab <- table(openDF$woonplaats, openDF$inspectiejaar)
+inspecTab
+str(inspecTab)
+
+```
+
+Als we de structuur van `inspecTab` bekijken zien we dat het class "table" heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Conversie tabel naar data frame
+inspecDF <- as.data.frame.matrix(inspecTab)
+head(inspecDF)
+
+## Bewaar rijnamen
+plaatsenVec <- rownames(inspecDF)
+cat(plaatsenVec, sep = ", ")
+```
+
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot gebruikt als input een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Barplot van aantal inspecties per woonplaats per jaar
+barplot(inspecTab,
+        xlab = "Jaar",
+        col=rainbow(9)
+        )
+
+legend("topleft",
+       legend = plaatsenVec,
+       fill=rainbow(9)
+)
+```
+
+### Vragenset 2C
+1. Wat valt op als je de `inspecTab` dataset bekijkt?
+
+2. Maak een tabel waarin je het aantal afzonderlijke categorieën veiligheidsmaatregelen per jaar telt.
+
+3. Voor hoeveel bomen werd in 2014 een jaarlijkse inspectie geadviseerd?
+
+4. Analyseer deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv)
 
 ---
 

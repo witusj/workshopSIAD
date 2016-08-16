@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 10:34:05 2016 -->
+<!-- Tue Aug 16 19:02:47 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID8485188635dc () {
+function gvisDataMapID96d747c24adc () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID8485188635dc() {
-var data = gvisDataMapID8485188635dc();
+function drawChartMapID96d747c24adc() {
+var data = gvisDataMapID96d747c24adc();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID8485188635dc')
+    document.getElementById('MapID96d747c24adc')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID8485188635dc);
+callbacks.push(drawChartMapID96d747c24adc);
 })();
-function displayChartMapID8485188635dc() {
+function displayChartMapID96d747c24adc() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID8485188635dc"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID96d747c24adc"></script>
  
 <!-- divChart -->
   
-<div id="MapID8485188635dc" 
+<div id="MapID96d747c24adc" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -581,7 +581,7 @@ library(dplyr)
 library(tidyr)
 ```
 
-Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen aan de Rijn](http://opendata.alphenaandenrijn.nl/).
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
 
 
 ```r
@@ -670,11 +670,114 @@ head(openDF2014)
 
 3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
 
-4. Zoek op een internet een dataset en experimenteer met de de vaardigheden die je tot nu toe hebt ontwikkeld. (TIP: https://opendatanederland.org/)
-
-
 ## Analyseren
-`table()`, `plot()` en `hist()`
+We gaan nu wat data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. De geaggregeerde data plaatsen we in een `barplot`
+
+
+```r
+## Aantal inspecties per woonplaats per jaar
+inspecTab <- table(openDF$woonplaats, openDF$inspectiejaar)
+inspecTab
+```
+
+```
+##                         
+##                           2003  2005  2006  2007  2008  2009  2010  2011
+##                              0     0     0     0     0     0     0     0
+##   Aarlanderveen              0     0     0    56     2   207     2     0
+##   Alphen aan den Rijn        0  2253  1643  1043   243   980   374  4510
+##   Benthuizen                 0     0     0     0     0     0     8     0
+##   Boskoop                    0     0     0     0     0   132     0     0
+##   Hazerswoude-Dorp           0     0     0     0     0     4   288     0
+##   Hazerswoude-Rijndijk       0     0     1     0     0     0    14     0
+##   Koudekerk aan den Rijn     0     0     0     0     0     0     0     0
+##   Zwammerdam                50    30     0     1     0   142     4     0
+##                         
+##                           2012  2013  2014  2015
+##                              0     0     0     1
+##   Aarlanderveen            767     4    11     0
+##   Alphen aan den Rijn    11983  1510  6457     0
+##   Benthuizen                 0     0  1617     0
+##   Boskoop                    0     0  5235     0
+##   Hazerswoude-Dorp           0     0  1691     0
+##   Hazerswoude-Rijndijk       0     0  1907     0
+##   Koudekerk aan den Rijn     0     0  1444     0
+##   Zwammerdam               589    27    90     0
+```
+
+```r
+str(inspecTab)
+```
+
+```
+##  'table' int [1:9, 1:12] 0 0 0 0 0 0 0 0 50 0 ...
+##  - attr(*, "dimnames")=List of 2
+##   ..$ : chr [1:9] "" "Aarlanderveen" "Alphen aan den Rijn" "Benthuizen" ...
+##   ..$ : chr [1:12] "2003" "2005" "2006" "2007" ...
+```
+
+Als we de structuur van `inspecTab` bekijken zien we dat het class "table" heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+
+
+```r
+## Conversie tabel naar data frame
+inspecDF <- as.data.frame.matrix(inspecTab)
+head(inspecDF)
+```
+
+```
+##                     2003 2005 2006 2007 2008 2009 2010 2011  2012 2013
+##                        0    0    0    0    0    0    0    0     0    0
+## Aarlanderveen          0    0    0   56    2  207    2    0   767    4
+## Alphen aan den Rijn    0 2253 1643 1043  243  980  374 4510 11983 1510
+## Benthuizen             0    0    0    0    0    0    8    0     0    0
+## Boskoop                0    0    0    0    0  132    0    0     0    0
+## Hazerswoude-Dorp       0    0    0    0    0    4  288    0     0    0
+##                     2014 2015
+##                        0    1
+## Aarlanderveen         11    0
+## Alphen aan den Rijn 6457    0
+## Benthuizen          1617    0
+## Boskoop             5235    0
+## Hazerswoude-Dorp    1691    0
+```
+
+```r
+## Bewaar rijnamen
+plaatsenVec <- rownames(inspecDF)
+cat(plaatsenVec, sep = ", ")
+```
+
+```
+## , Aarlanderveen, Alphen aan den Rijn, Benthuizen, Boskoop, Hazerswoude-Dorp, Hazerswoude-Rijndijk, Koudekerk aan den Rijn, Zwammerdam
+```
+
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot gebruikt als input een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+
+
+```r
+## Barplot van aantal inspecties per woonplaats per jaar
+barplot(inspecTab,
+        xlab = "Jaar",
+        col=rainbow(9)
+        )
+
+legend("topleft",
+       legend = plaatsenVec,
+       fill=rainbow(9)
+)
+```
+
+![](index_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
+
+### Vragenset 2C
+1. Wat valt op als je de `inspecTab` dataset bekijkt?
+
+2. Maak een tabel waarin je het aantal afzonderlijke categorieën veiligheidsmaatregelen per jaar telt.
+
+3. Voor hoeveel bomen werd in 2014 een jaarlijkse inspectie geadviseerd?
+
+4. Analyseer deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv)
 
 ---
 
