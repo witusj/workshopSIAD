@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Aug 13 09:21:34 2016 -->
+<!-- Tue Aug 16 10:34:05 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID791f48066e3e () {
+function gvisDataMapID8485188635dc () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID791f48066e3e() {
-var data = gvisDataMapID791f48066e3e();
+function drawChartMapID8485188635dc() {
+var data = gvisDataMapID8485188635dc();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID791f48066e3e')
+    document.getElementById('MapID8485188635dc')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID791f48066e3e);
+callbacks.push(drawChartMapID8485188635dc);
 })();
-function displayChartMapID791f48066e3e() {
+function displayChartMapID8485188635dc() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID791f48066e3e"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID8485188635dc"></script>
  
 <!-- divChart -->
   
-<div id="MapID791f48066e3e" 
+<div id="MapID8485188635dc" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -222,7 +222,7 @@ class(Plaats)
 ```
 
 ```r
-Geslacht <- c("Man", "Man", "Vrouw")
+Geslacht <- c("Man", "Man", "Vrouw", "Transgender")
 class(Geslacht)
 ```
 
@@ -231,7 +231,7 @@ class(Geslacht)
 ```
 
 ```r
-Geslacht <- factor(Geslacht, levels = c("Transgender", "Man", "Vrouw"))
+Geslacht <- as.factor(Geslacht)
 class(Geslacht)
 ```
 
@@ -244,8 +244,8 @@ Geslacht
 ```
 
 ```
-## [1] Man   Man   Vrouw
-## Levels: Transgender Man Vrouw
+## [1] Man         Man         Vrouw       Transgender
+## Levels: Man Transgender Vrouw
 ```
 
 Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven, dan heeft het element `Plaats[2]` de waarde `"London"`.
@@ -367,7 +367,7 @@ sum(values2)
 
 ## Naslagwerken
 
-Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.
+Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de *Cheatsheets* onder het helpmenu.
 
 Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
@@ -573,7 +573,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met functies werken uit de `dplyr` en `tidyr` packages.
+We gaan met functies werken uit de `dplyr` en `tidyr` packages. Een uitgebreid overzicht van de functies van `dplyr` vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
 
 
 ```r
@@ -664,7 +664,13 @@ head(openDF2014)
 ## 6       Wilgehout 103800,245 453831,052
 ```
 ### Vragenset 2B
+1. Maak een subset van de data waarin alleen de bomen staan die in 2014 in de Horstenbuurt aangemerkt werden om gerooid te worden.
 
+2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
+
+3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
+
+4. Zoek op een internet een dataset en experimenteer met de de vaardigheden die je tot nu toe hebt ontwikkeld. (TIP: https://opendatanederland.org/)
 
 
 ## Analyseren

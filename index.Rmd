@@ -127,9 +127,9 @@ Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaa
 ## Vectoren en classes
 Plaats <- c("Warszawa", "London", "Paris")
 class(Plaats)
-Geslacht <- c("Man", "Man", "Vrouw")
+Geslacht <- c("Man", "Man", "Vrouw", "Transgender")
 class(Geslacht)
-Geslacht <- factor(Geslacht, levels = c("Transgender", "Man", "Vrouw"))
+Geslacht <- as.factor(Geslacht)
 class(Geslacht)
 Geslacht
 ```
@@ -189,7 +189,7 @@ sum(values2)
 
 ## Naslagwerken
 
-Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.
+Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de *Cheatsheets* onder het helpmenu.
 
 Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
 
@@ -314,7 +314,7 @@ In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je
 
 Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
 
-We gaan met functies werken uit de `dplyr` en `tidyr` packages.
+We gaan met functies werken uit de `dplyr` en `tidyr` packages. Een uitgebreid overzicht van de functies van `dplyr` vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
 
 ```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
@@ -350,7 +350,13 @@ openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "
 head(openDF2014)
 ```
 ### Vragenset 2B
+1. Maak een subset van de data waarin alleen de bomen staan die in 2014 in de Horstenbuurt aangemerkt werden om gerooid te worden.
 
+2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
+
+3. Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.
+
+4. Zoek op een internet een dataset en experimenteer met de de vaardigheden die je tot nu toe hebt ontwikkeld. (TIP: https://opendatanederland.org/)
 
 
 ## Analyseren

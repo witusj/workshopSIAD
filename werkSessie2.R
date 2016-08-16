@@ -22,3 +22,17 @@ openDF <- separate(openDF, inspectiedatum, into = c("inspectiedag", "inspectiema
                    sep="-", remove = FALSE, extra = "drop", fill = "right")
 ## Filter op jaar en maatregel
 openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;")
+
+## Filter op jaar, maatregel en buurt
+openDF2014Buurt <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;", buurt == "Horstenbuurt")
+summary(openDF2014Buurt)
+
+## Verander class jaar, maand en datum naar numeric
+datumVec <- c("inspectiedag", "inspectiemaand", "inspectiejaar")
+openDF <- mutate(openDF,
+                 inspectiedag = as.numeric(inspectiedag),
+                 inspectiemaand = as.numeric(inspectiemaand),
+                 inspectiejaar = as.numeric(inspectiejaar)
+                 )
+## Alle bomen die sinds 2010 zijn geinspecteerd.
+openDF2010ev <- filter(openDF, inspectiejaar > 2009)

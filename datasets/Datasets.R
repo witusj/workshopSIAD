@@ -60,3 +60,48 @@ write.csv(dataClean, file = "sessie 2/cps_morg.csv", row.names = FALSE)
 #######################################
 openData <- xmlToDataFrame(doc="http://opendata.alphenaandenrijn.nl/bomen.xml")
 write.csv(openData, "sessie 2/open_data.csv")
+
+################################
+## Subsidieregister Purmerend ##
+################################
+# Laad de benodigde package(s)
+
+# Input ruwe data, output data frame
+
+scrapeData <- function(website, extension = "") {
+  
+  library(rvest)
+  url <- paste0(website, extension)
+  htmlpage <- read_html(url)
+  
+  # Extraheer alle tabellen uit de ruwe data
+  nodes <- html_nodes(htmlpage, "table")
+  tables <- html_table(nodes, fill = TRUE)
+  return(tables[1][[1]])
+
+}
+
+## Build dataset
+
+website <- "https://www.purmerend.nl/subsidieregister"
+subsData <- scrapeData(website = website)
+
+for(i in c(1:21)) {
+  
+  extension <- paste0("?page=", i)
+  print(extension)
+  addData <- scrapeData(website = website, extension = extension)
+  newData <- rbind(subsData, addData)
+  subsData <- newData
+  
+}
+
+subsData$Bedrag <- gsub(pattern = "€", replacement = "", x = subsData$Bedrag)
+subsData$Bedrag <- gsub(pattern = "\\.", replacement = "", x = subsData$Bedrag)
+subsData$Bedrag <- gsub(pattern = ",", replacement = ".", x = subsData$Bedrag)
+subsData$Bedrag <- as.numeric(subsData$Bedrag)
+
+str(subsData)
+summary(subsData)
+
+write.csv(subsData, "sessie 2/subs_data.csv")

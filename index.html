@@ -230,7 +230,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R-Workshop</h1>
 <h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
-<h4 class="date"><em>13 August, 2016</em></h4>
+<h4 class="date"><em>16 August, 2016</em></h4>
 
 </div>
 
@@ -251,12 +251,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Aug 13 09:21:34 2016 -->
+<!-- Tue Aug 16 10:34:05 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID791f48066e3e () {
+function gvisDataMapID8485188635dc () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -272,8 +272,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID791f48066e3e() {
-var data = gvisDataMapID791f48066e3e();
+function drawChartMapID8485188635dc() {
+var data = gvisDataMapID8485188635dc();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -282,7 +282,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID791f48066e3e')
+    document.getElementById('MapID8485188635dc')
     );
     chart.draw(data,options);
     
@@ -306,9 +306,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID791f48066e3e);
+callbacks.push(drawChartMapID8485188635dc);
 })();
-function displayChartMapID791f48066e3e() {
+function displayChartMapID8485188635dc() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -331,9 +331,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID791f48066e3e"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID8485188635dc"></script>
 <!-- divChart -->
-<div id="MapID791f48066e3e" style="width: 100; height: 300;">
+<div id="MapID8485188635dc" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -405,15 +405,15 @@ c</code></pre>
 Plaats &lt;- c(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)
 class(Plaats)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>Geslacht &lt;- c(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;)
+<pre class="r"><code>Geslacht &lt;- c(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;, &quot;Transgender&quot;)
 class(Geslacht)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>Geslacht &lt;- factor(Geslacht, levels = c(&quot;Transgender&quot;, &quot;Man&quot;, &quot;Vrouw&quot;))
+<pre class="r"><code>Geslacht &lt;- as.factor(Geslacht)
 class(Geslacht)</code></pre>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
 <pre class="r"><code>Geslacht</code></pre>
-<pre><code>## [1] Man   Man   Vrouw
-## Levels: Transgender Man Vrouw</code></pre>
+<pre><code>## [1] Man         Man         Vrouw       Transgender
+## Levels: Man Transgender Vrouw</code></pre>
 <p>Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> de naam <code>Plaats</code> geven, dan heeft het element <code>Plaats[2]</code> de waarde <code>&quot;London&quot;</code>.</p>
 <pre class="r"><code>## Vectorindices
 Plaats[2]</code></pre>
@@ -468,7 +468,7 @@ sum(values2)</code></pre>
 </div>
 <div id="naslagwerken" class="section level2">
 <h2>Naslagwerken</h2>
-<p>Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden.</p>
+<p>Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de <em>Cheatsheets</em> onder het helpmenu.</p>
 <p>Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:</p>
 <ul>
 <li><p><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</a></p></li>
@@ -634,7 +634,7 @@ stockDF &lt;- tables[1][[1]]</code></pre>
 <div id="muteren" class="section level2">
 <h2>Muteren</h2>
 <p>Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld <code>werkSessie2.R</code>). Verwijs in RStudio naar deze werkfolder door te klikken op <em>Session &gt;&gt; Set Working Directory &gt;&gt; To Source File Location</em></p>
-<p>We gaan met functies werken uit de <code>dplyr</code> en <code>tidyr</code> packages.</p>
+<p>We gaan met functies werken uit de <code>dplyr</code> en <code>tidyr</code> packages. Een uitgebreid overzicht van de functies van <code>dplyr</code> vind je <a href="https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">hier</a>.</p>
 <pre class="r"><code>library(dplyr)
 library(tidyr)</code></pre>
 <p>Met de volgende code kun je een online csv bestand direct inlezen in R en met de <code>dplyr::glimpse()</code> functie de data bekijken. De oorspronkelijke data komt van de <a href="http://opendata.alphenaandenrijn.nl/">Gemeente Alphen aan de Rijn</a>.</p>
@@ -704,6 +704,12 @@ head(openDF2014)</code></pre>
 </div>
 <div id="vragenset-2b" class="section level3">
 <h3>Vragenset 2B</h3>
+<ol style="list-style-type: decimal">
+<li><p>Maak een subset van de data waarin alleen de bomen staan die in 2014 in de Horstenbuurt aangemerkt werden om gerooid te worden.</p></li>
+<li><p>Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?</p></li>
+<li><p>Maak een subset van alle bomen die sinds 2010 geinspecteerd zijn.</p></li>
+<li><p>Zoek op een internet een dataset en experimenteer met de de vaardigheden die je tot nu toe hebt ontwikkeld. (TIP: <a href="https://opendatanederland.org/" class="uri">https://opendatanederland.org/</a>)</p></li>
+</ol>
 </div>
 </div>
 <div id="analyseren" class="section level2">
