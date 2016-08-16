@@ -423,7 +423,6 @@ De data die we gebruiken, komt uit een Google Spreadsheet.
 ## Lees data uit Google Spreadsheet
 url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
 surveyData <- gsheet2tbl(url)
-glimpse(surveyData[1:6])
 ```
 
 Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
