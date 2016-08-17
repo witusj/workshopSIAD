@@ -499,7 +499,7 @@ R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kun
 ![](images/knit.png)
 
 <br>
-In het bovenste gedeelte van het her *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Als je meer wilt weten over YAML en de RMarkdown zoek dan online op de termen *YAML* en *RMarkdown*. Voor RMarkdown vind je onder het helpmenu avn RStudio ook een *Cheatsheet* en een handleiding.
+In het bovenste gedeelte van het her *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Als je meer wilt weten over YAML en de RMarkdown zoek dan online op de termen *YAML* en *RMarkdown*. Voor RMarkdown vind je onder het helpmenu van RStudio ook een *Cheatsheet* en een handleiding.
 
 <pre>---
 title: "Rapportage Q1 2016"

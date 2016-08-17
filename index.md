@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 15:27:04 2016 -->
+<!-- Wed Aug 17 17:34:42 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDcc9a1b172400 () {
+function gvisDataMapIDce805152b592 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDcc9a1b172400() {
-var data = gvisDataMapIDcc9a1b172400();
+function drawChartMapIDce805152b592() {
+var data = gvisDataMapIDce805152b592();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDcc9a1b172400')
+    document.getElementById('MapIDce805152b592')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDcc9a1b172400);
+callbacks.push(drawChartMapIDce805152b592);
 })();
-function displayChartMapIDcc9a1b172400() {
+function displayChartMapIDce805152b592() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDcc9a1b172400"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDce805152b592"></script>
  
 <!-- divChart -->
   
-<div id="MapIDcc9a1b172400" 
+<div id="MapIDce805152b592" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -823,14 +823,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 15:27:05 2016 -->
+<!-- Wed Aug 17 17:34:42 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDcc9a6d06eeed () {
+function gvisDataBubbleChartIDce8016a316b3 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1192,8 +1192,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDcc9a6d06eeed() {
-var data = gvisDataBubbleChartIDcc9a6d06eeed();
+function drawChartBubbleChartIDce8016a316b3() {
+var data = gvisDataBubbleChartIDce8016a316b3();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1201,7 +1201,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDcc9a6d06eeed')
+    document.getElementById('BubbleChartIDce8016a316b3')
     );
     chart.draw(data,options);
     
@@ -1225,9 +1225,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDcc9a6d06eeed);
+callbacks.push(drawChartBubbleChartIDce8016a316b3);
 })();
-function displayChartBubbleChartIDcc9a6d06eeed() {
+function displayChartBubbleChartIDce8016a316b3() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1251,11 +1251,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDcc9a6d06eeed"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDce8016a316b3"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDcc9a6d06eeed" 
+<div id="BubbleChartIDce8016a316b3" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1317,7 +1317,7 @@ R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kun
 ![](images/knit.png)
 
 <br>
-In het bovenste gedeelte van het her *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Als je meer wilt weten over YAML en de RMarkdown zoek dan online op de termen *YAML* en *RMarkdown*. Voor RMarkdown vind je onder het helpmenu avn RStudio ook een *Cheatsheet* en een handleiding.
+In het bovenste gedeelte van het her *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Als je meer wilt weten over YAML en de RMarkdown zoek dan online op de termen *YAML* en *RMarkdown*. Voor RMarkdown vind je onder het helpmenu van RStudio ook een *Cheatsheet* en een handleiding.
 
 <pre>---
 title: "Rapportage Q1 2016"
