@@ -318,6 +318,7 @@ We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van
 
 ```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
+library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
@@ -380,7 +381,7 @@ cat(plaatsenVec, sep = ", ")
 
 We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot accepteert als input alleen een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
 ## Barplot van aantal inspecties per woonplaats per jaar
 barplot(inspecTab,
         xlab = "Jaar",
@@ -452,7 +453,7 @@ plot(survChart)
 
 4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
 
-Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
 
 We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
 

@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 17:38:47 2016 -->
+<!-- Wed Aug 17 19:41:54 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDcf2d4c1b1709 () {
+function gvisDataMapIDd0a03a60aecc () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDcf2d4c1b1709() {
-var data = gvisDataMapIDcf2d4c1b1709();
+function drawChartMapIDd0a03a60aecc() {
+var data = gvisDataMapIDd0a03a60aecc();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDcf2d4c1b1709')
+    document.getElementById('MapIDd0a03a60aecc')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDcf2d4c1b1709);
+callbacks.push(drawChartMapIDd0a03a60aecc);
 })();
-function displayChartMapIDcf2d4c1b1709() {
+function displayChartMapIDd0a03a60aecc() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDcf2d4c1b1709"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd0a03a60aecc"></script>
  
 <!-- divChart -->
   
-<div id="MapIDcf2d4c1b1709" 
+<div id="MapIDd0a03a60aecc" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -578,6 +578,7 @@ We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van
 
 ```r
 library(dplyr)
+library(tidyr)
 ```
 
 Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
@@ -823,14 +824,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 17:38:47 2016 -->
+<!-- Wed Aug 17 19:41:55 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDcf2d67d2c35a () {
+function gvisDataBubbleChartIDd0a02bf793c () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1192,8 +1193,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDcf2d67d2c35a() {
-var data = gvisDataBubbleChartIDcf2d67d2c35a();
+function drawChartBubbleChartIDd0a02bf793c() {
+var data = gvisDataBubbleChartIDd0a02bf793c();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1201,7 +1202,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDcf2d67d2c35a')
+    document.getElementById('BubbleChartIDd0a02bf793c')
     );
     chart.draw(data,options);
     
@@ -1225,9 +1226,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDcf2d67d2c35a);
+callbacks.push(drawChartBubbleChartIDd0a02bf793c);
 })();
-function displayChartBubbleChartIDcf2d67d2c35a() {
+function displayChartBubbleChartIDd0a02bf793c() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1251,11 +1252,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDcf2d67d2c35a"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd0a02bf793c"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDcf2d67d2c35a" 
+<div id="BubbleChartIDd0a02bf793c" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1268,7 +1269,7 @@ callbacks.shift()();
 
 4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
 
-Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
 
 We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
 
