@@ -105,3 +105,7 @@ str(subsData)
 summary(subsData)
 
 write.csv(subsData, "sessie 2/subs_data.csv")
+
+###########################
+## Spreiding Survey Data ##
+###########################

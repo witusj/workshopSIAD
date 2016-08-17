@@ -1,4 +1,5 @@
 library(gsheet)
+## Bouw Google Bubble Chart
 
 url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
 surveyData <- gsheet2tbl(url)
@@ -16,6 +17,7 @@ survChart <- gvisBubbleChart(surveyData,
                              )
 plot(survChart)
 
+## Bouw Google Bubble Chart 1
 survChart1 <- gvisBubbleChart(surveyData,
                              idvar = "Naam",
                              xvar = "Waarschijnlijkheid.1",

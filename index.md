@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 21:58:59 2016 -->
+<!-- Wed Aug 17 11:04:30 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDa3c7742348b3 () {
+function gvisDataMapIDb7f7407316c3 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDa3c7742348b3() {
-var data = gvisDataMapIDa3c7742348b3();
+function drawChartMapIDb7f7407316c3() {
+var data = gvisDataMapIDb7f7407316c3();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDa3c7742348b3')
+    document.getElementById('MapIDb7f7407316c3')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDa3c7742348b3);
+callbacks.push(drawChartMapIDb7f7407316c3);
 })();
-function displayChartMapIDa3c7742348b3() {
+function displayChartMapIDb7f7407316c3() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDa3c7742348b3"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDb7f7407316c3"></script>
  
 <!-- divChart -->
   
-<div id="MapIDa3c7742348b3" 
+<div id="MapIDb7f7407316c3" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -800,7 +800,7 @@ De data die we gebruiken, komt uit een Google Spreadsheet.
 ```r
 ## Lees data uit Google Spreadsheet
 url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
-surveyData <- gsheet2tbl(url)
+surveyDF <- gsheet2tbl(url)
 ```
 
 Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
@@ -808,7 +808,7 @@ Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om
 
 ```r
 ## Bouw Google Bubble Chart
-survChart <- gvisBubbleChart(surveyData,
+survChart <- gvisBubbleChart(surveyDF,
                              idvar = "Naam",
                              xvar = "Waarschijnlijkheid",
                              yvar = "Gevolg",
@@ -823,14 +823,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 16 21:59:00 2016 -->
+<!-- Wed Aug 17 11:04:34 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDa3c72a888754 () {
+function gvisDataBubbleChartIDb7f72e7263b4 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1192,8 +1192,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDa3c72a888754() {
-var data = gvisDataBubbleChartIDa3c72a888754();
+function drawChartBubbleChartIDb7f72e7263b4() {
+var data = gvisDataBubbleChartIDb7f72e7263b4();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1201,7 +1201,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDa3c72a888754')
+    document.getElementById('BubbleChartIDb7f72e7263b4')
     );
     chart.draw(data,options);
     
@@ -1225,9 +1225,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDa3c72a888754);
+callbacks.push(drawChartBubbleChartIDb7f72e7263b4);
 })();
-function displayChartBubbleChartIDa3c72a888754() {
+function displayChartBubbleChartIDb7f72e7263b4() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1251,27 +1251,36 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDa3c72a888754"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDb7f72e7263b4"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDa3c72a888754" 
+<div id="BubbleChartIDb7f72e7263b4" 
   style="width: 700; height: 700;">
 </div>
 
 ### Vragenset 3A
-1. Wat voor een structuur heeft `survData`?
+1. Wat voor een structuur heeft `survDF`?
 
 2. Om wat voor een soort data gaat het?
 
 3. Maak een nieuwe bubble chart met de variabelen die op ".1" eindigen.
 
+4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
+
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit bestand bewaard.
+
+
+
 
 `plotly` en `leaflet`
 
 ## Presenteren.
-*markdown* en *RPubs*
+\*markdown* en *RPubs*
+<br>
 
-
+<pre>```{r}
+c(1,2,3)
+```</pre>
 
 ---
