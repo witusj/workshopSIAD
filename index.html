@@ -255,12 +255,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:44:34 2016 -->
+<!-- Wed Aug 17 11:56:01 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDc04542169faf () {
+function gvisDataMapIDc1b0524a66c9 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -276,8 +276,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDc04542169faf() {
-var data = gvisDataMapIDc04542169faf();
+function drawChartMapIDc1b0524a66c9() {
+var data = gvisDataMapIDc1b0524a66c9();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -286,7 +286,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDc04542169faf')
+    document.getElementById('MapIDc1b0524a66c9')
     );
     chart.draw(data,options);
     
@@ -310,9 +310,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDc04542169faf);
+callbacks.push(drawChartMapIDc1b0524a66c9);
 })();
-function displayChartMapIDc04542169faf() {
+function displayChartMapIDc1b0524a66c9() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -335,9 +335,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDc04542169faf"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDc1b0524a66c9"></script>
 <!-- divChart -->
-<div id="MapIDc04542169faf" style="width: 100; height: 300;">
+<div id="MapIDc1b0524a66c9" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
@@ -822,12 +822,12 @@ survChart &lt;- gvisBubbleChart(surveyDF,
                              )
 plot(survChart)</code></pre>
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:44:34 2016 -->
+<!-- Wed Aug 17 11:56:02 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDc04566000ce3 () {
+function gvisDataBubbleChartIDc1b0316bea41 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1189,8 +1189,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDc04566000ce3() {
-var data = gvisDataBubbleChartIDc04566000ce3();
+function drawChartBubbleChartIDc1b0316bea41() {
+var data = gvisDataBubbleChartIDc1b0316bea41();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1198,7 +1198,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDc04566000ce3')
+    document.getElementById('BubbleChartIDc1b0316bea41')
     );
     chart.draw(data,options);
     
@@ -1222,9 +1222,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDc04566000ce3);
+callbacks.push(drawChartBubbleChartIDc1b0316bea41);
 })();
-function displayChartBubbleChartIDc04566000ce3() {
+function displayChartBubbleChartIDc1b0316bea41() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1247,9 +1247,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDc04566000ce3"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDc1b0316bea41"></script>
 <!-- divChart -->
-<div id="BubbleChartIDc04566000ce3" style="width: 700; height: 700;">
+<div id="BubbleChartIDc1b0316bea41" style="width: 700; height: 700;">
 
 </div>
 <div id="vragenset-3a" class="section level3">
@@ -1261,6 +1261,7 @@ callbacks.shift()();
 <li><p>Wat valt je op als je de twee bubble charts met elkaar vergelijkt?</p></li>
 </ol>
 <p>Zoals je wellicht al is opgevallen, bevat <code>survDF</code> 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv">bestand</a> bewaard.</p>
+<p>We gebruiken nu de package <code>plotly</code>. Voor het gebruik en voorbeelden zie <a href="https://plot.ly/r/">hier</a>.</p>
 <pre class="r"><code>## Laad packages
 library(plotly)
 
@@ -1280,6 +1281,14 @@ p &lt;- plot_ly(
 p</code></pre>
 <div id="htmlwidget-7734" style="width:672px;height:480px;" class="plotly html-widget"></div>
 <script type="application/json" data-for="htmlwidget-7734">{"x":{"data":[{"type":"scatter","inherit":false,"x":[3.5,4.5,3.6,3.4,3.3,3.1,3.5],"y":[3.9,4.1,3.7,3.7,3.5,3.8,3.6],"text":["W&R<br>Spreiding (size): 1.331","ICT<br>Spreiding (size): 0.729","HR<br>Spreiding (size): 1","Toetreders<br>Spreiding (size): 2.197","Rente<br>Spreiding (size): 2.197","Verdienmodel<br>Spreiding (size): 1.728","Vermogenverschaffers<br>Spreiding (size): 1.728"],"mode":"text+markers","cmin":0,"cmax":1,"size":[1.331,0.729,1,2.197,2.197,1.728,1.728],"marker":{"colorbar":{"title":"Perc.Kans"},"colorscale":[[0,"#FF0000"],[0.111111111111111,"#FF6700"],[0.222222222222222,"#FF9A00"],[0.333333333333333,"#FFC26C"],[0.444444444444444,"#FFEACE"],[0.555555555555556,"#EDF6F9"],[0.666666666666667,"#C9E5EE"],[0.777777777777778,"#A3D0E9"],[0.888888888888889,"#76AFF5"],[1,"#1E90FF"]],"color":[22,74,69,21,55,69,22],"size":[6587.90100824931,3608.24931255729,4949.58753437214,10874.2438130156,10874.2438130156,8552.88725939505,8552.88725939505],"sizemode":"area"}}],"layout":{"xaxis":{"title":"Waarschijnlijkheid"},"yaxis":{"title":"Gevolgen"},"hovermode":"closest","margin":{"b":40,"l":60,"t":25,"r":10}},"url":null,"width":null,"height":null,"source":"A","config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="vragenset-3b" class="section level3">
+<h3>Vragenset 3B</h3>
+<ol style="list-style-type: decimal">
+<li><p>Wat voor een structuur heeft <code>meanvarDF</code>?</p></li>
+<li><p>Analyseer de chart en beschrijf wat je opvalt.</p></li>
+<li><p>Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.</p></li>
+</ol>
 </div>
 </div>
 <div id="presenteren." class="section level2">

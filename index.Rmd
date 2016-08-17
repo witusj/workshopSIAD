@@ -454,6 +454,8 @@ plot(survChart)
 
 Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv) bewaard.
 
+We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
+
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
 meanvarDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv", stringsAsFactors = TRUE)
 ```
@@ -478,7 +480,12 @@ p <- plot_ly(
 p
 ```
 
+### Vragenset 3B
+1. Wat voor een structuur heeft `meanvarDF`?
 
+2. Analyseer de chart en beschrijf wat je opvalt.
+
+3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
 
 ## Presenteren.
 \*markdown* en *RPubs*
