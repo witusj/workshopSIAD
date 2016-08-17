@@ -515,7 +515,6 @@ Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
 </pre>
 <pre>```{r, message=FALSE, warning=FALSE}
 
-
 library(knitr)
 library(dplyr)
 

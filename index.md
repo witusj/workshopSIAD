@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 19:51:30 2016 -->
+<!-- Wed Aug 17 19:54:57 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDd2036a095e48 () {
+function gvisDataMapIDd2886104255b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDd2036a095e48() {
-var data = gvisDataMapIDd2036a095e48();
+function drawChartMapIDd2886104255b() {
+var data = gvisDataMapIDd2886104255b();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDd2036a095e48')
+    document.getElementById('MapIDd2886104255b')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDd2036a095e48);
+callbacks.push(drawChartMapIDd2886104255b);
 })();
-function displayChartMapIDd2036a095e48() {
+function displayChartMapIDd2886104255b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd2036a095e48"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd2886104255b"></script>
  
 <!-- divChart -->
   
-<div id="MapIDd2036a095e48" 
+<div id="MapIDd2886104255b" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -824,14 +824,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 19:51:31 2016 -->
+<!-- Wed Aug 17 19:54:57 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDd2034f880d85 () {
+function gvisDataBubbleChartIDd2882da58d97 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1193,8 +1193,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDd2034f880d85() {
-var data = gvisDataBubbleChartIDd2034f880d85();
+function drawChartBubbleChartIDd2882da58d97() {
+var data = gvisDataBubbleChartIDd2882da58d97();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1202,7 +1202,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDd2034f880d85')
+    document.getElementById('BubbleChartIDd2882da58d97')
     );
     chart.draw(data,options);
     
@@ -1226,9 +1226,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDd2034f880d85);
+callbacks.push(drawChartBubbleChartIDd2882da58d97);
 })();
-function displayChartBubbleChartIDd2034f880d85() {
+function displayChartBubbleChartIDd2882da58d97() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1252,11 +1252,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd2034f880d85"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd2882da58d97"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDd2034f880d85" 
+<div id="BubbleChartIDd2882da58d97" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1332,7 +1332,6 @@ output:
 Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
 </pre>
 <pre>```{r, message=FALSE, warning=FALSE}
-
 
 library(knitr)
 library(dplyr)
