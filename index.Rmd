@@ -473,12 +473,7 @@ p <- plot_ly(
   mode = "text+markers",
   cmin = 0,
   cmax = 1,
-  colors = c("red", "orange", "white", "light blue" , "dodgerblue"),
-  textfont = list(
-    family = "'Century Gothic'",
-    size = 14,
-    color = toRGB("black")
-  )
+  colors = c("red", "orange", "white", "light blue" , "dodgerblue")
 )
 p
 ```
