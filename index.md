@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:56:01 2016 -->
+<!-- Wed Aug 17 15:27:04 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDc1b0524a66c9 () {
+function gvisDataMapIDcc9a1b172400 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDc1b0524a66c9() {
-var data = gvisDataMapIDc1b0524a66c9();
+function drawChartMapIDcc9a1b172400() {
+var data = gvisDataMapIDcc9a1b172400();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDc1b0524a66c9')
+    document.getElementById('MapIDcc9a1b172400')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDc1b0524a66c9);
+callbacks.push(drawChartMapIDcc9a1b172400);
 })();
-function displayChartMapIDc1b0524a66c9() {
+function displayChartMapIDcc9a1b172400() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDc1b0524a66c9"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDcc9a1b172400"></script>
  
 <!-- divChart -->
   
-<div id="MapIDc1b0524a66c9" 
+<div id="MapIDcc9a1b172400" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -135,7 +135,7 @@ Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
 
 
 ```r
-install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "leaflet"))
+install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "knitr"))
 ```
 
 plak het in de console en druk op *Enter*.
@@ -153,7 +153,7 @@ In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
 
 Meestal zul je eerst je code in een script schrijven (of kopiëren uit voorbeelden) en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren en later dus kunt hergebruiken.
 
-Maak een nieuw R Script aan in RStudio via het icoontje met het groene plusje:
+Maak een nieuw R Script aan in RStudio via het icoontje met het 'groene plusje':
 
 ![<br>of _File >> New File >> R Script_](images/newfile.png)
 
@@ -823,14 +823,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:56:02 2016 -->
+<!-- Wed Aug 17 15:27:05 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDc1b0316bea41 () {
+function gvisDataBubbleChartIDcc9a6d06eeed () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1192,8 +1192,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDc1b0316bea41() {
-var data = gvisDataBubbleChartIDc1b0316bea41();
+function drawChartBubbleChartIDcc9a6d06eeed() {
+var data = gvisDataBubbleChartIDcc9a6d06eeed();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1201,7 +1201,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDc1b0316bea41')
+    document.getElementById('BubbleChartIDcc9a6d06eeed')
     );
     chart.draw(data,options);
     
@@ -1225,9 +1225,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDc1b0316bea41);
+callbacks.push(drawChartBubbleChartIDcc9a6d06eeed);
 })();
-function displayChartBubbleChartIDc1b0316bea41() {
+function displayChartBubbleChartIDcc9a6d06eeed() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1251,11 +1251,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDc1b0316bea41"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDcc9a6d06eeed"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDc1b0316bea41" 
+<div id="BubbleChartIDcc9a6d06eeed" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1268,7 +1268,7 @@ callbacks.shift()();
 
 4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
 
-Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv) bewaard.
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
 
 We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
 
@@ -1306,11 +1306,63 @@ p
 3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
 
 ## Presenteren.
-\*markdown* en *RPubs*
+Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R kun je heel gemakkelijk rapportages in verschillende formats (HTML, pdf of Word) creëren, waarin je tekst, code, tabellen en grafieken integreerd. Hiervoor open je een RMarkdown script.
+
+![](images/rmarkd.png)
+
+Geef je document een titel en kies wat voor een soort document je wilt maken. In dit voorbeeld gaan we een webpagina bouwen en kiezen dus voor HTML.
+
+R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kunt. Als je wilt testen hoe het document er uit gaat zien, klik je op *Knit HTML*.
+
+![](images/knit.png)
+
 <br>
+In het bovenste gedeelte van het her *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Als je meer wilt weten over YAML en de RMarkdown zoek dan online op de termen *YAML* en *RMarkdown*. Voor RMarkdown vind je onder het helpmenu avn RStudio ook een *Cheatsheet* en een handleiding.
 
-<pre>```{r}
-c(1,2,3)
-```</pre>
-
+<pre>---
+title: "Rapportage Q1 2016"
+author: "Nomen Nescio"
+date: "17-08-1016"
+output:
+ html_document:
+   toc: yes
 ---
+Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
+</pre>
+<pre>```{r, message=FALSE, warning=FALSE}
+
+
+library(knitr)
+library(dplyr)
+
+subsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv", stringsAsFactors = TRUE)
+glimpse(subsDF)
+
+## Tabel waarde subsidies per jaar per categorie
+subsTable <- xtabs(Bedrag ~ Categorie + Jaar, subsDF)
+subsDF <- as.data.frame.matrix(subsTable)
+subsDF <- round(subsDF, 0)
+kable(subsDF, caption = "Tabel 1. Waarde subsidies per jaar per categorie")
+
+## Staafdiagram
+barplot(subsTable,
+        main="Subsidiebedragen per categorie",
+        xlab="Jaar",
+        ylab="Bedrag",
+        col=rainbow(5)
+)
+
+legend("topright",
+       legend = dimnames(subsTable)$Categorie,
+       fill=rainbow(5)
+)
+```
+</pre>
+
+
+
+Als het document volledig naar wens is, kun je het snel publiceren op internet via [Rpubs](http://rpubs.com/). Klik hiervoor op het 'blauwe oogje'.
+
+![](images/rpubs.png)
+
+en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail.
