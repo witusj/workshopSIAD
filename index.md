@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 19:41:54 2016 -->
+<!-- Wed Aug 17 19:49:00 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDd0a03a60aecc () {
+function gvisDataMapIDd170153b1eb3 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDd0a03a60aecc() {
-var data = gvisDataMapIDd0a03a60aecc();
+function drawChartMapIDd170153b1eb3() {
+var data = gvisDataMapIDd170153b1eb3();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDd0a03a60aecc')
+    document.getElementById('MapIDd170153b1eb3')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDd0a03a60aecc);
+callbacks.push(drawChartMapIDd170153b1eb3);
 })();
-function displayChartMapIDd0a03a60aecc() {
+function displayChartMapIDd170153b1eb3() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd0a03a60aecc"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd170153b1eb3"></script>
  
 <!-- divChart -->
   
-<div id="MapIDd0a03a60aecc" 
+<div id="MapIDd170153b1eb3" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -824,14 +824,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 19:41:55 2016 -->
+<!-- Wed Aug 17 19:49:00 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDd0a02bf793c () {
+function gvisDataBubbleChartIDd170ce1cc0d () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1193,8 +1193,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDd0a02bf793c() {
-var data = gvisDataBubbleChartIDd0a02bf793c();
+function drawChartBubbleChartIDd170ce1cc0d() {
+var data = gvisDataBubbleChartIDd170ce1cc0d();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1202,7 +1202,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDd0a02bf793c')
+    document.getElementById('BubbleChartIDd170ce1cc0d')
     );
     chart.draw(data,options);
     
@@ -1226,9 +1226,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDd0a02bf793c);
+callbacks.push(drawChartBubbleChartIDd170ce1cc0d);
 })();
-function displayChartBubbleChartIDd0a02bf793c() {
+function displayChartBubbleChartIDd170ce1cc0d() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1252,11 +1252,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd0a02bf793c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd170ce1cc0d"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDd0a02bf793c" 
+<div id="BubbleChartIDd170ce1cc0d" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1311,6 +1311,7 @@ Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R
 
 ![](images/rmarkd.png)
 
+<br>
 Geef je document een titel en kies wat voor een soort document je wilt maken. In dit voorbeeld gaan we een webpagina bouwen en kiezen dus voor HTML.
 
 R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kunt. Als je wilt testen hoe het document er uit gaat zien, klik je op *Knit HTML*.
@@ -1366,4 +1367,5 @@ Als het document volledig naar wens is, kun je het snel publiceren op internet v
 
 ![](images/rpubs.png)
 
-en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail.
+<br>
+en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail. LET OP: de informatie op RPubs is niet afgeschermd en zichtbaar voor iedereen die het webadres heeft.

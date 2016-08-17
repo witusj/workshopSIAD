@@ -493,6 +493,7 @@ Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R
 
 ![](images/rmarkd.png)
 
+<br>
 Geef je document een titel en kies wat voor een soort document je wilt maken. In dit voorbeeld gaan we een webpagina bouwen en kiezen dus voor HTML.
 
 R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kunt. Als je wilt testen hoe het document er uit gaat zien, klik je op *Knit HTML*.
@@ -548,4 +549,5 @@ Als het document volledig naar wens is, kun je het snel publiceren op internet v
 
 ![](images/rpubs.png)
 
-en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail.
+<br>
+en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail. LET OP: de informatie op RPubs is niet afgeschermd en zichtbaar voor iedereen die het webadres heeft.
