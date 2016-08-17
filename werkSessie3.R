@@ -30,3 +30,25 @@ survChart1 <- gvisBubbleChart(surveyData,
                              )
 )
 plot(survChart1)
+
+## Bouw Plotly Chart
+p <- plot_ly(
+  meanvarDF,
+  x = Waarschijnlijkheid,
+  y = Gevolgen,
+  mode = "markers+text",
+  color = Perc.Kans,
+  size = Spreiding,
+  text = Topic,
+  #text = paste0(Topic, "<br>", "Kans: ", Perc.Kans, "%"),
+  
+  cmin = 0,
+  cmax = 1,
+  colors = c("red", "orange", "white", "light blue" , "dodgerblue"),
+  textfont = list(
+    family = "'Cabin Sketch', cursive",
+    size = 20,
+    color = toRGB("black")
+  )
+)
+p

@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:04:30 2016 -->
+<!-- Wed Aug 17 11:41:57 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDb7f7407316c3 () {
+function gvisDataMapIDbe8a54680ed6 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDb7f7407316c3() {
-var data = gvisDataMapIDb7f7407316c3();
+function drawChartMapIDbe8a54680ed6() {
+var data = gvisDataMapIDbe8a54680ed6();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDb7f7407316c3')
+    document.getElementById('MapIDbe8a54680ed6')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDb7f7407316c3);
+callbacks.push(drawChartMapIDbe8a54680ed6);
 })();
-function displayChartMapIDb7f7407316c3() {
+function displayChartMapIDbe8a54680ed6() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDb7f7407316c3"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDbe8a54680ed6"></script>
  
 <!-- divChart -->
   
-<div id="MapIDb7f7407316c3" 
+<div id="MapIDbe8a54680ed6" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -823,14 +823,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Wed Aug 17 11:04:34 2016 -->
+<!-- Wed Aug 17 11:41:57 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDb7f72e7263b4 () {
+function gvisDataBubbleChartIDbe8a20a23cf0 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1192,8 +1192,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDb7f72e7263b4() {
-var data = gvisDataBubbleChartIDb7f72e7263b4();
+function drawChartBubbleChartIDbe8a20a23cf0() {
+var data = gvisDataBubbleChartIDbe8a20a23cf0();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1201,7 +1201,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDb7f72e7263b4')
+    document.getElementById('BubbleChartIDbe8a20a23cf0')
     );
     chart.draw(data,options);
     
@@ -1225,9 +1225,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDb7f72e7263b4);
+callbacks.push(drawChartBubbleChartIDbe8a20a23cf0);
 })();
-function displayChartBubbleChartIDb7f72e7263b4() {
+function displayChartBubbleChartIDbe8a20a23cf0() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1251,11 +1251,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDb7f72e7263b4"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDbe8a20a23cf0"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDb7f72e7263b4" 
+<div id="BubbleChartIDbe8a20a23cf0" 
   style="width: 700; height: 700;">
 </div>
 
@@ -1268,12 +1268,40 @@ callbacks.shift()();
 
 4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
 
-Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit bestand bewaard.
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercisitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv) bewaard.
 
 
 
 
-`plotly` en `leaflet`
+```r
+## Laad packages
+library(plotly)
+
+## Bouw Plotly Chart
+p <- plot_ly(
+  meanvarDF,
+  x = Waarschijnlijkheid,
+  y = Gevolgen,
+  color = Perc.Kans,
+  size = Spreiding,
+  text = Topic,
+  mode = "text+markers",
+  cmin = 0,
+  cmax = 1,
+  colors = c("red", "orange", "white", "light blue" , "dodgerblue"),
+  textfont = list(
+    family = "'Century Gothic'",
+    size = 14,
+    color = toRGB("black")
+  )
+)
+p
+```
+
+<!--html_preserve--><div id="htmlwidget-7734" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7734">{"x":{"data":[{"type":"scatter","inherit":false,"x":[3.5,4.5,3.6,3.4,3.3,3.1,3.5],"y":[3.9,4.1,3.7,3.7,3.5,3.8,3.6],"text":["W&R<br>Spreiding (size): 1.331","ICT<br>Spreiding (size): 0.729","HR<br>Spreiding (size): 1","Toetreders<br>Spreiding (size): 2.197","Rente<br>Spreiding (size): 2.197","Verdienmodel<br>Spreiding (size): 1.728","Vermogenverschaffers<br>Spreiding (size): 1.728"],"mode":"text+markers","cmin":0,"cmax":1,"textfont":{"family":"'Century Gothic'","size":14,"color":"rgba(0,0,0,1)"},"size":[1.331,0.729,1,2.197,2.197,1.728,1.728],"marker":{"colorbar":{"title":"Perc.Kans"},"colorscale":[[0,"#FF0000"],[0.111111111111111,"#FF6700"],[0.222222222222222,"#FF9A00"],[0.333333333333333,"#FFC26C"],[0.444444444444444,"#FFEACE"],[0.555555555555556,"#EDF6F9"],[0.666666666666667,"#C9E5EE"],[0.777777777777778,"#A3D0E9"],[0.888888888888889,"#76AFF5"],[1,"#1E90FF"]],"color":[22,74,69,21,55,69,22],"size":[6587.90100824931,3608.24931255729,4949.58753437214,10874.2438130156,10874.2438130156,8552.88725939505,8552.88725939505],"sizemode":"area"}}],"layout":{"xaxis":{"title":"Waarschijnlijkheid"},"yaxis":{"title":"Gevolgen"},"hovermode":"closest","margin":{"b":40,"l":60,"t":25,"r":10}},"url":null,"width":null,"height":null,"source":"A","config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+
+
 
 ## Presenteren.
 \*markdown* en *RPubs*

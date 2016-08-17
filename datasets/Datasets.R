@@ -109,3 +109,6 @@ write.csv(subsData, "sessie 2/subs_data.csv")
 ###########################
 ## Spreiding Survey Data ##
 ###########################
+
+### dfRisk komt uit de Survey app.R. Run deze eerst.
+write.csv(dfRisk, "sessie 3/mean_var.csv")
