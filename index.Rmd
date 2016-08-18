@@ -59,7 +59,7 @@ LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
 Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
 
 ```{r, eval=FALSE, echo=TRUE}
-install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "knitr"))
+install.packages(c("gsheet", "rvest", "dplyr", "tidyr", "googleVis", "plotly", "leaflet", "knitr"))
 ```
 
 plak het in de console en druk op *Enter*.

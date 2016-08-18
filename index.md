@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 16:57:17 2016 -->
+<!-- Thu Aug 18 19:21:46 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDd9f469ed425c () {
+function gvisDataMapIDdb4e4b45e01f () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDd9f469ed425c() {
-var data = gvisDataMapIDd9f469ed425c();
+function drawChartMapIDdb4e4b45e01f() {
+var data = gvisDataMapIDdb4e4b45e01f();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDd9f469ed425c')
+    document.getElementById('MapIDdb4e4b45e01f')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDd9f469ed425c);
+callbacks.push(drawChartMapIDdb4e4b45e01f);
 })();
-function displayChartMapIDd9f469ed425c() {
+function displayChartMapIDdb4e4b45e01f() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +105,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDd9f469ed425c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDdb4e4b45e01f"></script>
  
 <!-- divChart -->
   
-<div id="MapIDd9f469ed425c" 
+<div id="MapIDdb4e4b45e01f" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -135,7 +135,7 @@ Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
 
 
 ```r
-install.packages(c("gsheet", "rvest", "dplyr", "googleVis", "plotly", "knitr"))
+install.packages(c("gsheet", "rvest", "dplyr", "tidyr", "googleVis", "plotly", "leaflet", "knitr"))
 ```
 
 plak het in de console en druk op *Enter*.
@@ -824,14 +824,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 16:57:17 2016 -->
+<!-- Thu Aug 18 19:21:46 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDd9f4130640e3 () {
+function gvisDataBubbleChartIDdb4e15131d5e () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1193,8 +1193,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDd9f4130640e3() {
-var data = gvisDataBubbleChartIDd9f4130640e3();
+function drawChartBubbleChartIDdb4e15131d5e() {
+var data = gvisDataBubbleChartIDdb4e15131d5e();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1202,7 +1202,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDd9f4130640e3')
+    document.getElementById('BubbleChartIDdb4e15131d5e')
     );
     chart.draw(data,options);
     
@@ -1226,9 +1226,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDd9f4130640e3);
+callbacks.push(drawChartBubbleChartIDdb4e15131d5e);
 })();
-function displayChartBubbleChartIDd9f4130640e3() {
+function displayChartBubbleChartIDdb4e15131d5e() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1252,11 +1252,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd9f4130640e3"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDdb4e15131d5e"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDd9f4130640e3" 
+<div id="BubbleChartIDdb4e15131d5e" 
   style="width: 700; height: 700;">
 </div>
 
