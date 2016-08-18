@@ -131,4 +131,4 @@ gpsData$speed <- as.numeric(gpsData$speed)/1000000
 
 gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
 
-write.csv(dfRisk, "sessie 3/gps_data.csv")
+write.csv(gpsData, "sessie 3/gps_data.csv")
