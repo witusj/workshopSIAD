@@ -112,3 +112,23 @@ write.csv(subsData, "sessie 2/subs_data.csv")
 
 ### dfRisk komt uit de Survey app.R. Run deze eerst.
 write.csv(dfRisk, "sessie 3/mean_var.csv")
+
+###########################
+## GPS Data ##
+###########################
+# Download a sheet
+url <- 'https://docs.google.com/spreadsheets/d/13t04EWh7DbIKy7DPRdaD5OD30PwP9AUJbER48LLdFl4'
+gpsData <- gsheet2tbl(url)
+
+gpsData$lat <- gsub(pattern = ".", replacement = "", gpsData$lat, fixed = TRUE)
+gpsData$lat <- as.numeric(gpsData$lat)/1000000
+
+gpsData$lon <- gsub(pattern = ".", replacement = "", gpsData$lon, fixed = TRUE)
+gpsData$lon <- as.numeric(gpsData$lon)/1000000
+
+gpsData$speed <- gsub(pattern = ".", replacement = "", gpsData$speed, fixed = TRUE)
+gpsData$speed <- as.numeric(gpsData$speed)/1000000
+
+gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
+
+write.csv(dfRisk, "sessie 3/gps_data.csv")

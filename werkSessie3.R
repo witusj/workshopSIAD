@@ -60,8 +60,9 @@ library(googleVis)
 
 
 # Download a sheet
-url <- 'https://docs.google.com/spreadsheets/d/13t04EWh7DbIKy7DPRdaD5OD30PwP9AUJbER48LLdFl4'
-gpsData <- gsheet2tbl(url)
+
+gpsData <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
+                    stringsAsFactors = TRUE)
 
 latCtr <- mean(gpsData$lat)
 lonCtr <- mean(gpsData$lon)
