@@ -133,10 +133,10 @@ gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
 
 write.csv(gpsData, "sessie 3/gps_data.csv")
 
-#######################
+###########################
 ## Evenementen Amsterdam ##
-#######################
+###########################
 
-eventData <- read.csv("http://open.datapunt.amsterdam.nl/Evenementen.csv")
+eventData <- read.csv("http://open.datapunt.amsterdam.nl/Evenementen.csv", sep = ";")
 write.csv(eventData, "sessie 3/event_data.csv")
 

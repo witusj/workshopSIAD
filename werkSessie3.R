@@ -53,7 +53,7 @@ p <- plot_ly(
 )
 p
 
-## Leaflet
+## Leaflet Mobiel
 library(leaflet)
 library(gsheet)
 library(googleVis)
@@ -72,10 +72,27 @@ gpsDF$coords <- paste0(gpsDF$lat, ":", gpsDF$lon)
 g <- gvisMap(gpsDF, locationvar = "coords", tipvar = "time", options = list())
 plot(g)
 
-m2 <- leaflet() %>%
+m1 <- leaflet() %>%
   addTiles() %>%
   setView(lonCtr, latCtr, 12) %>% # map location
   # add som circles:
   addCircles(color = "Red", lng=gpsDF$lon, lat=gpsDF$lat, 20)
-m2
+m1
 
+
+## Leaflet Events
+
+eventDF <- read.csv(file = "https://github.com/witusj/R-workshop/raw/gh-pages/Datasets/sessie%203/event_data.csv",
+                  stringsAsFactors = FALSE)
+
+eventDF$Latitude <- as.numeric(gsub(",", ".", eventDF$Latitude))
+eventDF$Longitude <- as.numeric(gsub(",", ".", eventDF$Longitude))
+
+latCtr <- mean(eventDF$Latitude)
+lonCtr <- mean(eventDF$Longitude)
+
+m2 <- leaflet() %>%
+  addTiles() %>%
+  setView(lonCtr, latCtr, 12) %>% # map location
+  addCircles(color = "Red", lng=eventDF$Longitude, lat=eventDF$Latitude, 20, popup = eventDF$Title)
+m2

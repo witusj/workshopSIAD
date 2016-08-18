@@ -488,7 +488,7 @@ p
 
 3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
 
-In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) opgehaald worden.
+In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) opgehaald worden. We gebruiken de [Leaflet](https://rstudio.github.io/leaflet/) package.
 
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
 gpsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
@@ -504,20 +504,20 @@ latCtr <- mean(gpsDF$lat)
 lonCtr <- mean(gpsDF$lon)
 
 ## Bouw de kaart en geef weer
-m <- leaflet() %>%
+m1 <- leaflet() %>%
   addTiles() %>%
   setView(lonCtr, latCtr, 12) %>% # map location
   # add som circles:
   addCircles(color = "Red", lng=gpsDF$lon, lat=gpsDF$lat, 20)
-m
+m1
 ```
 
-### Vragenset 3B
+### Vragenset 3C
 1. Welke data is door de mobiele telefoon verzameld en op welke momenten?
 
 2. Waarom zijn sommige punten verder van elkaar verwijderd dan andere?
 
-3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
+3. Gebruik deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/event_data.csv) om een nieuwe geografische kaart te bouwen en analyseer de informatie.
 
 ## Presenteren.
 Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R kun je heel gemakkelijk rapportages in verschillende formats (HTML, pdf of Word) creëren, waarin je tekst, code, tabellen en grafieken integreerd. Hiervoor open je een RMarkdown script.
