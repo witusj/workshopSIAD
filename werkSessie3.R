@@ -52,3 +52,31 @@ p <- plot_ly(
   )
 )
 p
+
+## Leaflet
+library(leaflet)
+library(gsheet)
+library(googleVis)
+
+
+# Download a sheet
+url <- 'https://docs.google.com/spreadsheets/d/13t04EWh7DbIKy7DPRdaD5OD30PwP9AUJbER48LLdFl4'
+gpsData <- gsheet2tbl(url)
+
+latCtr <- mean(gpsData$lat)
+lonCtr <- mean(gpsData$lon)
+
+gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
+
+g <- gvisMap(gpsData, locationvar = "coords", tipvar = "time", options = list())
+plot(g)
+
+pal <- colorNumeric(palette = colorspace::diverge_hsv(3), domain = c(min(gpsData$speed), max(gpsData$speed)))
+
+m2 <- leaflet() %>%
+  addTiles() %>%
+  setView(lonCtr, latCtr, 12) %>% # map location
+  # add som circles:
+  addCircles(color = pal(gpsData$speed), lng=gpsData$lon, lat=gpsData$lat, 20)
+m2
+
