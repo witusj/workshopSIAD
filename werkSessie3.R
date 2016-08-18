@@ -61,23 +61,21 @@ library(googleVis)
 
 # Download a sheet
 
-gpsData <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
+gpsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
                     stringsAsFactors = TRUE)
 
-latCtr <- mean(gpsData$lat)
-lonCtr <- mean(gpsData$lon)
+latCtr <- mean(gpsDF$lat)
+lonCtr <- mean(gpsDF$lon)
 
-gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
+gpsDF$coords <- paste0(gpsDF$lat, ":", gpsDF$lon)
 
-g <- gvisMap(gpsData, locationvar = "coords", tipvar = "time", options = list())
+g <- gvisMap(gpsDF, locationvar = "coords", tipvar = "time", options = list())
 plot(g)
-
-pal <- colorNumeric(palette = colorspace::diverge_hsv(3), domain = c(min(gpsData$speed), max(gpsData$speed)))
 
 m2 <- leaflet() %>%
   addTiles() %>%
   setView(lonCtr, latCtr, 12) %>% # map location
   # add som circles:
-  addCircles(color = pal(gpsData$speed), lng=gpsData$lon, lat=gpsData$lat, 20)
+  addCircles(color = "Red", lng=gpsDF$lon, lat=gpsDF$lat, 20)
 m2
 

@@ -117,7 +117,7 @@ write.csv(dfRisk, "sessie 3/mean_var.csv")
 ## GPS Data ##
 ###########################
 # Download a sheet
-url <- 'https://docs.google.com/spreadsheets/d/13t04EWh7DbIKy7DPRdaD5OD30PwP9AUJbER48LLdFl4'
+url <- 'https://docs.google.com/spreadsheets/d/1bspvOXiUfYOhw-AZOknyAeyK2aTN5-01BhSevoyyQg0'
 gpsData <- gsheet2tbl(url)
 
 gpsData$lat <- gsub(pattern = ".", replacement = "", gpsData$lat, fixed = TRUE)
@@ -132,3 +132,11 @@ gpsData$speed <- as.numeric(gpsData$speed)/1000000
 gpsData$coords <- paste0(gpsData$lat, ":", gpsData$lon)
 
 write.csv(gpsData, "sessie 3/gps_data.csv")
+
+#######################
+## Evenementen Amsterdam ##
+#######################
+
+eventData <- read.csv("http://open.datapunt.amsterdam.nl/Evenementen.csv")
+write.csv(eventData, "sessie 3/event_data.csv")
+
