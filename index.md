@@ -22,14 +22,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 19:21:46 2016 -->
+<!-- Sat Aug 20 11:35:42 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDdb4e4b45e01f () {
+function gvisDataMapID16cfd6e43de0a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +45,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDdb4e4b45e01f() {
-var data = gvisDataMapIDdb4e4b45e01f();
+function drawChartMapID16cfd6e43de0a() {
+var data = gvisDataMapID16cfd6e43de0a();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +55,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDdb4e4b45e01f')
+    document.getElementById('MapID16cfd6e43de0a')
     );
     chart.draw(data,options);
     
@@ -79,9 +79,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDdb4e4b45e01f);
+callbacks.push(drawChartMapID16cfd6e43de0a);
 })();
-function displayChartMapIDdb4e4b45e01f() {
+function displayChartMapID16cfd6e43de0a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,22 +105,20 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDdb4e4b45e01f"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID16cfd6e43de0a"></script>
  
 <!-- divChart -->
   
-<div id="MapIDdb4e4b45e01f" 
+<div id="MapID16cfd6e43de0a" 
   style="width: 100; height: 300;">
 </div>
 <br>
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ## Inschrijving
-Aanmelding geschiedt via dit <a href="https://goo.gl/forms/GGCpoQdm6d5Lkvvu1" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via wfth1969@gmail.com.
+Aanmelding geschiedt via dit <a href="https://drive.google.com/open?id=1rP6KIbqikbLQJ9hJRQQJMWnbCTgfhA0yJLa84JGklVQ" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via witek.tenhove@han.nl.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
-
-De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ## Voorbereiding
 Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/) voor R (je kunt ook iedere andere downloadsite gebruiken).
@@ -349,6 +347,7 @@ Locatie$Plaats[1]
 ```
 
 ### Vragenset Basis R
+De antwoorden kun je eventueel [hier](https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1) achterlaten en controleren.
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
@@ -824,14 +823,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 19:21:46 2016 -->
+<!-- Sat Aug 20 11:35:43 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDdb4e15131d5e () {
+function gvisDataBubbleChartID16cfd23978db1 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1193,8 +1192,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDdb4e15131d5e() {
-var data = gvisDataBubbleChartIDdb4e15131d5e();
+function drawChartBubbleChartID16cfd23978db1() {
+var data = gvisDataBubbleChartID16cfd23978db1();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1202,7 +1201,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDdb4e15131d5e')
+    document.getElementById('BubbleChartID16cfd23978db1')
     );
     chart.draw(data,options);
     
@@ -1226,9 +1225,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDdb4e15131d5e);
+callbacks.push(drawChartBubbleChartID16cfd23978db1);
 })();
-function displayChartBubbleChartIDdb4e15131d5e() {
+function displayChartBubbleChartID16cfd23978db1() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1252,11 +1251,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDdb4e15131d5e"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID16cfd23978db1"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDdb4e15131d5e" 
+<div id="BubbleChartID16cfd23978db1" 
   style="width: 700; height: 700;">
 </div>
 

@@ -7,7 +7,7 @@ output:
    code_folding: show
    keep_md: yes
    self_contained: no
-   theme: flatly
+   theme: cerulean
    toc: yes
    toc_float: yes
 ---
@@ -41,11 +41,9 @@ plot(M1)
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ## Inschrijving
-Aanmelding geschiedt via dit <a href="https://goo.gl/forms/GGCpoQdm6d5Lkvvu1" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via wfth1969@gmail.com.
+Aanmelding geschiedt via dit <a href="https://drive.google.com/open?id=1rP6KIbqikbLQJ9hJRQQJMWnbCTgfhA0yJLa84JGklVQ" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via witek.tenhove@han.nl.
 
 Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
-
-De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.
 
 ## Voorbereiding
 Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/) voor R (je kunt ook iedere andere downloadsite gebruiken).
@@ -172,6 +170,7 @@ Locatie$Plaats[1]
 ```
 
 ### Vragenset Basis R
+De antwoorden kun je eventueel [hier](https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1) achterlaten en controleren.
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 

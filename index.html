@@ -19,7 +19,7 @@
 <link href="index_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="index_files/tocify-1.9.1/jquery.tocify.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index_files/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="index_files/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -238,7 +238,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R-Workshop</h1>
 <h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
-<h4 class="date"><em>18 August, 2016</em></h4>
+<h4 class="date"><em>20 August, 2016</em></h4>
 
 </div>
 
@@ -259,12 +259,12 @@ div.tocify {
 </ul>
 <p>Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)</p>
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 19:21:46 2016 -->
+<!-- Sat Aug 20 11:35:42 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDdb4e4b45e01f () {
+function gvisDataMapID16cfd6e43de0a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -280,8 +280,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDdb4e4b45e01f() {
-var data = gvisDataMapIDdb4e4b45e01f();
+function drawChartMapID16cfd6e43de0a() {
+var data = gvisDataMapID16cfd6e43de0a();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -290,7 +290,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDdb4e4b45e01f')
+    document.getElementById('MapID16cfd6e43de0a')
     );
     chart.draw(data,options);
     
@@ -314,9 +314,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDdb4e4b45e01f);
+callbacks.push(drawChartMapID16cfd6e43de0a);
 })();
-function displayChartMapIDdb4e4b45e01f() {
+function displayChartMapID16cfd6e43de0a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -339,18 +339,17 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDdb4e4b45e01f"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID16cfd6e43de0a"></script>
 <!-- divChart -->
-<div id="MapIDdb4e4b45e01f" style="width: 100; height: 300;">
+<div id="MapID16cfd6e43de0a" style="width: 100; height: 300;">
 
 </div>
 <p><br> Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
 </div>
 <div id="inschrijving" class="section level2">
 <h2>Inschrijving</h2>
-<p>Aanmelding geschiedt via dit <a href="https://goo.gl/forms/GGCpoQdm6d5Lkvvu1" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a>.</p>
+<p>Aanmelding geschiedt via dit <a href="https://drive.google.com/open?id=1rP6KIbqikbLQJ9hJRQQJMWnbCTgfhA0yJLa84JGklVQ" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via <a href="mailto:witek.tenhove@han.nl">witek.tenhove@han.nl</a>.</p>
 <p>Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.</p>
-<p>De kosten van de workshop bedragen 30 EUR per persoon. Het bedrag zal tijdens de eerste sessie contant worden afgerekend met de instructeur.</p>
 </div>
 <div id="voorbereiding" class="section level2">
 <h2>Voorbereiding</h2>
@@ -462,6 +461,7 @@ Locatie$Land</code></pre>
 ## Levels: Amsterdam London Warszawa</code></pre>
 <div id="vragenset-basis-r" class="section level3">
 <h3>Vragenset Basis R</h3>
+<p>De antwoorden kun je eventueel <a href="https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1">hier</a> achterlaten en controleren.</p>
 <ol style="list-style-type: decimal">
 <li><p>Zoals je ziet hebben de variabelen <code>Plaats</code> en <code>Land</code> uit het voorbeeld door de omzetting naar een data frame de <code>class</code> <code>factor</code> gekregen. Hoe zet je de <code>class</code> van beide variabelen weer terug naar <code>character</code>?</p></li>
 <li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;)</code>?</p></li>
@@ -827,12 +827,12 @@ survChart &lt;- gvisBubbleChart(surveyDF,
                              )
 plot(survChart)</code></pre>
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Thu Aug 18 19:21:46 2016 -->
+<!-- Sat Aug 20 11:35:43 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDdb4e15131d5e () {
+function gvisDataBubbleChartID16cfd23978db1 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1194,8 +1194,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDdb4e15131d5e() {
-var data = gvisDataBubbleChartIDdb4e15131d5e();
+function drawChartBubbleChartID16cfd23978db1() {
+var data = gvisDataBubbleChartID16cfd23978db1();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1203,7 +1203,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDdb4e15131d5e')
+    document.getElementById('BubbleChartID16cfd23978db1')
     );
     chart.draw(data,options);
     
@@ -1227,9 +1227,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDdb4e15131d5e);
+callbacks.push(drawChartBubbleChartID16cfd23978db1);
 })();
-function displayChartBubbleChartIDdb4e15131d5e() {
+function displayChartBubbleChartID16cfd23978db1() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1252,9 +1252,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDdb4e15131d5e"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID16cfd23978db1"></script>
 <!-- divChart -->
-<div id="BubbleChartIDdb4e15131d5e" style="width: 700; height: 700;">
+<div id="BubbleChartID16cfd23978db1" style="width: 700; height: 700;">
 
 </div>
 <div id="vragenset-3a" class="section level3">
