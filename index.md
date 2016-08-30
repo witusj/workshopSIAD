@@ -12,6 +12,10 @@ Tijdens de workshop werk je met [R](https://www.r-project.org/). Deze software i
 
 Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
 
+## De instructeur
+
+[Witek ten Hove](https://nl.linkedin.com/in/witektenhove) is hoofddocent aan de Hogeschool van Arnhem en Nijmegen en voorzitter van de R-User Group in Nijmegen. Na zijn studie aan de Universiteit van Maastricht heeft hij bij verschillende multinationals gewerkt als business analist, beurshandelaar en commodity trader. Zijn specialisaties zijn onder andere data science en online / blended learning.
+
 ## Workshop sessies
 De workshop bestaat uit drie sessies:
 
@@ -22,14 +26,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sun Aug 21 14:58:07 2016 -->
+<!-- Tue Aug 30 15:57:24 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID806173cadafe () {
+function gvisDataMapID3960fc5b13 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -45,8 +49,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID806173cadafe() {
-var data = gvisDataMapID806173cadafe();
+function drawChartMapID3960fc5b13() {
+var data = gvisDataMapID3960fc5b13();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -55,7 +59,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID806173cadafe')
+    document.getElementById('MapID3960fc5b13')
     );
     chart.draw(data,options);
     
@@ -79,9 +83,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID806173cadafe);
+callbacks.push(drawChartMapID3960fc5b13);
 })();
-function displayChartMapID806173cadafe() {
+function displayChartMapID3960fc5b13() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -105,11 +109,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID806173cadafe"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3960fc5b13"></script>
  
 <!-- divChart -->
   
-<div id="MapID806173cadafe" 
+<div id="MapID3960fc5b13" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -825,14 +829,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sun Aug 21 14:58:07 2016 -->
+<!-- Tue Aug 30 15:57:24 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartID80615af71c59 () {
+function gvisDataBubbleChartID396072f38ce3 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1194,8 +1198,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartID80615af71c59() {
-var data = gvisDataBubbleChartID80615af71c59();
+function drawChartBubbleChartID396072f38ce3() {
+var data = gvisDataBubbleChartID396072f38ce3();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1203,7 +1207,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartID80615af71c59')
+    document.getElementById('BubbleChartID396072f38ce3')
     );
     chart.draw(data,options);
     
@@ -1227,9 +1231,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartID80615af71c59);
+callbacks.push(drawChartBubbleChartID396072f38ce3);
 })();
-function displayChartBubbleChartID80615af71c59() {
+function displayChartBubbleChartID396072f38ce3() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1253,11 +1257,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID80615af71c59"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID396072f38ce3"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartID80615af71c59" 
+<div id="BubbleChartID396072f38ce3" 
   style="width: 700; height: 700;">
 </div>
 
