@@ -26,14 +26,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 30 15:57:24 2016 -->
+<!-- Tue Aug 30 19:25:51 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID3960fc5b13 () {
+function gvisDataMapID72d83a126b29 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -49,8 +49,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID3960fc5b13() {
-var data = gvisDataMapID3960fc5b13();
+function drawChartMapID72d83a126b29() {
+var data = gvisDataMapID72d83a126b29();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -59,7 +59,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID3960fc5b13')
+    document.getElementById('MapID72d83a126b29')
     );
     chart.draw(data,options);
     
@@ -83,9 +83,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID3960fc5b13);
+callbacks.push(drawChartMapID72d83a126b29);
 })();
-function displayChartMapID3960fc5b13() {
+function displayChartMapID72d83a126b29() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -109,11 +109,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID3960fc5b13"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID72d83a126b29"></script>
  
 <!-- divChart -->
   
-<div id="MapID3960fc5b13" 
+<div id="MapID72d83a126b29" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -212,7 +212,7 @@ Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met e
 
 De belangrijkste datatypes (`classes`) binnen R zijn: *getallen*, *letters* en *factoren*. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
 
-Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` *letters* (`character`). De elementen uit de vector `("Man", "Man", "Vrouw")` kunnen van `class` *letters* zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van *factoren* met 3 levels: `Transgender`, `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` *letters* (`character`). De elementen uit de vector `("Man", "Man", "Vrouw", "Transgender")` kunnen van `class` *letters* zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van *factoren* met 3 levels: `Transgender`, `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
 
 
 ```r
@@ -829,14 +829,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Tue Aug 30 15:57:24 2016 -->
+<!-- Tue Aug 30 19:25:52 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartID396072f38ce3 () {
+function gvisDataBubbleChartID72d82742da7b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1198,8 +1198,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartID396072f38ce3() {
-var data = gvisDataBubbleChartID396072f38ce3();
+function drawChartBubbleChartID72d82742da7b() {
+var data = gvisDataBubbleChartID72d82742da7b();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1207,7 +1207,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartID396072f38ce3')
+    document.getElementById('BubbleChartID72d82742da7b')
     );
     chart.draw(data,options);
     
@@ -1231,9 +1231,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartID396072f38ce3);
+callbacks.push(drawChartBubbleChartID72d82742da7b);
 })();
-function displayChartBubbleChartID396072f38ce3() {
+function displayChartBubbleChartID72d82742da7b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1257,11 +1257,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID396072f38ce3"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID72d82742da7b"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartID396072f38ce3" 
+<div id="BubbleChartID72d82742da7b" 
   style="width: 700; height: 700;">
 </div>
 
