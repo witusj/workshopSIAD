@@ -148,7 +148,7 @@ We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit
 library(gsheet)
 
 ## Lees online data in
-url <- "https://docs.google.com/spreadsheets/d/1YnAdYzJ6hAHlFTbgv2xMxkMwGyAcFM8zM1FMnEkJKgw/edit?usp=sharing"
+url <- "https://docs.google.com/spreadsheets/d/1YnAdYzJ6hAHlFTbgv2xMxkMwGyAcFM8zM1FMnEkJKgw"
 surveyDF <- gsheet2tbl(url)
 ```
 
