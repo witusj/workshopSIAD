@@ -1,7 +1,7 @@
 # R-Workshop
 Witek ten Hove - wfth1969@gmail.com  
 `r format(Sys.time(), '%d %B, %Y')`  
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+
 
 
 # Sessie 1 - Inlezen / Bekijken
@@ -148,7 +148,7 @@ We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit
 library(gsheet)
 
 ## Lees online data in
-url <- "https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA"
+url <- "https://docs.google.com/spreadsheets/d/1YnAdYzJ6hAHlFTbgv2xMxkMwGyAcFM8zM1FMnEkJKgw/edit?usp=sharing"
 surveyDF <- gsheet2tbl(url)
 ```
 
