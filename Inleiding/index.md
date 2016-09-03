@@ -22,6 +22,8 @@ De workshop bestaat uit twee sessies:
 * __Sessie 1__: Dinsdag 16 september 2016
 * __Sessie 2__: Dinsdag 9 december 2016
 
+Vul voordat je deelneemt aan de eerste sessie dit <a href="https://drive.google.com/open?id=1rP6KIbqikbLQJ9hJRQQJMWnbCTgfhA0yJLa84JGklVQ" target="_blank">formulier</a> in.
+
 Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
 
 ## Voorbereiding
