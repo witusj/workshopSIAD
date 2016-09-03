@@ -30,7 +30,7 @@ Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring h
 [Witek ten Hove](https://nl.linkedin.com/in/witektenhove) is hoofddocent aan de Hogeschool van Arnhem en Nijmegen en voorzitter van de R-User Group in Nijmegen. Na zijn studie aan de Universiteit van Maastricht heeft hij bij verschillende multinationals gewerkt als business analist, beurshandelaar en commodity trader. Zijn specialisaties zijn onder andere data science en online / blended learning.
 
 ## Workshop sessies
-De workshop bestaat uit drie sessies:
+De workshop bestaat uit twee sessies:
 
 * __Sessie 1__: Dinsdag 16 september 2016
 * __Sessie 2__: Dinsdag 9 december 2016
