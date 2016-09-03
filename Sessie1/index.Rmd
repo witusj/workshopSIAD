@@ -1,0 +1,121 @@
+---
+title: "R-Workshop"
+author: "Witek ten Hove - wfth1969@gmail.com"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+ html_document:
+   code_folding: show
+   keep_md: yes
+   self_contained: no
+   theme: cerulean
+   toc: yes
+   toc_float: yes
+---
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("content.R")
+```
+
+# Sessie 1 - Inlezen / Bekijken
+
+In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+
+## Lokaal bestand
+
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
+
+In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+## Lees data uit lokaal csv-bestand
+studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+```
+Selecteer alles en klik op Run. In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
+
+![](images/env.png)
+
+<br>
+We kunnen snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk eerste regels van data
+head(studDF)
+```
+
+<br>
+Het gaat hier klaarblijkelijk om een cijferlijst van studenten met wat metadata. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de structuur van data
+str(studDF)
+```
+
+<br>
+en we zien dat de data de vorm van een *data frame* (tabel) heeft met `r length(studDF$Voor)` rijen (observaties) en `r length(studDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+
+Met `summary()` kunnen we de kwaliteit van de data beoordelen:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de kwaliteit van data
+summary(studDF)
+```
+<br>
+We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(studDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(studDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
+
+Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Console* met het commando `View(studDF)`), krijg je een tabel met alle data.
+
+![](images/view.png)
+
+### Vragenset 1A
+1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
+
+2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
+
+## Online bestand
+We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+## Laad de benodigde package(s)
+library(gsheet)
+
+## Lees online data in
+url <- "https://docs.google.com/spreadsheets/d/1j-bW2MmrbRYso2IJekNWKsGlWL2SwtJQ_ebSj9hs7kA"
+surveyDF <- gsheet2tbl(url)
+```
+
+### Vragenset 1B
+1. Om wat voor een soort data gaat het hier?
+
+2. Welke dimensies heeft de dataset (rijen / kolommen)?
+
+3. Welke classes hebben de variabelen?
+
+4. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
+
+
+## Web scraping
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` package kunnen we de data uit de html code filteren.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+# Laad de benodigde package(s)
+library(rvest)
+
+# Lees ruwe html data in.
+htmlpage <- read_html("http://www.pginvestor.com/Historic-Prices")
+
+# Extraheer alle tabellen uit de ruwe data
+nodes <- html_nodes(htmlpage, "table")
+tables <- html_table(nodes, fill = TRUE)
+
+# Kies een tabel en stop de data in een data frame
+stockDF <- tables[1][[1]]
+```
+
+### Vragenset 1C
+1. Wat voor een soort data bevat `stockDF`?
+
+2. Welke classes hebben de variabelen?
+
+3. Wat was de hoogste waarde voor de variabele`Price`?

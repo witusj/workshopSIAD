@@ -1,0 +1,294 @@
+---
+title: "R-Workshop"
+author: "Witek ten Hove - wfth1969@gmail.com"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+ html_document:
+   code_folding: show
+   keep_md: yes
+   self_contained: no
+   theme: cerulean
+   toc: yes
+   toc_float: yes
+---
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("content.R")
+```
+
+# Sessie 2 - Muteren / Analyseren
+
+In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
+
+## Muteren
+
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van deze functies vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+library(dplyr)
+library(tidyr)
+```
+
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit online csv-bestand
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = TRUE)
+glimpse(openDF)
+```
+### Vragenset 2A
+1. Wat voor een soort data bevat `openDF`?
+
+2. Wat is de latijnse naam voor 'Moeraseik'?
+
+3. Wat is het vroegste aanlegjaar in de dataset?
+
+4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
+
+Het kan wellicht handig zijn om de inspectiedatum op te splitsen in *dag*, *maand* en *jaar*.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Splits de inspectiedatum
+openDF <- separate(openDF, inspectiedatum, into = c("inspectiedag", "inspectiemaand", "inspectiejaar"), sep="-", remove = FALSE, extra = "drop", fill = "right")
+```
+
+Nu kunnen we makkelijk de inspecties van een bepaalde periode uit de data filteren (let op het dubbele `=` teken) en kijken welke bomen zijn aangemerkt om gerooid te worden.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Filter op jaar en maand
+openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;")
+head(openDF2014)
+```
+### Vragenset 2B
+1. Maak een subset van de data waarin alleen de bomen staan die in 2014 in de Horstenbuurt aangemerkt werden om gerooid te worden.
+
+2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
+
+3. Maak een subset van alle bomen die **sinds** 2010 geinspecteerd zijn.
+
+## Analyseren
+We gaan data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. Met de `table()` functie kunnen we een matrix bouwen. Horizontaal (*rij*) plaatsen we de afzonderlijke *woonplaatsen* en verticaal (*kolom*) de *inspectiejaren*. In de cellen van de matrix staat het aantal keren dat de gegeven combinatie (*woonplaats*, *jaar*) in de dataset voorkomt.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Aantal inspecties per woonplaats per jaar
+inspecTab <- table(openDF$woonplaats, openDF$inspectiejaar)
+inspecTab
+str(inspecTab)
+
+```
+
+Als we de structuur van `inspecTab` bekijken zien we dat het class `table` heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Conversie tabel naar data frame
+inspecDF <- as.data.frame.matrix(inspecTab)
+head(inspecDF)
+
+## Bewaar rijnamen
+plaatsenVec <- rownames(inspecDF)
+cat(plaatsenVec, sep = ", ")
+```
+
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot accepteert als input alleen een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Barplot van aantal inspecties per woonplaats per jaar
+barplot(inspecTab,
+        xlab = "Jaar",
+        col=rainbow(9)
+        )
+
+legend("topleft",
+       legend = plaatsenVec,
+       fill=rainbow(9)
+)
+```
+
+### Vragenset 2C
+1. Wat valt op als je de `inspecTab` dataset bekijkt?
+
+2. Maak een tabel waarin je het aantal afzonderlijke categorieën veiligheidsmaatregelen per jaar telt.
+
+3. Voor hoeveel bomen werd in 2014 een jaarlijkse inspectie geadviseerd?
+
+4. Analyseer deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv)
+
+---
+
+# Sessie 3 - Visualiseren / Presenteren
+
+In deze sessie kijken we hoe je data aantrekkelijk kunt visualiseren en op een makkelijke manier toegankelijk maakt voor de gebruikers.
+
+## Visualiseren
+Er zijn talrijke packages voor R gebouwd waarmee je data op veelzijdige manieren grafisch kunt weergeven. In deze workshop gaan we werken met de R interface voor de Google Charts API (`googleVis`). Op deze  [pagina](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html) vind je voorbeelden van de mogelijkheden die de interface biedt.
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+## Laad de benodigde packages
+library(googleVis)
+library(gsheet)
+library(dplyr)
+```
+
+De data die we gebruiken, komt uit een Google Spreadsheet.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit Google Spreadsheet
+url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
+surveyDF <- gsheet2tbl(url)
+```
+
+Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Bouw Google Bubble Chart
+survChart <- gvisBubbleChart(surveyDF,
+                             idvar = "Naam",
+                             xvar = "Waarschijnlijkheid",
+                             yvar = "Gevolg",
+                             colorvar = "Soort.Risico",
+                             options = list(hAxis = '{minValue:1, maxValue:5, title:"Gevolg"}'
+                                            ,vAxis = '{minValue:1, maxValue:5, title:"Waarschijnlijkheid"}',
+                                            width = 700,
+                                            height = 700
+                                            )
+                             )
+plot(survChart)
+```
+
+### Vragenset 3A
+1. Wat voor een structuur heeft `survDF`?
+
+2. Om wat voor een soort data gaat het?
+
+3. Maak een nieuwe bubble chart met de variabelen die op ".1" eindigen.
+
+4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
+
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
+
+We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+meanvarDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv", stringsAsFactors = TRUE)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Laad packages
+library(plotly)
+
+## Bouw Plotly Chart
+p <- plot_ly(
+  meanvarDF,
+  x = Waarschijnlijkheid,
+  y = Gevolgen,
+  color = Perc.Kans,
+  size = Spreiding,
+  text = Topic,
+  mode = "text+markers",
+  cmin = 0,
+  cmax = 1,
+  colors = c("red", "orange", "white", "light blue" , "dodgerblue")
+)
+p
+```
+
+### Vragenset 3B
+1. Wat voor een structuur heeft `meanvarDF`?
+
+2. Analyseer de chart en beschrijf wat je opvalt.
+
+3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
+
+In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) opgehaald worden. We gebruiken de [Leaflet](https://rstudio.github.io/leaflet/) package.
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+gpsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
+                    stringsAsFactors = TRUE)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Laad packages
+library(leaflet)
+
+## Bepaal middelpunt van de kaart
+latCtr <- mean(gpsDF$lat)
+lonCtr <- mean(gpsDF$lon)
+
+## Bouw de kaart en geef weer
+m1 <- leaflet() %>%
+  addTiles() %>%
+  setView(lonCtr, latCtr, 12) %>% # map location
+  # add som circles:
+  addCircles(color = "Red", lng=gpsDF$lon, lat=gpsDF$lat, 20)
+m1
+```
+
+### Vragenset 3C
+1. Welke data is door de mobiele telefoon verzameld en op welke momenten?
+
+2. Waarom zijn sommige punten verder van elkaar verwijderd dan andere?
+
+3. Gebruik deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/event_data.csv) om een nieuwe geografische kaart te bouwen en analyseer de informatie.
+
+## Presenteren.
+Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R kun je heel gemakkelijk rapportages in verschillende formats (HTML, pdf of Word) creëren, waarin je tekst, code, tabellen en grafieken integreerd. Hiervoor open je een RMarkdown script.
+
+![](images/rmarkd.png)
+
+<br>
+Geef je document een titel en kies wat voor een soort document je wilt maken. In dit voorbeeld gaan we een webpagina bouwen en kiezen dus voor HTML.
+
+R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kunt. Als je wilt testen hoe het document er uit gaat zien, klik je op *Knit HTML*.
+
+![](images/knit.png)
+
+<br>
+In het bovenste gedeelte van het het *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Online is veel informatie te vinden over het gebruik van YAML en (R) Markdown. Voor RMarkdown vind je onder het helpmenu van RStudio ook een *Cheatsheet* en een handleiding.
+
+<pre>---
+title: "Rapportage Q1 2016"
+author: "Nomen Nescio"
+date: "17-08-1016"
+output:
+ html_document:
+   toc: yes
+---
+Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
+</pre>
+<pre>```{r, message=FALSE, warning=FALSE}
+
+library(knitr)
+library(dplyr)
+
+subsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv", stringsAsFactors = TRUE)
+glimpse(subsDF)
+
+## Tabel waarde subsidies per jaar per categorie
+subsTable <- xtabs(Bedrag ~ Categorie + Jaar, subsDF)
+subsDF <- as.data.frame.matrix(subsTable)
+subsDF <- round(subsDF, 0)
+kable(subsDF, caption = "Tabel 1. Waarde subsidies per jaar per categorie")
+
+## Staafdiagram
+barplot(subsTable,
+        main="Subsidiebedragen per categorie",
+        xlab="Jaar",
+        ylab="Bedrag",
+        col=rainbow(5)
+)
+
+legend("topright",
+       legend = dimnames(subsTable)$Categorie,
+       fill=rainbow(5)
+)
+```
+</pre>
+
+
+
+Als het document volledig naar wens is, kun je het snel publiceren op internet via [Rpubs](http://rpubs.com/). Klik hiervoor op het 'blauwe oogje'.
+
+![](images/rpubs.png)
+
+<br>
+en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail. LET OP: de informatie op RPubs is niet afgeschermd en zichtbaar voor iedereen die het webadres heeft.

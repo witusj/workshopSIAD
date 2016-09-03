@@ -1,0 +1,40 @@
+---
+title: "Rapportage Q1"
+author: "Nomen Nescio"
+date: "17-08-1016"
+output:
+ html_document:
+   toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
+
+```{r, message=FALSE, warning=FALSE}
+library(knitr)
+library(dplyr)
+
+subsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv", stringsAsFactors = TRUE)
+glimpse(subsDF)
+
+## Tabel waarde subsidies per jaar per categorie
+subsTable <- xtabs(Bedrag ~ Categorie + Jaar, subsDF)
+subsDF <- as.data.frame.matrix(subsTable)
+subsDF <- round(subsDF, 0)
+kable(subsDF, caption = "Tabel 1. Waarde subsidies per jaar per categorie")
+
+## Staafdiagram
+barplot(subsTable,
+        main="Subsidiebedragen per categorie",
+        xlab="Jaar",
+        ylab="Bedrag",
+        col=rainbow(5)
+)
+
+legend("topright",
+       legend = dimnames(subsTable)$Categorie,
+       fill=rainbow(5)
+)
+```

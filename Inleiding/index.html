@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Witek ten Hove - wfth1969@gmail.com" />
+
+
+<title>R-Workshop</title>
+
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<script src="index_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="index_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="index_files/tocify-1.9.1/jquery.tocify.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="index_files/highlight/default.css"
+      type="text/css" />
+<script src="index_files/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<script src="index_files/navigation-1.1/codefolding.js"></script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">R-Workshop</h1>
+<h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
+<h4 class="date"><em>03 September, 2016</em></h4>
+
+</div>
+
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+<div id="inleiding" class="section level1">
+<h1>Inleiding</h1>
+<p>In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.</p>
+<p>Tijdens de workshop werk je met <a href="https://www.r-project.org/">R</a>. Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de <a href="http://blog.revolutionanalytics.com/2016/06/r-holds-top-ranking-in-kdnuggets-software-poll.html">belangrijkste tool voor data analyse</a> en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.</p>
+<p>Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.</p>
+<div id="de-instructeur" class="section level2">
+<h2>De instructeur</h2>
+<p><a href="https://nl.linkedin.com/in/witektenhove">Witek ten Hove</a> is hoofddocent aan de Hogeschool van Arnhem en Nijmegen en voorzitter van de R-User Group in Nijmegen. Na zijn studie aan de Universiteit van Maastricht heeft hij bij verschillende multinationals gewerkt als business analist, beurshandelaar en commodity trader. Zijn specialisaties zijn onder andere data science en online / blended learning.</p>
+</div>
+<div id="workshop-sessies" class="section level2">
+<h2>Workshop sessies</h2>
+<p>De workshop bestaat uit drie sessies:</p>
+<ul>
+<li><strong>Sessie 1</strong>: Dinsdag 16 september 2016</li>
+<li><strong>Sessie 2</strong>: Dinsdag 9 december 2016</li>
+</ul>
+<p>Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.</p>
+</div>
+<div id="voorbereiding" class="section level2">
+<h2>Voorbereiding</h2>
+<p>Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Zie <a href="https://youtu.be/cX532N_XLIs?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU">hier</a> voor instructies (Engels).</p>
+<p>Dit is de Nederlandse <a href="http://cran.xl-mirror.nl/">downloadsite</a> voor R (je kunt ook iedere andere downloadsite gebruiken).</p>
+<p>Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een command line opdrachten kunnen worden ingevoerd.</p>
+<p>Om echter wat comfortabeler te programmeren zijn er zogenaamde <em>integrated development environments (IDEs)</em> ontwikkeld. Wij gaan werken met die van <a href="http://cran.xl-mirror.nl/">RStudio</a>. Ook deze software is gratis te <a href="https://www.rstudio.com/products/rstudio/download2/">downloaden</a>.</p>
+<p>LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.</p>
+<p>Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:</p>
+<pre class="r"><code>install.packages(c(&quot;gsheet&quot;, &quot;rvest&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;googleVis&quot;, &quot;plotly&quot;, &quot;leaflet&quot;, &quot;knitr&quot;))</code></pre>
+<p>plak het in de console en druk op <em>Enter</em>.</p>
+<div class="figure">
+<img src="images/console.png" alt="" />
+
+</div>
+<p><br> Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.</p>
+</div>
+<div id="basis-r" class="section level2">
+<h2>Basis R</h2>
+<p>In RStudio kun je op twee manieren code schrijven en laten uitvoeren:</p>
+<ul>
+<li>Direct via de console</li>
+<li>Indirect via een script</li>
+</ul>
+<p>Meestal zul je eerst je code in een script schrijven (of kopiëren uit voorbeelden) en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren en later dus kunt hergebruiken.</p>
+<p>Maak een nieuw R Script aan in RStudio via het icoontje met het ‘groene plusje’:</p>
+<div class="figure">
+<img src="images/newfile.png" alt=" of File &gt;&gt; New File &gt;&gt; R Script" />
+<p class="caption"><br>of <em>File &gt;&gt; New File &gt;&gt; R Script</em></p>
+</div>
+<p>Er wordt nu een venster met een veld voor tekstbewerking geopend. Je kunt hier je instructies invoeren, bijvoorbeeld een optelling.</p>
+<div class="figure">
+<img src="images/editor.png" alt="" />
+
+</div>
+<p><br></p>
+<p>Selecteer alles en klik op <em>Run</em>:</p>
+<div class="figure">
+<img src="images/run.png" alt=" of Ctrl + Enter" />
+<p class="caption"><br>of <em>Ctrl + Enter</em></p>
+</div>
+<p>In de console zie je het resultaat.</p>
+<pre><code>## [1] 5</code></pre>
+<p>We hebben nu niet meer gedaan dan je ook op een gewone rekenmachine kunt uitvoeren. R is echter geen rekenmachine, maar een programmeertaal. In iedere programmeertaal kun je gegevens in variabelen opslaan en deze variabelen hergebruiken.</p>
+<p>We kunnen bijvoorbeeld een variabele <em>a</em> en <em>b</em> aanmaken en daarin de waarden <em>2</em> en <em>3</em> bewaren. Het resultaat van de optelling bewaren we in een variabele <em>c</em>.</p>
+<pre class="r"><code>a &lt;- 2
+b &lt;- 3
+c &lt;- a + b
+c</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>Het voordeel hiervan is dat we nu <em>a</em> of <em>b</em> andere waarden kunnen geven en dat de waarde van <em>c</em> automatisch wordt aangepast.</p>
+<pre class="r"><code>a &lt;- 4
+b &lt;- 3
+c &lt;- a + b
+c</code></pre>
+<pre><code>## [1] 7</code></pre>
+<p>Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, <code>classes</code>, <code>vectors</code> en <code>data frames</code>, en te begrijpen hoe deze elementen zich tot elkaar verhouden.</p>
+<p>De belangrijkste datatypes (<code>classes</code>) binnen R zijn: <em>getallen</em>, <em>letters</em> en <em>factoren</em>. Een vector is een geordende verzameling van elementen van hetzelfde type data.</p>
+<p>Bijvoorbeeld de vector: <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> is een vector van plaatsen en de elementen zijn van <code>class</code> <em>letters</em> (<code>character</code>). De elementen uit de vector <code>(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;, &quot;Transgender&quot;)</code> kunnen van <code>class</code> <em>letters</em> zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van <em>factoren</em> met 3 levels: <code>Transgender</code>, <code>Man</code> en <code>Vrouw</code>. Dit kunnen we specifiek aangeven in R.</p>
+<pre class="r"><code>## Vectoren en classes
+Plaats &lt;- c(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)
+class(Plaats)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>Geslacht &lt;- c(&quot;Man&quot;, &quot;Man&quot;, &quot;Vrouw&quot;, &quot;Transgender&quot;)
+class(Geslacht)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>Geslacht &lt;- as.factor(Geslacht)
+class(Geslacht)</code></pre>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<pre class="r"><code>Geslacht</code></pre>
+<pre><code>## [1] Man         Man         Vrouw       Transgender
+## Levels: Man Transgender Vrouw</code></pre>
+<p>Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector <code>(&quot;Warszawa&quot;, &quot;London&quot;, &quot;Paris&quot;)</code> de naam <code>Plaats</code> geven, dan heeft het element <code>Plaats[2]</code> de waarde <code>&quot;London&quot;</code>.</p>
+<pre class="r"><code>## Vectorindices
+Plaats[2]</code></pre>
+<pre><code>## [1] &quot;London&quot;</code></pre>
+<p>We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.</p>
+<pre class="r"><code>## Vectorelementen toevoegen of verwijderen.
+Plaats[4] &lt;- &quot;Amsterdam&quot;
+Plaats</code></pre>
+<pre><code>## [1] &quot;Warszawa&quot;  &quot;London&quot;    &quot;Paris&quot;     &quot;Amsterdam&quot;</code></pre>
+<pre class="r"><code>Plaats &lt;- Plaats[-3]
+Plaats</code></pre>
+<pre><code>## [1] &quot;Warszawa&quot;  &quot;London&quot;    &quot;Amsterdam&quot;</code></pre>
+<p>Stel we creëren een tweede vector <code>Land</code> met de elementen <code>(&quot;Polska&quot;, &quot;UK&quot;, &quot;Nederland&quot;)</code>. We kunnen nu de vectoren <code>Plaats</code> en <code>Land</code> samenvoegen in een data frame en via de indexen <em>[rij,kolom]</em> de elementen opvragen.</p>
+<pre class="r"><code>## Data frame structuur
+Land &lt;- c(&quot;Polska&quot;, &quot;UK&quot;, &quot;Nederland&quot;)
+Locatie &lt;- data.frame(Plaats, Land)
+Locatie</code></pre>
+<pre><code>##      Plaats      Land
+## 1  Warszawa    Polska
+## 2    London        UK
+## 3 Amsterdam Nederland</code></pre>
+<pre class="r"><code>Locatie[3,1]</code></pre>
+<pre><code>## [1] Amsterdam
+## Levels: Amsterdam London Warszawa</code></pre>
+<pre class="r"><code>Locatie[3,]</code></pre>
+<pre><code>##      Plaats      Land
+## 3 Amsterdam Nederland</code></pre>
+<pre class="r"><code>Locatie[,2]</code></pre>
+<pre><code>## [1] Polska    UK        Nederland
+## Levels: Nederland Polska UK</code></pre>
+<p>We kunnen de afzonderlijke variabelen binnen een data frame ook oproepen via het <code>$</code> teken.</p>
+<pre class="r"><code>## Data frame structuur
+Locatie$Land</code></pre>
+<pre><code>## [1] Polska    UK        Nederland
+## Levels: Nederland Polska UK</code></pre>
+<pre class="r"><code>Locatie$Plaats[1]</code></pre>
+<pre><code>## [1] Warszawa
+## Levels: Amsterdam London Warszawa</code></pre>
+<div id="vragenset-basis-r" class="section level3">
+<h3>Vragenset Basis R</h3>
+<p>De antwoorden kun je eventueel <a href="https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1">hier</a> achterlaten en controleren.</p>
+<ol style="list-style-type: decimal">
+<li><p>Zoals je ziet hebben de variabelen <code>Plaats</code> en <code>Land</code> uit het voorbeeld door de omzetting naar een data frame de <code>class</code> <code>factor</code> gekregen. Hoe zet je de <code>class</code> van beide variabelen weer terug naar <code>character</code>?</p></li>
+<li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;)</code>?</p></li>
+<li><p>Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.</p></li>
+</ol>
+<pre class="r"><code>values1 &lt;- c(&quot;20&quot;, &quot;50&quot;)
+sum(values1)
+
+values2 &lt;- c(20, 50)
+sum(values2)</code></pre>
+</div>
+</div>
+<div id="naslagwerken" class="section level2">
+<h2>Naslagwerken</h2>
+<p>Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de <em>Cheatsheets</em> onder het helpmenu.</p>
+<p>Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:</p>
+<ul>
+<li><p><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</a></p></li>
+<li><p><a href="https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf">Introduction to R for Excel Users</a></p></li>
+</ul>
+<p>Al je een indruk wilt krijgen van wat je allemaal met R kunt, is de <a href="https://www.r-bloggers.com/">R-bloggers</a> website een goed startpunt.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
