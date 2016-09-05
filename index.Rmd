@@ -174,13 +174,19 @@ We kunnen de afzonderlijke variabelen binnen een data frame ook oproepen via het
 Locatie$Land
 Locatie$Plaats[1]
 ```
+Als we een nieuwe kolom met data willen toevoegen, kunnen we dit in één keer doen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Kolom toevoegen
+Locatie$Inwoners <- c(38.5, 64.1, 16.8)
+head(Locatie)
+```
 
 ### Vragenset Basis R
-De antwoorden kun je eventueel [hier](https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1) achterlaten en controleren.
 
 1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
 
-2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland")`?
+2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland", 80.6)`?
 
 3. Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.
 

@@ -230,7 +230,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R-Workshop</h1>
 <h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
-<h4 class="date"><em>03 September, 2016</em></h4>
+<h4 class="date"><em>05 September, 2016</em></h4>
 
 </div>
 
@@ -364,12 +364,19 @@ Locatie$Land</code></pre>
 <pre class="r"><code>Locatie$Plaats[1]</code></pre>
 <pre><code>## [1] Warszawa
 ## Levels: Amsterdam London Warszawa</code></pre>
+<p>Als we een nieuwe kolom met data willen toevoegen, kunnen we dit in één keer doen.</p>
+<pre class="r"><code>## Kolom toevoegen
+Locatie$Inwoners &lt;- c(38.5, 64.1, 16.8)
+head(Locatie)</code></pre>
+<pre><code>##      Plaats      Land Inwoners
+## 1  Warszawa    Polska     38.5
+## 2    London        UK     64.1
+## 3 Amsterdam Nederland     16.8</code></pre>
 <div id="vragenset-basis-r" class="section level3">
 <h3>Vragenset Basis R</h3>
-<p>De antwoorden kun je eventueel <a href="https://goo.gl/forms/ZKIXUSOo4Zi9SxKl1">hier</a> achterlaten en controleren.</p>
 <ol style="list-style-type: decimal">
 <li><p>Zoals je ziet hebben de variabelen <code>Plaats</code> en <code>Land</code> uit het voorbeeld door de omzetting naar een data frame de <code>class</code> <code>factor</code> gekregen. Hoe zet je de <code>class</code> van beide variabelen weer terug naar <code>character</code>?</p></li>
-<li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;)</code>?</p></li>
+<li><p>Hoe vervang je de elementen uit de laatste rij door <code>(&quot;Berlin&quot;, &quot;Deutschland&quot;, 80.6)</code>?</p></li>
 <li><p>Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.</p></li>
 </ol>
 <pre class="r"><code>values1 &lt;- c(&quot;20&quot;, &quot;50&quot;)
