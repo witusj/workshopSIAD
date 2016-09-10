@@ -189,6 +189,20 @@ values2 <- c(20, 50)
 sum(values2)
 ```
 
+4. Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.
+
+```{r, echo=TRUE, eval= FALSE}
+a <- c("b", 2)
+a
+
+a <- c(a, 3)
+a
+
+a <- c(b, 4)
+a
+```
+
+
 ## Naslagwerken
 
 Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de *Cheatsheets* onder het helpmenu.
