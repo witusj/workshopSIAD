@@ -26,14 +26,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep 10 14:49:27 2016 -->
+<!-- Sat Sep 10 14:54:13 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapIDfdc4d528c36 () {
+function gvisDataMapID26fb1fc6111 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -49,8 +49,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapIDfdc4d528c36() {
-var data = gvisDataMapIDfdc4d528c36();
+function drawChartMapID26fb1fc6111() {
+var data = gvisDataMapID26fb1fc6111();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -59,7 +59,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapIDfdc4d528c36')
+    document.getElementById('MapID26fb1fc6111')
     );
     chart.draw(data,options);
     
@@ -83,9 +83,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDfdc4d528c36);
+callbacks.push(drawChartMapID26fb1fc6111);
 })();
-function displayChartMapIDfdc4d528c36() {
+function displayChartMapID26fb1fc6111() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -109,11 +109,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDfdc4d528c36"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID26fb1fc6111"></script>
  
 <!-- divChart -->
   
-<div id="MapIDfdc4d528c36" 
+<div id="MapID26fb1fc6111" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -843,14 +843,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep 10 14:49:39 2016 -->
+<!-- Sat Sep 10 14:54:14 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDfdc427c1b94 () {
+function gvisDataBubbleChartID26fb3ffb7264 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1212,8 +1212,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDfdc427c1b94() {
-var data = gvisDataBubbleChartIDfdc427c1b94();
+function drawChartBubbleChartID26fb3ffb7264() {
+var data = gvisDataBubbleChartID26fb3ffb7264();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1221,7 +1221,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDfdc427c1b94')
+    document.getElementById('BubbleChartID26fb3ffb7264')
     );
     chart.draw(data,options);
     
@@ -1245,9 +1245,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDfdc427c1b94);
+callbacks.push(drawChartBubbleChartID26fb3ffb7264);
 })();
-function displayChartBubbleChartIDfdc427c1b94() {
+function displayChartBubbleChartID26fb3ffb7264() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1271,11 +1271,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDfdc427c1b94"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID26fb3ffb7264"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDfdc427c1b94" 
+<div id="BubbleChartID26fb3ffb7264" 
   style="width: 700; height: 700;">
 </div>
 
