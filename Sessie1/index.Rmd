@@ -11,7 +11,7 @@ output:
    toc: yes
    toc_float: yes
 ---
-
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 source("content.R")
