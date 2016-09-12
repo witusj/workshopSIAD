@@ -19,8 +19,8 @@ Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring h
 ## Workshop sessies
 De workshop bestaat uit twee sessies:
 
-* __Sessie 1__: Dinsdag 16 september 2016
-* __Sessie 2__: Dinsdag 9 december 2016
+* __Sessie 1__: Vrijdag 16 september 2016
+* __Sessie 2__: Vrijdag 9 december 2016
 
 Vul voordat je deelneemt aan de eerste sessie dit <a href="https://goo.gl/forms/uYYVbm5BtAgFmG593" target="_blank">formulier</a> in.
 
