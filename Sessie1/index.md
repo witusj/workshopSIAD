@@ -187,3 +187,10 @@ stockDF <- tables[1][[1]]
 2. Welke classes hebben de variabelen?
 
 3. Wat was de hoogste waarde voor de variabele`Price`?
+
+4. Lees deze databron uit en bekijk de data:
+
+```
+http://iot.semtech.com/applications/00-00-00-00-00-00-00-00/data/mote.00-00-00-00-00-00-AA-F4/
+
+```
