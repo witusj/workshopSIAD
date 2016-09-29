@@ -15,14 +15,14 @@
 <title>R-Workshop</title>
 
 <script src="index_files/jquery-1.11.3/jquery.min.js"></script>
-<script src="index_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="index_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="index_files/tocify-1.9.1/jquery.tocify.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="index_files/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="index_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="index_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="index_files/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="index_files/htmlwidgets-0.6/htmlwidgets.js"></script>
 <link href="index_files/plotlyjs-1.10.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="index_files/plotlyjs-1.10.1/plotly-latest.min.js"></script>
@@ -107,6 +107,7 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -118,6 +119,9 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 <script src="index_files/navigation-1.1/codefolding.js"></script>
 <script>
 $(document).ready(function () {
@@ -238,12 +242,11 @@ div.tocify {
 
 <h1 class="title toc-ignore">R-Workshop</h1>
 <h4 class="author"><em>Witek ten Hove - <a href="mailto:wfth1969@gmail.com">wfth1969@gmail.com</a></em></h4>
-<h4 class="date"><em>03 September, 2016</em></h4>
+<h4 class="date"><em>30 September, 2016</em></h4>
 
 </div>
 
 
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 <div id="sessie-2---muteren-analyseren" class="section level1">
 <h1>Sessie 2 - Muteren / Analyseren</h1>
 <p>In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.</p>
@@ -435,12 +438,12 @@ survChart &lt;- gvisBubbleChart(surveyDF,
                              )
 plot(survChart)</code></pre>
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep  3 15:34:41 2016 -->
+<!-- Fri Sep 30 00:12:46 2016 -->
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartID200b15b5995b () {
+function gvisDataBubbleChartIDd11e4cdef77f () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -802,8 +805,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartID200b15b5995b() {
-var data = gvisDataBubbleChartID200b15b5995b();
+function drawChartBubbleChartIDd11e4cdef77f() {
+var data = gvisDataBubbleChartIDd11e4cdef77f();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -811,7 +814,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartID200b15b5995b')
+    document.getElementById('BubbleChartIDd11e4cdef77f')
     );
     chart.draw(data,options);
     
@@ -835,9 +838,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartID200b15b5995b);
+callbacks.push(drawChartBubbleChartIDd11e4cdef77f);
 })();
-function displayChartBubbleChartID200b15b5995b() {
+function displayChartBubbleChartIDd11e4cdef77f() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -860,9 +863,9 @@ callbacks.shift()();
 // jsFooter
 </script>
 <!-- jsChart -->
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID200b15b5995b"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd11e4cdef77f"></script>
 <!-- divChart -->
-<div id="BubbleChartID200b15b5995b" style="width: 700; height: 700;">
+<div id="BubbleChartIDd11e4cdef77f" style="width: 700; height: 700;">
 
 </div>
 <div id="vragenset-3a" class="section level3">
@@ -902,7 +905,7 @@ p</code></pre>
 <li><p>Analyseer de chart en beschrijf wat je opvalt.</p></li>
 <li><p>Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.</p></li>
 </ol>
-<p>In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv">hier</a> opgehaald worden. We gebruiken de <a href="https://rstudio.github.io/leaflet/">Leaflet</a> package.</p>
+<p>In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan <a href="https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv">hier</a> opgehaald worden. We gebruiken de <a href="https://rstudio.github.io/leaflet/">Leaflet</a> package.</p>
 <pre class="r"><code>## Laad packages
 library(leaflet)
 
@@ -1003,6 +1006,7 @@ legend("topright",
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 

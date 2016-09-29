@@ -1,7 +1,7 @@
 # R-Workshop
 Witek ten Hove - wfth1969@gmail.com  
 `r format(Sys.time(), '%d %B, %Y')`  
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+
 
 
 # Sessie 2 - Muteren / Analyseren
@@ -263,14 +263,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep  3 15:34:41 2016 -->
+<!-- Fri Sep 30 00:12:46 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartID200b15b5995b () {
+function gvisDataBubbleChartIDd11e4cdef77f () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -632,8 +632,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartID200b15b5995b() {
-var data = gvisDataBubbleChartID200b15b5995b();
+function drawChartBubbleChartIDd11e4cdef77f() {
+var data = gvisDataBubbleChartIDd11e4cdef77f();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -641,7 +641,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartID200b15b5995b')
+    document.getElementById('BubbleChartIDd11e4cdef77f')
     );
     chart.draw(data,options);
     
@@ -665,9 +665,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartID200b15b5995b);
+callbacks.push(drawChartBubbleChartIDd11e4cdef77f);
 })();
-function displayChartBubbleChartID200b15b5995b() {
+function displayChartBubbleChartIDd11e4cdef77f() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -691,11 +691,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID200b15b5995b"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd11e4cdef77f"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartID200b15b5995b" 
+<div id="BubbleChartIDd11e4cdef77f" 
   style="width: 700; height: 700;">
 </div>
 
@@ -745,7 +745,7 @@ p
 
 3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
 
-In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) opgehaald worden. We gebruiken de [Leaflet](https://rstudio.github.io/leaflet/) package.
+In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv) opgehaald worden. We gebruiken de [Leaflet](https://rstudio.github.io/leaflet/) package.
 
 
 

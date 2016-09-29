@@ -26,14 +26,14 @@ De workshop bestaat uit drie sessies:
 Locatie: HAN, Kapittelweg 33, 6525 EN Nijmegen (Lokaal C106)
 
 <!-- Map generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep 10 14:54:13 2016 -->
+<!-- Fri Sep 16 23:07:46 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMapID26fb1fc6111 () {
+function gvisDataMapID12f3e2b51d12d () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -49,8 +49,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMapID26fb1fc6111() {
-var data = gvisDataMapID26fb1fc6111();
+function drawChartMapID12f3e2b51d12d() {
+var data = gvisDataMapID12f3e2b51d12d();
 var options = {};
 options["showTip"] = true;
 options["mapType"] = "normal";
@@ -59,7 +59,7 @@ options["width"] =    100;
 options["height"] =    300;
 
     var chart = new google.visualization.Map(
-    document.getElementById('MapID26fb1fc6111')
+    document.getElementById('MapID12f3e2b51d12d')
     );
     chart.draw(data,options);
     
@@ -83,9 +83,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapID26fb1fc6111);
+callbacks.push(drawChartMapID12f3e2b51d12d);
 })();
-function displayChartMapID26fb1fc6111() {
+function displayChartMapID12f3e2b51d12d() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -109,11 +109,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID26fb1fc6111"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID12f3e2b51d12d"></script>
  
 <!-- divChart -->
   
-<div id="MapID26fb1fc6111" 
+<div id="MapID12f3e2b51d12d" 
   style="width: 100; height: 300;">
 </div>
 <br>
@@ -843,14 +843,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Sat Sep 10 14:54:14 2016 -->
+<!-- Fri Sep 16 23:07:47 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartID26fb3ffb7264 () {
+function gvisDataBubbleChartID12f3e3adcc794 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1212,8 +1212,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartID26fb3ffb7264() {
-var data = gvisDataBubbleChartID26fb3ffb7264();
+function drawChartBubbleChartID12f3e3adcc794() {
+var data = gvisDataBubbleChartID12f3e3adcc794();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -1221,7 +1221,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartID26fb3ffb7264')
+    document.getElementById('BubbleChartID12f3e3adcc794')
     );
     chart.draw(data,options);
     
@@ -1245,9 +1245,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartID26fb3ffb7264);
+callbacks.push(drawChartBubbleChartID12f3e3adcc794);
 })();
-function displayChartBubbleChartID26fb3ffb7264() {
+function displayChartBubbleChartID12f3e3adcc794() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1271,11 +1271,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID26fb3ffb7264"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartID12f3e3adcc794"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartID26fb3ffb7264" 
+<div id="BubbleChartID12f3e3adcc794" 
   style="width: 700; height: 700;">
 </div>
 
