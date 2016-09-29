@@ -2,6 +2,7 @@
 Witek ten Hove - wfth1969@gmail.com  
 `r format(Sys.time(), '%d %B, %Y')`  
 
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
 
 
 # Sessie 2 - Muteren / Analyseren
@@ -263,14 +264,14 @@ plot(survChart)
 ```
 
 <!-- BubbleChart generated in R 3.3.0 by googleVis 0.5.10 package -->
-<!-- Fri Sep 30 00:12:46 2016 -->
+<!-- Fri Sep 30 00:19:17 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBubbleChartIDd11e4cdef77f () {
+function gvisDataBubbleChartIDd90a448a066a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -632,8 +633,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBubbleChartIDd11e4cdef77f() {
-var data = gvisDataBubbleChartIDd11e4cdef77f();
+function drawChartBubbleChartIDd90a448a066a() {
+var data = gvisDataBubbleChartIDd90a448a066a();
 var options = {};
 options["hAxis"] = {minValue:1, maxValue:5, title:"Gevolg"};
 options["vAxis"] = {minValue:1, maxValue:5, title:"Waarschijnlijkheid"};
@@ -641,7 +642,7 @@ options["width"] =    700;
 options["height"] =    700;
 
     var chart = new google.visualization.BubbleChart(
-    document.getElementById('BubbleChartIDd11e4cdef77f')
+    document.getElementById('BubbleChartIDd90a448a066a')
     );
     chart.draw(data,options);
     
@@ -665,9 +666,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBubbleChartIDd11e4cdef77f);
+callbacks.push(drawChartBubbleChartIDd90a448a066a);
 })();
-function displayChartBubbleChartIDd11e4cdef77f() {
+function displayChartBubbleChartIDd90a448a066a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -691,11 +692,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd11e4cdef77f"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBubbleChartIDd90a448a066a"></script>
  
 <!-- divChart -->
   
-<div id="BubbleChartIDd11e4cdef77f" 
+<div id="BubbleChartIDd90a448a066a" 
   style="width: 700; height: 700;">
 </div>
 
