@@ -82,4 +82,16 @@ CF <-
 
 BS['Total Receivables, Net', grep('PHG.f.2014',names(BS))]
 
+## IoT
+dfNodes <- read.csv("https://eu1.loriot.io/1/data/0ZpcVxn0o__4zxNHCcl4iQ/BE7A0609.csv", fill = TRUE, header = FALSE, stringsAsFactors = FALSE)
 
+# Converteer hex naar tekst en bewaar data in data frame
+Message <- NULL
+Temp <- NULL
+for (i in c(1:length(dfNodes[10]))) {
+  
+  s <- unlist(strsplit(dfNodes[10][[i]], " "))      # Splits the tekst in substrings van twee letters 2
+  Message[i] <- rawToChar(as.raw(strtoi(s, 16L)))   # Converteer naar tekst
+}
+
+dfNodes[11] <- rawToChar(as.raw(strtoi(dfNodes[10], 16L)))

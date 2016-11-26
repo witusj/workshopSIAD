@@ -123,6 +123,6 @@ stockDF <- tables[1][[1]]
 4. Lees deze databron uit en bekijk de data:
 
 ```
-http://iot.semtech.com/applications/00-00-00-00-00-00-00-00/data/mote.00-00-00-00-00-00-AA-F4/
+https://eu1.loriot.io/1/data/0ZpcVxn0o__4zxNHCcl4iQ/BE7A0609.csv
 
 ```
