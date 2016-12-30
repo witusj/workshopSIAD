@@ -1,0 +1,594 @@
+---
+title: "R-Workshop"
+author: "Witek ten Hove - wfth1969@gmail.com"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+ html_document:
+   code_folding: show
+   keep_md: yes
+   self_contained: no
+   theme: cerulean
+   toc: yes
+   toc_float: yes
+---
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAfbzoFaFxwmdLDpzlwjku5kCcSgPLb33I" async="" defer="defer" type="text/javascript"></script>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("content.R")
+```
+
+# Inleiding
+
+In deze workshop leer je op een slimme wijze kwantitatieve data verzamelen, deze om te zetten naar bruikbare input voor je analyse en uitkomsten te visualiseren en te rapporteren.
+
+Tijdens de workshop werk je met [R](https://www.r-project.org/). Deze software is speciaal ontwikkeld om makkelijk en snel data in te lezen en te verwerken. Het is op dit moment naast Python de [belangrijkste tool voor data analyse](http://blog.revolutionanalytics.com/2016/06/r-holds-top-ranking-in-kdnuggets-software-poll.html) en wordt ingezet door ondernemingen als bijvoorbeeld Facebook, Airbnb en Microsoft om informatie uit hun enorme databestanden te genereren. Je bent dus in uitstekend gezelschap als je klaar bent met het leertraject.
+
+Deze workshop is ontwikkeld voor mensen die nog geen of zeer beperkte ervaring hebben met programmeren. Wellicht heb je al een beetje ervaring met Excel of SPSS. Dit is handig, maar geen vereiste om deel te kunnen nemen. R is een programmeertaal, maar zeer eenvoudig qua opzet en je zult merken dat je al heel snel krachtige stukjes code (scripts) kunt schrijven. Je hoeft geen investeringen te doen, want R is volledig open source en werkt op zowel Mac OS, Windows als Linux.
+
+## De instructeur
+
+[Witek ten Hove](https://nl.linkedin.com/in/witektenhove) is hoofddocent aan de Hogeschool van Arnhem en Nijmegen en voorzitter van de R-User Group in Nijmegen. Na zijn studie aan de Universiteit van Maastricht heeft hij bij verschillende multinationals gewerkt als business analist, beurshandelaar en commodity trader. Zijn specialisaties zijn onder andere data science en online / blended learning.
+
+## Workshop sessies
+De workshop bestaat uit drie sessies:
+
+* __Sessie 1__: Dinsdag 6 september 2016 van 18:30 tot 21:00u
+* __Sessie 2__: Dinsdag 13 september 2016 van 18:30 tot 21:00u
+* __Sessie 3__: Dinsdag 20 september 2016 van 18:30 tot 21:00u
+
+Locatie: `r paste0(adres, " (", extra, ")")`
+
+```{r Map1, echo=FALSE, results='asis', tidy=FALSE}
+plot(M1)
+```
+<br>
+Tijdens iedere sessie ga je werken aan een opdracht. Je krijgt een dataset (of een verwijzing naar een online databron) en gaat hier informatie uit halen. De instructeur helpt je als je vastloopt of geeft suggesties voor verbeteringen van je code.
+
+## Inschrijving
+Aanmelding geschiedt via dit <a href="https://drive.google.com/open?id=1rP6KIbqikbLQJ9hJRQQJMWnbCTgfhA0yJLa84JGklVQ" target="_blank">formulier</a>. Er kunnen maximaal 16 personen deelnemen. Mocht er na de aanmelding iets veranderd zijn waardoor je niet meer kunt deelnemen, geef dit dan door aan de instructeur via witek.tenhove@han.nl.
+
+Inschrijving vindt plaats naar volgorde van aanmelding. Nadat de aanmeldingstermijn is verstreken, zullen de deelnemers per mail worden geinformeerd.
+
+## Voorbereiding
+Om direct aan de gang te kunnen gaan tijdens de workshop sessies is het belangrijk dat je R op je computer installeert. Zie [hier](https://youtu.be/cX532N_XLIs?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU) voor instructies (Engels).
+
+Dit is de Nederlandse [downloadsite](http://cran.xl-mirror.nl/) voor R (je kunt ook iedere andere downloadsite gebruiken).
+
+Als je klaar bent met de installatie kun je in principe al aan de gang gaan met het pakket. R heeft namelijk een eigen interface, waarmee via een command line opdrachten kunnen worden ingevoerd.
+
+Om echter wat comfortabeler te programmeren zijn er zogenaamde *integrated development environments (IDEs)* ontwikkeld. Wij gaan werken met die van [RStudio](http://cran.xl-mirror.nl/). Ook deze software is gratis te [downloaden](https://www.rstudio.com/products/rstudio/download2/).
+
+LET OP: Het is belangrijk dat je eerst R en daarna RStudio installeert.
+
+Als je alles hebt geinstalleerd, open RStudio, kopieer de volgende code:
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages(c("gsheet", "rvest", "dplyr", "tidyr", "googleVis", "plotly", "leaflet", "knitr"))
+```
+
+plak het in de console en druk op *Enter*.
+
+![](images/console.png)
+
+<br>
+Er worden nu een aantal sets van functies geinstalleerd die we tijdens de sessies gaan gebruiken.
+
+## Basis R
+In RStudio kun je op twee manieren code schrijven en laten uitvoeren:
+
+* Direct via de console
+* Indirect via een script
+
+Meestal zul je eerst je code in een script schrijven (of kopiëren uit voorbeelden) en als je helemaal tevreden bent, uitvoeren. Het voordeel is tevens dat je een script kunt bewaren en later dus kunt hergebruiken.
+
+Maak een nieuw R Script aan in RStudio via het icoontje met het 'groene plusje':
+
+![<br>of _File >> New File >> R Script_](images/newfile.png)
+
+Er wordt nu een venster met een veld voor tekstbewerking geopend. Je kunt hier je instructies invoeren, bijvoorbeeld een optelling.
+
+![](images/editor.png)
+
+<br>
+
+Selecteer alles en klik op *Run*:
+
+![<br>of _Ctrl + Enter_](images/run.png)
+
+In de console zie je het resultaat.
+
+```{r}
+2 + 3
+```
+
+We hebben nu niet meer gedaan dan je ook op een gewone rekenmachine kunt uitvoeren. R is echter geen rekenmachine, maar een programmeertaal. In iedere programmeertaal kun je gegevens in variabelen opslaan en deze variabelen hergebruiken.
+
+We kunnen bijvoorbeeld een variabele *a* en *b* aanmaken en daarin de waarden *2* en *3* bewaren. Het resultaat van de optelling bewaren we in een variabele *c*.
+
+```{r, echo=TRUE}
+a <- 2
+b <- 3
+c <- a + b
+c
+```
+
+Het voordeel hiervan is dat we nu *a* of *b* andere waarden kunnen geven en dat de waarde van *c* automatisch wordt aangepast.
+```{r, echo=TRUE}
+a <- 4
+b <- 3
+c <- a + b
+c
+```
+
+
+Om goed te kunnen begrijpen hoe R werkt, is het belangrijk bekend te raken met een aantal basiselementen, `classes`, `vectors` en `data frames`, en te begrijpen hoe deze elementen zich tot elkaar verhouden.
+
+De belangrijkste datatypes (`classes`) binnen R zijn: *getallen*, *letters* en *factoren*. Een vector is een geordende verzameling van elementen van hetzelfde type data. 
+
+Bijvoorbeeld de vector: `("Warszawa", "London", "Paris")` is een vector van plaatsen en de elementen zijn van `class` *letters* (`character`). De elementen uit de vector `("Man", "Man", "Vrouw", "Transgender")` kunnen van `class` *letters* zijn, maar waarschijnlijk is de functie van zo een vector een verzameling van *factoren* met 3 levels: `Transgender`, `Man` en `Vrouw`. Dit kunnen we specifiek aangeven in R.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectoren en classes
+Plaats <- c("Warszawa", "London", "Paris")
+class(Plaats)
+Geslacht <- c("Man", "Man", "Vrouw", "Transgender")
+class(Geslacht)
+Geslacht <- as.factor(Geslacht)
+class(Geslacht)
+Geslacht
+```
+
+Ieder element binnen een vector heeft een indexnummer beginnend bij 1. Als we de vector `("Warszawa", "London", "Paris")` de naam `Plaats` geven, dan heeft het element `Plaats[2]` de waarde `"London"`.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectorindices
+Plaats[2]
+```
+
+We kunnen met behulp van indexnummers elementen toevoegen of verwijderen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Vectorelementen toevoegen of verwijderen.
+Plaats[4] <- "Amsterdam"
+Plaats
+Plaats <- Plaats[-3]
+Plaats
+```
+
+Stel we creëren een tweede vector `Land` met de elementen `("Polska", "UK", "Nederland")`. We kunnen nu de vectoren `Plaats` en `Land` samenvoegen in een data frame en via de indexen *[rij,kolom]* de elementen opvragen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Data frame structuur
+Land <- c("Polska", "UK", "Nederland")
+Locatie <- data.frame(Plaats, Land)
+Locatie
+Locatie[3,1]
+Locatie[3,]
+Locatie[,2]
+```
+
+We kunnen de afzonderlijke variabelen binnen een data frame ook oproepen via het `$` teken.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Data frame structuur
+Locatie$Land
+Locatie$Plaats[1]
+```
+Als we een nieuwe kolom met data willen toevoegen, kunnen we dit in één keer doen.
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Kolom toevoegen
+Locatie$Inwoners <- c(38.5, 64.1, 16.8)
+head(Locatie)
+```
+
+### Vragenset Basis R
+
+1. Zoals je ziet hebben de variabelen `Plaats` en `Land` uit het voorbeeld door de omzetting naar een data frame de `class` `factor` gekregen. Hoe zet je de `class` van beide variabelen weer terug naar `character`?
+
+2. Hoe vervang je de elementen uit de laatste rij door `("Berlin", "Deutschland", 80.6)`?
+
+3. Neem volgende code over in een script, voer het uit en analyseer wat er gebeurt.
+
+```{r, echo=TRUE, eval= FALSE}
+values1 <- c("20", "50")
+sum(values1)
+
+values2 <- c(20, 50)
+sum(values2)
+```
+
+## Naslagwerken
+
+Ondanks dat R open source is, wordt er veel controle uitgeoefend op de kwaliteit van het pakket. Dat betekent onder andere dat iedere bijdrage goede documentatie moet bevatten voordat het als onderdeel in het pakket wordt opgenomen. RStudio heeft een helpfuctie, waarmee makkelijk in de documentatie gezocht kan worden. Zie ook de *Cheatsheets* onder het helpmenu.
+
+Er zijn online ontzettend veel gratis handleidingen voor R te vinden. Volgende documenten zijn een willekeurige selectie:
+
+- [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
+
+- [Introduction to R for Excel Users](https://dl.dropboxusercontent.com/u/12616850/R_Intro_for_Excel.pdf)
+
+Al je een indruk wilt krijgen van wat je allemaal met R kunt, is de [R-bloggers](https://www.r-bloggers.com/) website een goed startpunt.
+
+---
+
+# Sessie 1 - Inlezen / Bekijken
+
+In deze sessie gaan we kijken hoe je data uit verschillende bronnen kunt inlezen. We beginnen eenvoudig en lezen een lokaal opgeslagen bestand uit. Daarna gaan we data uitlezen vanuit een online spreadsheet. We eindigen met het scrapen van informatie uit een webpagina.
+
+## Lokaal bestand
+
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie1.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+Download nu het volgende databestand: <a href="https://github.com/witusj/R-workshop/raw/gh-pages/datasets/sessie%201/stud_perf.csv" download>Student Performance (csv)</a> en sla het op in de werkfolder. Nu ben je klaar om je eerste data in te lezen in R.
+
+In het scriptvenster in RStudio schrijf (of kopieer) je volgende instructie:
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+## Lees data uit lokaal csv-bestand
+studDF <- read.csv("stud_perf.csv", stringsAsFactors = FALSE)
+```
+Selecteer alles en klik op Run. In de console van RStudio zie je dat de instructies worden uitgevoerd, maar je ziet verder geen resultaten. R heeft echter alle data in het geheugen geladen. Je kunt dit zien in het *Environment* veld waar nu een data object *studDF* is toegevoegd:
+
+![](images/env.png)
+
+<br>
+We kunnen snel controleren of de data goed is overgekomen door naar de eerste zes rijen te kijken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk eerste regels van data
+head(studDF)
+```
+
+<br>
+Het gaat hier klaarblijkelijk om een cijferlijst van studenten met wat metadata. Alles lijkt correct te zijn ingelezen door R en we kunnen nu wat nauwkeuriger kijken naar de data. Het is een goede gewoonte om eerst de structuur van de data te onderzoeken:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de structuur van data
+str(studDF)
+```
+
+<br>
+en we zien dat de data de vorm van een *data frame* (tabel) heeft met `r length(studDF$Voor)` rijen (observaties) en `r length(studDF)` kolommen (variabelen). De eerste variabele heet `Voor` en de elementen bestaan uit letters (`chr`). De derde variabele heet `Kennistoetsen` en de elementen zijn getallen (`num`). De vijfde variabele heet `Schriftelijk.Voldoende` en bestaat uit gehele getallen (`int`).
+
+Met `summary()` kunnen we de kwaliteit van de data beoordelen:
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
+## Bekijk de kwaliteit van data
+summary(studDF)
+```
+<br>
+We kunnen hieruit onder andere aflezen dat de gemiddelde score van de kennistoetsen `r round(mean(studDF$Kennistoetsen), 2)` bedroeg met een maximum van `r round(max(studDF$Kennistoetsen), 2)` en dat bij de variabele `BEC.Propedeuse` van 5 observaties de gegevens ontbreken (`NA`).
+
+Door in het *Environment* veld op de variabele `StudDF` te klikken (of in de *Console* met het commando `View(studDF)`), krijg je een tabel met alle data.
+
+![](images/view.png)
+
+### Vragenset 1A
+1. Hoeveel procent van de studenten heeft voor het schriftelijk tentamen (inclusief bonuspunten) een voldoende gehaald?
+
+2. In hoeveel procent van de gevallen hadden studenten de bonuspunten nodig om voor het schriftelijk een voldoende te halen?
+
+## Online bestand
+We kunnen met R ook heel makkelijk data ophalen die online is opgeslagen. In dit voorbeeld lezen we data uit een Google Spreadsheet uit. Er zijn verschillende packages die voor deze taak geschikt zijn. Wij gaan de package `gsheet` gebruiken.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+## Laad de benodigde package(s)
+library(gsheet)
+
+## Lees online data in
+url <- "https://docs.google.com/spreadsheets/d/1YnAdYzJ6hAHlFTbgv2xMxkMwGyAcFM8zM1FMnEkJKgw"
+surveyDF <- gsheet2tbl(url)
+```
+
+### Vragenset 1B
+1. Om wat voor een soort data gaat het hier?
+
+2. Welke dimensies heeft de dataset (rijen / kolommen)?
+
+3. Welke classes hebben de variabelen?
+
+4. Wat is het gemiddelde niveau van de ingeschatte vaardigheden?
+
+
+## Web scraping
+Een andere wijze om online data te verzamelen is via *web scraping*. Soms zie je op webpagina's tabellen met data staan, zoals bijvoorbeeld [hier](http://www.pginvestor.com/Historic-Prices). Met de `rvest` package kunnen we de data uit de html code filteren.
+
+```{r, eval=FALSE, echo=TRUE, message=TRUE, warning=FALSE}
+# Laad de benodigde package(s)
+library(rvest)
+
+# Lees ruwe html data in.
+htmlpage <- read_html("http://www.pginvestor.com/Historic-Prices")
+
+# Extraheer alle tabellen uit de ruwe data
+nodes <- html_nodes(htmlpage, "table")
+tables <- html_table(nodes, fill = TRUE)
+
+# Kies een tabel en stop de data in een data frame
+stockDF <- tables[1][[1]]
+```
+
+### Vragenset 1C
+1. Wat voor een soort data bevat `stockDF`?
+
+2. Welke classes hebben de variabelen?
+
+3. Wat was de hoogste waarde voor de variabele`Price`?
+
+---
+
+# Sessie 2 - Muteren / Analyseren
+
+In deze sessie gaan we de kwaliteit van de ruwe data bekijken en leren we hoe je met slimme tools data kunt aanpassen, zodat deze gebruikt kan worden voor verdere analyse of visualisatie.
+
+## Muteren
+
+Maak een nieuw R Script aan in RStudio en bewaar het in een voor jou logische folder op je computer (geef het een zinvolle naam, bijvoorbeeld `werkSessie2.R`). Verwijs in RStudio naar deze werkfolder door te klikken op *Session >> Set Working Directory >> To Source File Location*
+
+We gaan met functies werken uit de `dplyr` package. Een uitgebreid overzicht van deze functies vind je [hier](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+library(dplyr)
+library(tidyr)
+```
+
+Met de volgende code kun je een online csv bestand direct inlezen in R en met de `dplyr::glimpse()` functie de data bekijken. De oorspronkelijke data komt van de [Gemeente Alphen a/d Rijn](http://opendata.alphenaandenrijn.nl/).
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit online csv-bestand
+openDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/open_data.csv", stringsAsFactors = TRUE)
+glimpse(openDF)
+```
+### Vragenset 2A
+1. Wat voor een soort data bevat `openDF`?
+
+2. Wat is de latijnse naam voor 'Moeraseik'?
+
+3. Wat is het vroegste aanlegjaar in de dataset?
+
+4. Van hoeveel boomsoorten binnen de Gemeente Alphen aan de Rijn is de latijnse naam vastgesteld? (HINT: gebruik de functie `levels()` en kijk goed bij de namen die met een 'N' beginnen)
+
+Het kan wellicht handig zijn om de inspectiedatum op te splitsen in *dag*, *maand* en *jaar*.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Splits de inspectiedatum
+openDF <- separate(openDF, inspectiedatum, into = c("inspectiedag", "inspectiemaand", "inspectiejaar"), sep="-", remove = FALSE, extra = "drop", fill = "right")
+```
+
+Nu kunnen we makkelijk de inspecties van een bepaalde periode uit de data filteren (let op het dubbele `=` teken) en kijken welke bomen zijn aangemerkt om gerooid te worden.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Filter op jaar en maand
+openDF2014 <- filter(openDF, inspectiejaar == "2014", kl_veilig_maatregelen == "Rooien;")
+head(openDF2014)
+```
+### Vragenset 2B
+1. Maak een subset van de data waarin alleen de bomen staan die in 2014 in de Horstenbuurt aangemerkt werden om gerooid te worden.
+
+2. Van welke boomsoort zullen de meeste bomen worden gerooid in deze buurt?
+
+3. Maak een subset van alle bomen die **sinds** 2010 geinspecteerd zijn.
+
+## Analyseren
+We gaan data aggregeren om een beter beeld te krijgen van het inspectieproces bij de Gemeente Alphen a/d Rijn. Met de `table()` functie kunnen we een matrix bouwen. Horizontaal (*rij*) plaatsen we de afzonderlijke *woonplaatsen* en verticaal (*kolom*) de *inspectiejaren*. In de cellen van de matrix staat het aantal keren dat de gegeven combinatie (*woonplaats*, *jaar*) in de dataset voorkomt.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Aantal inspecties per woonplaats per jaar
+inspecTab <- table(openDF$woonplaats, openDF$inspectiejaar)
+inspecTab
+str(inspecTab)
+
+```
+
+Als we de structuur van `inspecTab` bekijken zien we dat het class `table` heeft en bestaat uit de waarden (`int`) en namen van de *rijen* en *kolommen* (`attr`). Om dit om te zetten naar een data frame kunnen we de functie `as.data.frame.matrix()` gebruiken. Wat we zo direct nodig hebben, zijn de de *namen* van de afzonderlijke *rijen*. Deze kunnen we via de functie `rownames()` opslaan in een vector.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Conversie tabel naar data frame
+inspecDF <- as.data.frame.matrix(inspecTab)
+head(inspecDF)
+
+## Bewaar rijnamen
+plaatsenVec <- rownames(inspecDF)
+cat(plaatsenVec, sep = ", ")
+```
+
+We kunnen nu de data in een staafdiagram weergeven m.b.v. de functie `barplot()`. De functie barplot accepteert als input alleen een matrix of een vector. Daarom gebruiken we de tabel in plaats van de data frame.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Barplot van aantal inspecties per woonplaats per jaar
+barplot(inspecTab,
+        xlab = "Jaar",
+        col=rainbow(9)
+        )
+
+legend("topleft",
+       legend = plaatsenVec,
+       fill=rainbow(9)
+)
+```
+
+### Vragenset 2C
+1. Wat valt op als je de `inspecTab` dataset bekijkt?
+
+2. Maak een tabel waarin je het aantal afzonderlijke categorieën veiligheidsmaatregelen per jaar telt.
+
+3. Voor hoeveel bomen werd in 2014 een jaarlijkse inspectie geadviseerd?
+
+4. Analyseer deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv)
+
+---
+
+# Sessie 3 - Visualiseren / Presenteren
+
+In deze sessie kijken we hoe je data aantrekkelijk kunt visualiseren en op een makkelijke manier toegankelijk maakt voor de gebruikers.
+
+## Visualiseren
+Er zijn talrijke packages voor R gebouwd waarmee je data op veelzijdige manieren grafisch kunt weergeven. In deze workshop gaan we werken met de R interface voor de Google Charts API (`googleVis`). Op deze  [pagina](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html) vind je voorbeelden van de mogelijkheden die de interface biedt.
+
+```{r, echo=TRUE, results='hide', message=FALSE, warning=FALSE}
+## Laad de benodigde packages
+library(googleVis)
+library(gsheet)
+library(dplyr)
+```
+
+De data die we gebruiken, komt uit een Google Spreadsheet.
+```{r, echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+## Lees data uit Google Spreadsheet
+url <- 'https://docs.google.com/spreadsheets/d/1f0qX_BBu-4qhKHa6mBiwbUHmUahrXcHeWieBDD9fiXg'
+surveyDF <- gsheet2tbl(url)
+```
+
+Met de functie `gvisBubbleChart()` wordt alle code gegegenereerd die nodig is om de grafiek in een html pagina weer te geven. Met de `plot()` functie wordt de grafiek in een webbrowser getoond.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Bouw Google Bubble Chart
+survChart <- gvisBubbleChart(surveyDF,
+                             idvar = "Naam",
+                             xvar = "Waarschijnlijkheid",
+                             yvar = "Gevolg",
+                             colorvar = "Soort.Risico",
+                             options = list(hAxis = '{minValue:1, maxValue:5, title:"Gevolg"}'
+                                            ,vAxis = '{minValue:1, maxValue:5, title:"Waarschijnlijkheid"}',
+                                            width = 700,
+                                            height = 700
+                                            )
+                             )
+plot(survChart)
+```
+
+### Vragenset 3A
+1. Wat voor een structuur heeft `survDF`?
+
+2. Om wat voor een soort data gaat het?
+
+3. Maak een nieuwe bubble chart met de variabelen die op ".1" eindigen.
+
+4. Wat valt je op als je de twee bubble charts met elkaar vergelijkt?
+
+Zoals je wellicht al is opgevallen, bevat `survDF` 7 sets van variabelen die een gelijke opzet hebben. Het gaat hier om een survey, waarbij deelnemers moesten reageren op stellingen. In de vorige exercitie hebben we de afzonderlijke reacties grafisch weergegeven. We gaan nu kijken naar de centrum- en spreidingsmaten. Voor het gemak zijn deze waarden al berekend en in dit [bestand](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv) bewaard.
+
+We gebruiken nu de package `plotly`. Voor het gebruik en voorbeelden zie [hier](https://plot.ly/r/).
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+meanvarDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/mean_var.csv", stringsAsFactors = TRUE)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Laad packages
+library(plotly)
+
+## Bouw Plotly Chart
+p <- plot_ly(
+  meanvarDF,
+  x = Waarschijnlijkheid,
+  y = Gevolgen,
+  color = Perc.Kans,
+  size = Spreiding,
+  text = Topic,
+  mode = "text+markers",
+  cmin = 0,
+  cmax = 1,
+  colors = c("red", "orange", "white", "light blue" , "dodgerblue")
+)
+p
+```
+
+### Vragenset 3B
+1. Wat voor een structuur heeft `meanvarDF`?
+
+2. Analyseer de chart en beschrijf wat je opvalt.
+
+3. Verander de chart, zodat in plaats van het thema het percentage van deelnemers wordt getoond dat aangaf het thema als een kans te zien.
+
+In de volgende oefening gaan we data in een geografische kaart plaatsen. De data is via een mobiele telefoon verzameld en kan [hier](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv) opgehaald worden. We gebruiken de [Leaflet](https://rstudio.github.io/leaflet/) package.
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+gpsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/gps_data.csv",
+                    stringsAsFactors = TRUE)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis', tidy=FALSE}
+## Laad packages
+library(leaflet)
+
+## Bepaal middelpunt van de kaart
+latCtr <- mean(gpsDF$lat)
+lonCtr <- mean(gpsDF$lon)
+
+## Bouw de kaart en geef weer
+m1 <- leaflet() %>%
+  addTiles() %>%
+  setView(lonCtr, latCtr, 12) %>% # map location
+  # add som circles:
+  addCircles(color = "Red", lng=gpsDF$lon, lat=gpsDF$lat, 20)
+m1
+```
+
+### Vragenset 3C
+1. Welke data is door de mobiele telefoon verzameld en op welke momenten?
+
+2. Waarom zijn sommige punten verder van elkaar verwijderd dan andere?
+
+3. Gebruik deze [data](https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%203/event_data.csv) om een nieuwe geografische kaart te bouwen en analyseer de informatie.
+
+## Presenteren.
+Natuurlijk wil je uiteindelijk de uitkomsten van je werk met anderen delen. In R kun je heel gemakkelijk rapportages in verschillende formats (HTML, pdf of Word) creëren, waarin je tekst, code, tabellen en grafieken integreerd. Hiervoor open je een RMarkdown script.
+
+![](images/rmarkd.png)
+
+<br>
+Geef je document een titel en kies wat voor een soort document je wilt maken. In dit voorbeeld gaan we een webpagina bouwen en kiezen dus voor HTML.
+
+R bouwt alvast een template met wat voorbeelden, zodat je direct aan de slag kunt. Als je wilt testen hoe het document er uit gaat zien, klik je op *Knit HTML*.
+
+![](images/knit.png)
+
+<br>
+In het bovenste gedeelte van het het *RMarkdown script* zie je een zogenaamd YAML veld waarin meta data staat. Je kunt deze veranderen en extra variabelen toevoegen (bijvoorbeeld een inhoudsopgave). Online is veel informatie te vinden over het gebruik van YAML en (R) Markdown. Voor RMarkdown vind je onder het helpmenu van RStudio ook een *Cheatsheet* en een handleiding.
+
+<pre>---
+title: "Rapportage Q1 2016"
+author: "Nomen Nescio"
+date: "17-08-1016"
+output:
+ html_document:
+   toc: yes
+---
+Deze rapportage gaat over de subsidie-uitkeringen van de Gemeente Purmerend.
+</pre>
+<pre>```{r, message=FALSE, warning=FALSE}
+
+library(knitr)
+library(dplyr)
+
+subsDF <- read.csv(file = "https://raw.githubusercontent.com/witusj/R-workshop/gh-pages/Datasets/sessie%202/subs_data.csv", stringsAsFactors = TRUE)
+glimpse(subsDF)
+
+## Tabel waarde subsidies per jaar per categorie
+subsTable <- xtabs(Bedrag ~ Categorie + Jaar, subsDF)
+subsDF <- as.data.frame.matrix(subsTable)
+subsDF <- round(subsDF, 0)
+kable(subsDF, caption = "Tabel 1. Waarde subsidies per jaar per categorie")
+
+## Staafdiagram
+barplot(subsTable,
+        main="Subsidiebedragen per categorie",
+        xlab="Jaar",
+        ylab="Bedrag",
+        col=rainbow(5)
+)
+
+legend("topright",
+       legend = dimnames(subsTable)$Categorie,
+       fill=rainbow(5)
+)
+```
+</pre>
+
+
+
+Als het document volledig naar wens is, kun je het snel publiceren op internet via [Rpubs](http://rpubs.com/). Klik hiervoor op het 'blauwe oogje'.
+
+![](images/rpubs.png)
+
+<br>
+en volg de instructies. De [link](http://rpubs.com/tweety/ExampleRmd) naar je document op RPubs kun je delen met betrokkenen en bijvoorbeeld integreren in het intranet van je organisatie of toevoegen aan een mail. LET OP: de informatie op RPubs is niet afgeschermd en zichtbaar voor iedereen die het webadres heeft.
